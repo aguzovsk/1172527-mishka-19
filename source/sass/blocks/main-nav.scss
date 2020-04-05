@@ -33,9 +33,11 @@ $show: inline-block;
   justify-content: flex-end;
   background-image: url("../../img/icon-menu-open.svg");
   &:focus  ~ .main-nav__item {
-    // background-image: url("../../img/icon-menu-close.svg");
-    // background-repeat: no-repeat;
     display: flex;
+ }
+ &:focus {
+  background-image: url("../../img/icon-menu-close.svg");
+  background-repeat: no-repeat;
  }
  background-repeat: no-repeat;
  background-size: 21px 21px;

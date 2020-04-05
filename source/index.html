@@ -3,48 +3,68 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Мишка</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body class="page-body">
-    <header class="page-header">
-      <a class="page-header__logo">
-        <picture>
-          <source media="(min-width: 1025px)" srcset="./img/logo-desktop.svg">
-          <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg">
-          <img class="page-header__logo-image"
-            src="./img/logo-mobile.svg"
-            width="86" height="35"
-            alt="Мишка: милые штуки ручной работы для дома"
-          >
-        </picture>
-      </a>
+    <header class="page-header page-header--index">
       <nav class="main-nav">
-        <button class="main-nav__toggle" type="button">
-          Открыть меню
-        </button>
-        <div class="main-nav__wrapper">
-          <ul class="main-nav__list site-list">
-            <li class="site-list__item site-list__item--active">
-              <a href="./pages/catalog.html">
-                Каталог товаров
+        <ul class="main-nav__list">
+          <!-- <div class="main-nav__logo-wrapper"> -->
+            <li class="main-nav__logo">
+              <a class="">
+                <picture>
+                  <source media="(min-width: 1025px)" srcset="./img/logo-desktop.svg">
+                  <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg">
+                  <img class="page-header__logo-image"
+                    src="./img/logo-mobile.svg"
+                    width="86" height="35"
+                    alt="Мишка"
+                  >
+                </picture>
               </a>
             </li>
-            <li class="site-list__item">
-              <a href="./pages/knitting.html">
-                Вязание на заказ
-              </a>
-            </li>
-            <li class="site-list__item">
-              <a href="#">
-                Поиск по сайту
-              </a>
-            </li>
-            <li class="site-list__item">
-              <a href="#">
-                Корзина: пока пуста
-              </a>
-            </li>
-          </ul>
-        </div>
+
+            <!-- <li class="main-nav__dropbtn-wrapper"> -->
+              <input type="text" class="main-nav__dropbtn-wrapper" src="./img/icon-menu-open.svg" readonly	 alt="Открыть меню"/>
+            <!-- </li> -->
+            <!-- <div class="main-nav__dropbtn-icon"><p class="visually-hidden">Открыть меню</p></div> -->
+            <!-- <label class="main-nav__switch">
+              <input type="checkbox" class="main-nav__switch-checkbox">
+              <img class="main-nav__open-icon" src="./img/icon-menu-open.svg" alt="Открыть меню" />
+              <img class="main-nav__close-icon" src="./img/icon-menu-close.svg" alt="Закрыть меню" />
+            </label> -->
+
+          <li class="main-nav__item site-list__item onmobile__toggle">
+            <a href="./pages/catalog.html">
+              Каталог товаров
+            </a>
+          </li>
+          <li class="main-nav__item site-list__item onmobile__toggle">
+            <a href="./pages/knitting.html">
+              Вязание на заказ
+            </a>
+          </li>
+          <li class="main-nav__item option-list__item onmobile__toggle">
+            <a href="#">
+              Поиск по сайту
+            </a>
+          </li>
+          <li class="main-nav__item option-list__item onmobile__toggle">
+            <a href="#">
+              Корзина: пока пуста
+            </a>
+          </li>
+          <li class="sellout-list__item onmobile__hide">
+            <a href="#">Новые поступления</a>
+          </li>
+          <li class="sellout-list__item onmobile__hide">
+            <a href="#">Распродажа</a>
+          </li>
+          <li class="main-nav__free-delivery onmobile__hide">
+            <p>Бесплатная доставка по России</p>
+          </li>
+        </ul>
       </nav>
     </header>
     <main class="page-main">

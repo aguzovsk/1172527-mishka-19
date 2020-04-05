@@ -1,0 +1,142 @@
+@import "../var.scss";
+
+$show: inline-block;
+
+@mixin hide {
+  display: none;
+}
+
+// .main-nav {
+//   position: absolute;
+//   top: 0px;
+//   right: 0px;
+// }
+
+.main-nav__list {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  &:before {
+    content: "";
+    width: calc((100vw - 86px) / 2 - 1vw);
+    // width: -webkit-calc((100vw-86px));
+    // width: 30vw;
+  }
+}
+.main-nav__dropbtn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  background-image: url("../../img/icon-menu-open.svg");
+  &:focus  ~ .main-nav__item {
+    // background-image: url("../../img/icon-menu-close.svg");
+    // background-repeat: no-repeat;
+    display: flex;
+ }
+ background-repeat: no-repeat;
+ background-size: 21px 21px;
+ width: 21px;
+//  height: 21px;
+
+ background-color: inherit;
+ background-position: right;
+
+  padding: 0;
+  border-width: 0;
+  border-style: 0;
+  border-color: 0;
+  border-image: 0;
+
+  margin-right: 5vw;
+  margin-left: calc(((100vw - 86px) /2) - 21px - 6vw);
+}
+
+// .main-nav__dropbtn-wrapper:has(input:focus) {
+//   display: flex;
+// }
+
+// .main-nav__dropbtn {
+
+// }
+
+.main-nav__item {
+  width: 98vw;
+}
+
+.main-nav__logo-wrapper {
+  display: flex;
+}
+
+.main-nav__close-icon {
+  display: none;
+}
+
+// .main-nav__switch:focus > .main-nav__open-icon {
+//   display: none;
+// }
+
+
+// .main-nav__switch:focus > .main-nav__close-icon {
+//   display: initial;
+// }
+
+// @media (max-width: $mobileMaxW) {
+//   .main-nav {
+//     flex-direction: column;
+//   }
+// }
+
+// .main-nav__switch {
+//   position: absolute;
+//   right: 10px;
+//   top: 50%;
+// }
+
+/*
+.main-nav__dropbtn {
+  background-image: url(../../img/icon-menu-open.svg);
+}
+
+.main-nav__dropbtn:focus {
+  background-image: url(../../img/icon-menu-close.svg);
+} */
+
+// .main-nav__wrapper {
+//   position:
+// }
+/*
+.main-nav__list {
+  list-style-type: none;
+}
+
+.main-nav__switch-checkbox {
+  display: $hide;
+}
+
+.main-nav__close-icon {
+  display: $hide;
+}
+
+.main-nav__open-icon {
+  display: $show;
+}
+
+.main-nav__switch-checkbox:checked ~ .main-nav__close-icon {
+  display: $show;
+}
+
+.main-nav__switch-checkbox:checked ~ .main-nav__open-icon {
+  display: $hide;
+} */
+
+// .main-nav__toggle {
+//   background-image: url(../../img/icon-menu-open.svg);
+// }
+
+// .main-nav__toggle:focus {
+//   background-image: url(../../img/icon-menu-close.svg) no-repeat 0 0;
+// }

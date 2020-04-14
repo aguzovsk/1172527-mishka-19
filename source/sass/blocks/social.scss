@@ -1,0 +1,39 @@
+@import "../var.scss";
+@import "../utils.scss";
+
+// .social {
+//   display: flex;
+//   justify-content: space-around;
+// }
+
+.social__list {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.social__item {
+  margin: 0 20px;
+}
+
+.social__link {
+  $social-networks: (
+    twitter: (suffix: twitter, width: 23px, height: 20px),
+    instagram: (suffix: insta, width: 22px, height: 21px),
+    facebook: (suffix: fb, width: 15px, height: 28px),
+  );
+
+  text-decoration: none;
+
+  @include before-icon-base();
+
+  @each $network, $params in $social-networks {
+    $icon-suffix: map-get($params, suffix);
+
+    &--#{$network}::before {
+      width: map-get($params, width);
+      height: map-get($params, height);
+      background-image: url("../../img/icon-#{$icon-suffix}.svg");
+    }
+  }
+}

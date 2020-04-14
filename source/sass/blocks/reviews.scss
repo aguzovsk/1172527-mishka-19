@@ -1,0 +1,64 @@
+@import "../var.scss";
+
+// .reviews {
+
+// }
+
+.reviews__wrapper {
+  height: 100%;
+  margin: 30px;
+}
+
+.reviews__author {
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reviews__arrows {
+  width: 260px;
+  height: 52px;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (min-width: $tablet-min-width) {
+  .reviews {
+    height: 457px;
+    background-image: url("../../img/review@1x.jpg");
+    background-repeat: no-repeat;
+  }
+
+  .reviews__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+  }
+
+  // .reviews__header {
+  //   order: 1;
+  // }
+
+  .reviews__write {
+    order: 2;
+  }
+
+  .reviews__comment {
+    order: 3;
+  }
+
+  .reviews__author {
+    order: 4;
+  }
+
+  .reviews__arrows {
+    order: 5;
+  }
+
+  .reviews__arrows {
+    width: 137px;
+    justify-content: space-between;
+  }
+}

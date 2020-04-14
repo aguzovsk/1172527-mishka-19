@@ -1,0 +1,30 @@
+@import "../var.scss";
+
+.about {
+  margin: 30px;
+}
+
+.about__list {
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 750px;
+}
+
+.about__item {
+  // overflow: hidden;
+  box-sizing: border-box;
+  width: 19em;
+  margin: 5px;
+}
+
+.about__item-image {
+  fill: $seafoam-blue;
+}
+
+@media (min-width: $tablet-min-width) {
+  .about__list {
+    height: 450px;
+  }
+}

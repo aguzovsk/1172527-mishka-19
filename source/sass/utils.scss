@@ -1,0 +1,36 @@
+// @import "./var.scss";
+
+@mixin before-icon-base {
+  &::before {
+    content: "";
+    display: inline-block;
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin before-icon-params ($width, $height, $background-image) {
+  &::before {
+    width: $width;
+    height: $height;
+    background-image: url($background-image);
+  }
+}
+
+@mixin before-icon($width, $height, $background-image) {
+  @include before-icon-base();
+  @include before-icon-params ($width, $height, $background-image);
+}
+
+// @mixin before-icon-on-modifiers($modifiers-with-values) {
+//   @include before-icon-base();
+
+//   @each $modifier, $params-map in $modifiers-with-values {
+//     &--#{$modifier} {
+//       @include before-icon-params(
+//         map-get($params-map, width),
+//         map-get($params-map, height),
+//         map-get($params-map, background-image)
+//       );
+//     }
+//   }
+// }

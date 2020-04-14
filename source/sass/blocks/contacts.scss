@@ -1,0 +1,128 @@
+@import "../var.scss";
+
+.contacts {
+  margin: 0 $margin-horizontal-mobile;
+}
+
+.contacts__icon-flag {
+  display: none;
+}
+
+.contacts__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contacts__list-item {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.contacts__list-key {
+  margin-right: 1.5em;
+  white-space: nowrap;
+}
+
+.contacts__map {
+  height: 457px;
+  width: 322px;
+  background-image: url("../../img/icon-map-pin.svg"), url("../../img/map-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: 53% 40%, 0 0;
+  margin: 0 (-$margin-horizontal-mobile);
+}
+
+@media (min-width: $tablet-min-width) {
+  .contacts {
+    margin: 0 $margin-horizontal-tablet;
+  }
+
+  .contacts__icon-flag {
+    display: unset;
+  }
+
+  .contacts__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contacts__list-item {
+    width: 45%;
+  }
+
+  .contacts__map {
+    width: 768px;
+    background-image: url("../../img/icon-map-pin.svg"), url("../../img/map-tablet@1x.jpg");
+    background-position: 52% 40%, 0 0;
+    // margin: 0 (-$margin-horizontal-tablet);
+  }
+}
+
+@media (min-width: $desktop-min-width) {
+  $margin-top: 40px;
+
+  .contacts__wrapper {
+    height: 457px;
+    margin-top: $margin-top;
+  }
+
+  .contacts__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts__icon-flag {
+    order: 1;
+    height: 100%;
+  }
+
+  $icon-height: 81px;
+  $before-height: 50px;
+
+  .contacts__header-wrapper {
+    height: $icon-height + $before-height;
+    display: flex;
+    flex-direction: column;
+    order: 2;
+  }
+
+  .contacts__header {
+    display: flex;
+    flex-direction: column;
+    height: $icon-height;
+    justify-content: center;
+  }
+
+  .contacts__list {
+    order: 3;
+  }
+
+  .contacts__write-btn {
+    order: 4;
+  }
+
+  .contacts__list, .contacts__header-wrapper, .contacts__write-btn {
+    width: 30%;
+  }
+
+  .contacts__icon-flag::before, .contacts__header-wrapper::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: $before-height;
+  }
+
+  .contacts__list-item {
+    width: initial;
+  }
+
+  .contacts__map {
+    margin-top: -($margin-top);
+    order: 5;
+    width: 525px;
+    background-image: url("../../img/icon-map-pin.svg"), url("../../img/map-desktop@1x.jpg");
+    margin: 0 0;
+  }
+}

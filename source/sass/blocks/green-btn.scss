@@ -1,0 +1,66 @@
+@import "../var.scss";
+// fill="#231F20"
+.green-btn {
+  width: 320px;
+  height: 103px;
+  border: none;
+  // padding: 30px;
+  &:hover {
+    padding-bottom: 5px;
+    & &__icon {
+      opacity: 0.7;
+    }
+  }
+
+  &:active .text__green-btn {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &:active &__icon {
+    opacity: 0.3;
+  }
+}
+
+.green-btn__container {
+  display: flex;
+  justify-content: space-between;
+  // padding: 30px;
+}
+
+.green-btn--left {
+  background-color: $seafoam-blue;
+  &:hover {
+    background-color: #59d5bc;
+  }
+  &:active {
+    background-color: #59d5bc;
+  }
+}
+
+.green-btn--right {
+  background-color: $greeny-blue;
+  &:hover {
+    background-color: #46c1ae;
+  }
+  &:active {
+    background-color: #46c1ae;
+  }
+}
+
+.green-btn__icon {
+  fill: #149080;
+  opacity: 0.5;
+}
+
+@media (min-width: $tablet-min-width) {
+  .green-btn {
+    width: 334px;
+    height: 119px;
+  }
+}
+
+@media (min-width: $desktop-min-width) {
+  .green-btn {
+    width: 525px;
+  }
+}

@@ -1,0 +1,210 @@
+@import "../var.scss";
+
+@mixin bold($color: false) {
+  font-family: "OpenSans-Bold";
+  font-weight: bold;
+  @if ($color) {
+    color: $color;
+  }
+}
+
+@mixin height-size($line-height, $font-size: false) {
+  @if ($font-size) {
+    font-size: $font-size;
+  }
+  line-height: $line-height;
+}
+
+.text__bold-black {
+  @include bold($black);
+}
+
+.text__big-header, .text__add-to-basket { // use with text__bold-black
+  @include height-size(1.2, 25px);
+}
+
+.text__main-header { // use with .text__bold-black
+  text-align: center;
+  @include height-size(1.11, 27px);
+}
+
+.text__main-header--index {
+  color: $very-dark-brown;
+}
+
+.text__popular-title {
+  @include bold($seafoam-blue);
+  @include height-size(1.18, 17px);
+}
+
+.text__green-btn {
+  @include bold($white-three);
+  @include height-size(1.26, 19px);
+
+  width: min-content;
+}
+
+.text__popular-description {
+  line-height: 1.6;
+}
+
+.text__popular-table {
+  line-height: 1.33;
+}
+
+.text__popular-price {
+  @include bold();
+  @include height-size(1.33, 17px);
+}
+
+.text__about-item { // use with text__bold-black
+  @include height-size(1.18, 17px);
+}
+
+.text__comment, .text__contacts-table, .text__select-size {
+  line-height: 2;
+}
+
+.text__author-name { //use with text__bold-black
+  @include height-size(1.41, 17px);
+}
+
+.text__author-address {
+  @include height-size(1.76, 17px);
+}
+
+.text__contacts-header { // use with text__bold-black
+  @include height-size(1.67, 18px);
+}
+
+.text__copyright { // use with text__bold-black
+  @include height-size(0.95, 19px);
+}
+
+.text__menu-item, .text__catalog-item-name { //use with text__bold-black
+  // @include bold($black);
+  @include height-size(1.41, 17px);
+}
+
+.text__catalog-item-description {
+  @include height-size(2.31, 13px);
+}
+
+.text__catalog-item-description--video {
+  line-height: 1.85;
+}
+
+.text__catalog-item-price { // use with text__bold-black
+  @include height-size(1.6, 15px);
+}
+
+.text__size-item {
+  @include bold();
+  @include height-size(0.94, 17px);
+
+  text-align: center;
+}
+
+.text__knitting-sub-header {
+  @include bold($seafoam-blue);
+  @include height-size(0.94, 17px);
+}
+
+.text__knitting-description {
+  @include height-size(1.85, 13px);
+}
+
+.text__knitting-item-name { // use with text__bold-black
+  @include height-size(1.06, 17px);
+}
+
+.text__knitting-input {
+  @include height-size(1.06, 17px);
+  color: rgba(68, 68, 68, 0.3);
+}
+
+.text__knitting-input--tel {
+  @include height-size(0.95, 19px);
+  // color: rgba(68, 68, 68, 0.3);
+}
+
+.text__knitting-order-info {
+  @include height-size(1.14, 14px);
+}
+
+.text__ghost-btn {
+  @include bold();
+  @include height-size(1.18, 17px);
+
+  vertical-align: middle
+}
+
+/* ========= Mobile Version ends here ================= */
+
+.text__menu-item-small { // use with bold-black
+  @include height-size(1.6, 15px);
+}
+
+@media (min-width: $tablet-min-width) {
+  .text__main-header, .text__big-header, .text__contacts-header{
+    @include height-size(1.16, 43px);
+    color: $black;
+  }
+
+  .text__green-btn {
+    @include height-size(1.5, 20px);
+  }
+
+  .text__popular-title {
+    width: min-content;
+    line-height: 1;
+  }
+
+  .text__popular-description, .text__comment, .text__contacts-table, .text__select-size {
+    @include height-size(1.76, 17px);
+  }
+
+  .text__popular-price, .text__catalog-item-name {
+    @include height-size(1.2, 20px);
+  }
+
+  .text__about-item {
+    @include height-size(1.1, 20px);
+  }
+
+  .text__author-name {
+    @include height-size(1.33, 18px);
+  }
+
+  .text__add-to-basket {
+    @include height-size(1.9, 30px);
+  }
+
+  .text__catalog-item-description, .text__catalog-item-description--video {
+    @include height-size(2, 15px);
+  }
+
+  .text__catalog-item-price {
+    @include height-size(1.41, 17px);
+  }
+
+  .text__knitting-description, .text__knitting-order-info {
+    @include height-size(1.76, 17px);
+  }
+
+  .text__knitting-item-name, .text__knitting-input {
+    @include height-size(0.95, 19px);
+  }
+}
+
+/*================ Tablet version ends here ================ */
+
+@media (min-width: $desktop-min-width) {
+  .text__main-header, .text__big-header, .text__contacts-header {
+    @include height-size(1.08, 53px);
+  }
+
+  .text__author-name {
+    @include height-size(1.41, 17px);
+  }
+}

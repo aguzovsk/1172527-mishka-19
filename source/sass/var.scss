@@ -1,3 +1,18 @@
-$desktopMinW: 1025px;
-$tabletMinW: 768px;
-$mobileMaxW: $tabletMinW - 1;
+$desktop-min-width: 1020px;
+$tablet-min-width: 768px;
+$mobile-max-width: $tablet-min-width - 1;
+
+$margin-horizontal-mobile: 30px;
+$margin-horizontal-tablet: 50px;
+// $margin-horizontal-desktop: 30px;
+
+$black: rgba(0, 0, 0, 1);
+$black-60: rgba(0, 0, 0, 0.6);
+$black-30: rgba(0, 0, 0, 0.3);
+$seafoam-blue: #63d1bb;
+
+$greeny-blue: #56c3b2;
+$white-three: #ffffff;
+$white-30: rgba(255, 255, 255, 0.3);
+$very-dark-brown: #010000;
+$black-44: #444444;

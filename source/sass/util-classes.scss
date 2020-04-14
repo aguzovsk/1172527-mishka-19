@@ -1,0 +1,62 @@
+@import "./var.scss";
+
+.visually-hidden {
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  border:0;
+  padding:0;
+  white-space:nowrap;
+  -webkit-clip-path:inset(100%);
+  clip-path:inset(100%);
+  clip:rect(0 0 0 0);
+  overflow:hidden
+}
+
+.mobile-hide, .mobile-toggle, .desktop-show {
+  display: none;
+}
+
+@media (min-width: $tablet-min-width) {
+  .mobile-hide, .mobile-toggle {
+    display: initial;
+  }
+
+  .mobile-show {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-min-width) {
+  .desktop-show {
+    display: initial;
+  }
+}
+
+// .big-link {
+//   font-family: OpenSans;
+//   font-size: 17px;
+//   font-weight: bold;
+//   font-weight: bold;
+//   font-stretch: normal;
+//   font-style: normal;
+//   line-height: 1.41;
+//   letter-spacing: normal;
+//   text-align: left;
+//   color: $black;
+
+//   &:hover {
+//     color: $black-60;
+//   }
+
+//   &:active {
+//     color: $black-30;
+//   }
+// }
+
+// @media (min-width: $tablet-min-width) {
+//   .mobile-only {
+//     display: none;
+//   }
+// }

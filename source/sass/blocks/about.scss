@@ -1,22 +1,28 @@
 @import "../var.scss";
 
 .about {
-  margin: 30px;
+  margin: 0px $margin-horizontal-mobile;
 }
 
 .about__list {
   display: flex;
-  flex: 1 1 0px;
+  // flex: 1 1 0px;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 750px;
+  height: 150px;
 }
 
 .about__item {
   // overflow: hidden;
-  box-sizing: border-box;
-  width: 19em;
-  margin: 5px;
+  // box-sizing: border-box;
+  // width: 19em;
+  // width: 45%;
+  margin: 15px 0;
+}
+
+.about__item-image {
+  // display: none;
+  margin-bottom: 10px;
 }
 
 .about__item-image {
@@ -24,6 +30,10 @@
 }
 
 @media (min-width: $tablet-min-width) {
+  .about {
+    margin: 0 $margin-horizontal-tablet;
+  }
+
   .about__list {
     height: 450px;
   }

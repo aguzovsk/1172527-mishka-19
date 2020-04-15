@@ -1,58 +1,53 @@
 @import "../var.scss";
 @import "../utils.scss";
-@use "sass:meta";
 
-$free-space-half: "((100vw - 86px) / 2)";
-$dropbtn-right-margin: "5vw";
+$logo-width-mobile: 86px;
+$logo-width-tablet: 112px;
+$logo-width-desktop: 150px;
+
+@mixin width-half-of-space($logo-width, $margin) {
+  width: calc((100% - #{$logo-width}) / 2 - #{$margin});
+}
+
+@mixin half-of-space-versioned($screen, $margin-side: false) {
+  $logo: $logo-width-mobile;
+  $margin: $margin-horizontal-mobile;
+
+  @if $screen == tablet {
+    $logo: $logo-width-tablet;
+    $margin: $margin-horizontal-tablet;
+  } @else if $screen == desktop {
+    $logo: $logo-width-desktop;
+    $margin: $margin-horizontal-desktop;
+  } @else if $screen != mobile {
+    @error "undefined screen size/version: #{$screen}";
+  }
+
+  @include width-half-of-space($logo, $margin);
+  @if $margin-side {
+    margin-#{$margin-side}: $margin;
+  }
+}
 
 .main-nav__list {
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 0;
-  list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   &:before {
     content: "";
-    width: calc(#{$free-space-half});
-  }
-}
-
-.main-nav__dropbtn-checkbox {
-  display: none;
-  &:checked ~ {
-    & .mobile-toggle {
-      display: flex;
-    }
-    & .main-nav__dropbtn-wrapper {
-      background-image: url("../../img/icon-menu-close.svg");
-      background-repeat: no-repeat;
-    }
+    @include half-of-space-versioned(mobile, left);
   }
 }
 
 .main-nav__dropbtn-wrapper {
   display: flex;
   justify-content: flex-end;
-  background-image: url("../../img/icon-menu-open.svg");
-  background-repeat: no-repeat;
-  background-size: 21px 21px;
+  align-items: center;
+  @include half-of-space-versioned(mobile, right);
+}
+
+.main-nav__dropbtn {
   width: 21px;
-//  height: 21px;
-
-  background-color: inherit;
-  background-position: right;
-
-  padding: 0;
-  border-width: 0;
-  border-style: 0;
-  border-color: 0;
-  border-image: 0;
-
-  margin-right: #{$dropbtn-right-margin};
-  margin-left: calc(#{$free-space-half} - 21px - #{$dropbtn-right-margin});
+  height: 21px;
 }
 
 .main-nav__item {
@@ -63,7 +58,7 @@ $dropbtn-right-margin: "5vw";
   @each $side in $sides {
     border-#{$side}: 1px solid;
   }
-  border-color: $seafoam-blue;
+  border-color: $delimiter-color;
 }
 
 .main-nav__item--bot-bordered {
@@ -115,19 +110,23 @@ $dropbtn-right-margin: "5vw";
 .main-nav__header-text {
   width: 244px;
   height: 87px;
-  color: $very-dark-brown;
-  font-family: OpenSans;
-  font-size: 27px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.11;
-  letter-spacing: normal;
-  text-align: center;
 }
 
 @media (min-width: $tablet-min-width) {
+  .main-nav__group {
+    display: flex;
+  }
+
+  .main-nav__search-text {
+    display: none;
+  }
+
+  .main-nav__link-container--search {
+    @include border(right, left);
+  }
+
   .main-nav__list {
+    justify-content: space-between;
 
     &::before {
       content: none;
@@ -140,6 +139,10 @@ $dropbtn-right-margin: "5vw";
 
   .main-nav__prepend-icon-2 {
     width: 82px;
+
+    // &--search {
+    //   @include border(right, left);
+    // }
   }
 
   .main-nav__item--bot-bordered, .main-nav__item--horizontally-bordered {
@@ -155,56 +158,49 @@ $dropbtn-right-margin: "5vw";
     // flex-basis: 200px;
   }
 
-  @mixin resizable-element {
-    flex-grow: 1;
-    display: flex;
+  .manin-nav__group--end {
     justify-content: flex-end;
   }
 
-  $menu-ordered: logo, search, card, catalog, tailored, delivery;
+  $ordered-menu: 1, 3, 2, 5;
+  @for $order from 1 through length($ordered-menu) {
+    $group: nth($ordered-menu, $order);
 
-  @for $order from 1 through length($menu-ordered) {
-    $item: nth($menu-ordered, $order);
+    .main-nav__group-#{$group} {
+      order: $order;
 
-    .main-nav__#{$item} {
-      order: $order - 1;
-
-      @if $item == logo {
-        flex-basis: 360px;
+      @if $group != 1 {
+        flex-grow: 1;
+      } @else {
+        flex-shrink: 1;
       }
 
-      @if $item == search {
-        @include resizable-element();
-
-        & .main-nav__link-container {
-          @include border(right, left);
-        }
-        & .text__menu-item {
-          display: none;
-        }
-      }
-
-      @if $item == delivery {
-        @include resizable-element();
+      @if $group == 3  {
+        min-width: 50vw;
       }
     }
   }
 }
 
 @media (min-width: $desktop-min-width) {
-  $menu-ordered: catalog, tailored, logo, search, card, "new", sale, delivery;
 
-  @for $order from 1 through length($menu-ordered) {
-    $item: nth($menu-ordered, $order);
-    .main-nav__#{$item} {
-      order: $order - 1;
+  $ordered-menu: 2, 1, 3, 4, 5;
+  @for $order from 1 through length($ordered-menu) {
+    $group: nth($ordered-menu, $order);
 
-      @if $item == logo {
-        flex-basis: 200px;
+    .main-nav__group-#{$group} {
+      order: $order;
+
+      @if $group == 2 or $group == 3 {
+        // min-width: calc(50% - 75px);
+        // min-width: calc((90vw - 150px) / 2);
+        // @include width-half-of-space(150px, 50px);
+        // min-width: calc((100% - 150px) / 2);
+        @include half-of-space-versioned(desktop);
       }
 
-      @if $item == tailored {
-        flex: 1;
+      @if $group == 1 {
+        margin: auto;
       }
     }
   }

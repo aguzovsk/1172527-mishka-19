@@ -14,7 +14,7 @@
   overflow:hidden
 }
 
-.mobile-hide, .mobile-toggle, .desktop-show {
+.mobile-hide, .desktop-show {
   display: none;
 }
 
@@ -33,30 +33,3 @@
     display: initial;
   }
 }
-
-// .big-link {
-//   font-family: OpenSans;
-//   font-size: 17px;
-//   font-weight: bold;
-//   font-weight: bold;
-//   font-stretch: normal;
-//   font-style: normal;
-//   line-height: 1.41;
-//   letter-spacing: normal;
-//   text-align: left;
-//   color: $black;
-
-//   &:hover {
-//     color: $black-60;
-//   }
-
-//   &:active {
-//     color: $black-30;
-//   }
-// }
-
-// @media (min-width: $tablet-min-width) {
-//   .mobile-only {
-//     display: none;
-//   }
-// }

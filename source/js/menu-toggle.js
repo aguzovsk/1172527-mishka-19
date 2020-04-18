@@ -1,7 +1,8 @@
 // var menuToggleButton = document.querySelector(".main-nav__dropbtn-checkbox");
+var nonMobileWidth = "768px";
 var menuToggleButton = document.querySelector(".main-nav__dropbtn");
 var menuToggleLabel = document.querySelector(".main-nav__dropbtn-label");
-var menuToggleItems = document.querySelectorAll(".main-nav__item--toggle");
+var menuToggleItems = document.querySelectorAll(".main-nav__group--toggle");
 var isChecked = true;
 
 function toggle() {
@@ -21,6 +22,27 @@ function changeEventHandler() {
   toggle();
 }
 
-menuToggleButton.addEventListener("click", changeEventHandler);
+var mql = window.matchMedia("(min-width: " + nonMobileWidth + ")");
+// mql.addEventListener("change", mediaQueryChangeHandler);
+mql.addListener(mediaQueryChangeHandler);
 
-toggle();
+function mediaQueryChangeHandler(event) {
+  for (var i = 0; i < menuToggleItems.length; ++i) {
+    menuToggleItems[i].removeAttribute("style");
+  }
+
+  if (event.matches) {
+    menuToggleButton.removeEventListener("click", changeEventHandler);
+  } else {
+    menuToggleButton.addEventListener("click", changeEventHandler);
+    isChecked = !isChecked;
+    toggle();
+  }
+}
+
+
+if (!mql.matches) {
+  menuToggleButton.addEventListener("click", changeEventHandler);
+  toggle();
+}
+

@@ -1,5 +1,15 @@
 @import "./var.scss";
 
+.break-flex {
+  width: 0;
+  height: 0;
+  flex-basis: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
 .visually-hidden {
   position:absolute;
   width:1px;
@@ -14,13 +24,15 @@
   overflow:hidden
 }
 
-.mobile-hide, .desktop-show {
-  display: none;
-}
+// @media (max-width: $mobile-max-width) {
+  .mobile-hide, .desktop-show {
+    display: none;
+  }
+// }
 
 @media (min-width: $tablet-min-width) {
   .mobile-hide, .mobile-toggle {
-    display: initial;
+    display: flex;
   }
 
   .mobile-show {

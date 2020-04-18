@@ -4,13 +4,17 @@
   margin: 0px $margin-horizontal-mobile;
 }
 
-.about__list {
-  display: flex;
-  // flex: 1 1 0px;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 150px;
+.about__header {
+  margin-bottom: 30px;
 }
+
+// .about__list {
+//   display: flex;
+//   // flex: 1 1 0px;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   height: 700px;
+// }
 
 .about__item {
   // overflow: hidden;
@@ -34,7 +38,24 @@
     margin: 0 $margin-horizontal-tablet;
   }
 
+  .about__header {
+    margin-bottom: 45px;
+  }
+
+  .about__item {
+    width: 45%;
+  }
+
   .about__list {
-    height: 450px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  $n: 3;
+  @for $i from 1 through $n {
+    .about__item:nth-child(#{$n}n+#{$i}) {
+      order: #{$i};
+    }
   }
 }

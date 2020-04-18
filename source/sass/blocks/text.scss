@@ -15,6 +15,11 @@
   line-height: $line-height;
 }
 
+.text {
+  display: flex;
+  align-items: center;
+}
+
 .text__bold-black {
   @include bold($black);
 }
@@ -35,6 +40,7 @@
 .text__popular-title {
   @include bold($seafoam-blue);
   @include height-size(1.18, 17px);
+  text-align: center;
 }
 
 .text__green-btn {
@@ -141,11 +147,11 @@
 
 /* ========= Mobile Version ends here ================= */
 
-.text__menu-item-small { // use with bold-black
-  @include height-size(1.6, 15px);
-}
-
 @media (min-width: $tablet-min-width) {
+  .text__menu-item-small { // use with bold-black
+    @include height-size(1.6, 15px);
+  }
+
   .text__main-header, .text__big-header, .text__contacts-header{
     @include height-size(1.16, 43px);
     color: $black;
@@ -202,6 +208,10 @@
 @media (min-width: $desktop-min-width) {
   .text__main-header, .text__big-header, .text__contacts-header {
     @include height-size(1.08, 53px);
+  }
+
+  .text__menu-item { // doesn't change, just for overriding text__menu-item-small
+    @include height-size(1.41, 17px);
   }
 
   .text__author-name {

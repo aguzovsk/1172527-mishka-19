@@ -15,9 +15,9 @@
   margin-inline-end: 0;
 }
 
-img {
-  max-width: 100%;
-}
+// img {
+//   max-width: 100%;
+// }
 
 ul, li {
   list-style-type: none;
@@ -31,13 +31,21 @@ ul, li {
 @font-face {
   font-family: "OpenSans";
   // src: url("../../source/fonts/opensans.woff");
-  src: url("../fonts/opensans.woff");
+  src: url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff") format("woff");
+  // font-weight: normal;
+  // font-style: normal;
 }
 
 @font-face {
   font-family: "OpenSans-Bold";
   // src: url("../../source/fonts/opensansbold.woff");
-  src: url("../fonts/opensansbold.woff");
+  src: url("../fonts/opensansbold.woff2") format("woff2"), url("../fonts/opensansbold.woff") format("woff");
+  // font-weight: normal;
+  // font-style: normal;
+}
+
+a {
+  text-decoration: none;
 }
 
 p, h1, h2, h3, h4, h5, h6, span, button, a, cite, address {

@@ -1,17 +1,26 @@
 @import "../var.scss";
-// .page-main {
-//   position: relative;
-// }
-
-// .page-header__logo-image {
-//   display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
+@import "../utils.scss";
 
 $vertical-indent-mobile: -17px;
 
-.page-main__header {
+.page-main__header-text {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.page-main__index-header-text {
+  padding-top: 93px;
+}
+
+.page-main__casual-header {
+  height: 277px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+}
+
+.page-main__index-header {
   // width: 322px;
   height: 373px;
   background-image: url("../../img/hero-mobile@1x.jpg");
@@ -24,86 +33,53 @@ $vertical-indent-mobile: -17px;
   margin-bottom: -73px;
 }
 
-.page-main__header-text {
-  padding-top: 93px;
-}
-
-// .page-main__header-text {
-
-// }
-
-// .page-main__header-text {
-//   padding: 1.5em 1em;
-//   text-align: center;
-// }
-
-// .page-main__catalog {
-
-// }
-
-.page-main__button-wrapper {
+.page-main__catalog {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   flex: 1 1 0px;
   justify-content: center;
-  clip-path: url("../img/bg-zigzag-fill.svg#Layer_2");
-  // clip-path: circle(40%);
-}
-.page-main__path {
-  // clip-path: url("../img/bg-zigzag-fill.svg#Layer_1");
-  size: 200px;
-  color: orangered;
-  background-color: black;
-  height: 20px;
-  z-index: 15;
-  clip-path: url("../img/bg-zigzag-fill.svg#Layer_1");
 }
 
 @media (min-width: $tablet-min-width) {
-  // .page-main-header {
-  //   background-size: contain;
-  //   // margin-bottom: -80px;
-  // }
-  .page-main__header {
+  .page-main__catalog {
+    padding: 0 $margin-horizontal-tablet;
+  }
+
+  .page-main__index-header {
     height: 746px;
     margin-top: -$menu-second-line-height-tablet;
     background-image: url("../../img/hero-tablet@1x.jpg");
     background-position: center;
     margin-bottom: -$green-btn-height-tablet;
-    &::after {
-      content: "";
-      display: block;
-      z-index: 2;
-      width: 1000px;
-      background-image: url("../../img/bg-zigzag-fill.svg");
-      background-repeat: repeat-x;
-      height: 34px;
-      transform: translateY(-50%);
-    }
+    @include insert-icon(after,
+      (display: block,
+        height: calc(24px + (100vw - 770px) / 38),
+        // height: calc(34px * 1150px/(100vw)),
+        transform: translateY(-50%),
+        img: "../../img/bg-zigzag-fill.svg",
+        background-size: contain,
+        repeat: repeat-x,
+        background-position: center
+    ), ());
+    // &::after {
+    //   content: "";
+    //   background-image: url("../../img/bg-zigzag-fill.svg");
+    //   background-repeat: repeat;
+    //   height: 24px + (100vw - 770px) / 38;
+    //   background-size: contain;
+    //   display: block;
+    //   transform: translateY(-50%);
+    // }
   }
 
-  .page-main__header-text {
+  .page-main__index-header-text {
     padding-top: 161px;
-    &::after {
-      content: "";
-      height: 100%;
-    }
   }
-
-  // .page-main__catalog {
-  //   &::after {
-  //     content: "";
-  //     background-image: url("../../img/bg-zigzag-fill.svg");
-  //     background-repeat: repeat-x;
-  //     height: 34px;
-  //     transform: translateY(-50%);
-  //   }
-  // }
 }
 
 @media (min-width: $desktop-min-width) {
-  .page-main__header {
+  .page-main__index-header {
     margin-top: -$menu-second-line-height-desktop;
     background-image: url("../../img/hero-desktop@1x.jpg");
   }

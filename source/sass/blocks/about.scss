@@ -1,6 +1,18 @@
 @import "../var.scss";
 
 .about {
+  &::before {
+    content: "";
+    display: block;
+    background-image: url("../../img/bg-zigzag-line.svg");
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: center;
+    height: calc(6px + (100vw - 320px) / 45);
+  }
+}
+
+.about__container {
   margin: 0px $margin-horizontal-mobile;
 }
 
@@ -34,7 +46,7 @@
 }
 
 @media (min-width: $tablet-min-width) {
-  .about {
+  .about__container {
     margin: 0 $margin-horizontal-tablet;
   }
 
@@ -57,5 +69,25 @@
     .about__item:nth-child(#{$n}n+#{$i}) {
       order: #{$i};
     }
+  }
+}
+
+$double-desktop-margin: 2 * $margin-horizontal-desktop;
+$margin-share-beginning: $double-desktop-margin / $desktop-min-width;
+$margin-share-expanded: $double-desktop-margin / ($desktop-min-width + $double-desktop-margin);
+$share-average: (($margin-share-beginning + $margin-share-expanded) / 2) * 100;
+
+@media (min-width: $desktop-min-width) {
+  .about {
+    margin: 0 $margin-horizontal-desktop;
+    &::before {
+      height: calc(6px + (#{100 - $share-average}vw - 320px) / 45);
+    }
+  }
+}
+
+@media (min-width: #{$desktop-min-width + 2 * $margin-horizontal-desktop}) {
+  .about::before {
+    height: calc(6px + (100vw - 320px - #{2 * $margin-horizontal-desktop}) / 45);
   }
 }

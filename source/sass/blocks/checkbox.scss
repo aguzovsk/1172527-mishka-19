@@ -1,0 +1,56 @@
+@import "../var.scss";
+
+$edge-x-mobile: 40px;
+$edge-y-mobile: 39px;
+$edge-x: 54px;
+$edge-y: 52px;
+$tick-width-mobile: 22px;
+$tick-height-mobile: 16px;
+$tick-width: 33px;
+$tick-height: 23px;
+$border-width: 2px;
+
+@mixin edges($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin centered($parent-width, $parent-height, $width, $height) {
+  $offset-x: $parent-width / 2 - $width / 2 - $border-width;
+  $offset-y: ($parent-height - $height) / 2 - $border-width;
+  top: $offset-y;
+  left: $offset-x;
+}
+
+.checkbox__shell {
+  display: inline-block;
+  position: relative;
+  border-style: solid;
+  border-width: $border-width;
+  box-sizing: border-box;
+  @include edges($edge-x-mobile, $edge-y-mobile);
+  &::before {
+    content: none;
+    display: inline-block;
+    position: absolute;
+    background-repeat: no-repeat;
+    @include edges($tick-width-mobile, $tick-height-mobile);
+    @include centered($edge-x-mobile, $edge-y-mobile, $tick-width-mobile, $tick-height-mobile);
+    background-image: url("../../img/icon-tick.svg");
+    // background-size: contain;
+  }
+}
+
+.checkbox__input:checked ~ .checkbox__shell::before {
+  content: "";
+}
+
+@media (min-width: $tablet-min-width) {
+  .checkbox__shell {
+    @include edges($edge-x, $edge-y);
+    &::before {
+      @include edges($tick-width, $tick-height);
+      @include centered($edge-x, $edge-y, $tick-width, $tick-height);
+    }
+  }
+}

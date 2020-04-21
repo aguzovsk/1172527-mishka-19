@@ -1,0 +1,62 @@
+@import "../var.scss";
+
+$shell-diameter-mobile: 40px;
+$shell-diameter: 53px;
+$checkmark-diameter-mobile: 16px;
+$checkmark-diameter: 22px;
+$shell-border-width: 2px;
+
+@mixin diameter($diameter) {
+  width: $diameter;
+  height: $diameter;
+}
+
+@mixin centered($parent-diameter, $diameter, $is-border-box: true) {
+  $offset: ($parent-diameter / 2 - $diameter / 2)
+    - if($is-border-box, $shell-border-width, 0);
+  left: $offset;
+  top: $offset;
+}
+
+.radio-btn {
+  &:hover .radio-btn__shell {
+    border-color: $seafoam-blue-two;
+  }
+
+  &:active .radio-btn__shell {
+    border-color: $light-grey;
+  }
+}
+
+.radio-btn__shell {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  @include diameter($shell-diameter-mobile);
+  border-style: solid;
+  border-width: $shell-border-width;
+  border-radius: 50%;
+  &::before {
+    content: none;
+    position: absolute;
+    display: inline-block;
+    @include diameter($checkmark-diameter-mobile);
+    @include centered($shell-diameter-mobile, $checkmark-diameter-mobile);
+    background-color: $seafoam-blue-two;
+    border-radius: 50%;
+  }
+}
+
+.radio-btn__input:checked ~ .radio-btn__shell::before {
+  content: "";
+}
+
+@media (min-width: $tablet-min-width) {
+  .radio-btn__shell {
+    @include diameter($shell-diameter);
+    &::before {
+      @include diameter($checkmark-diameter);
+      @include centered($shell-diameter, $checkmark-diameter);
+    }
+  }
+}

@@ -1,4 +1,5 @@
 @import "../var.scss";
+@import "../utils.scss";
 
 $field-width: 50%;
 $no-columns: 1;
@@ -10,9 +11,10 @@ $headline-margin-bottom: 20px;
 $height: $image-height + $headline-height + $headline-margin-bottom + 5px;
 
 .popular {
-  margin: 32px;
+  margin: 34px $margin-horizontal-mobile;
   display: flex;
   flex-flow: column wrap;
+  // @include insert-icon(after, (width: 100%, height: 6px, transform: transte))
   // height: 750px;
 }
 
@@ -46,6 +48,9 @@ $height: $image-height + $headline-height + $headline-margin-bottom + 5px;
   align-items: center;
   border-bottom: 1px solid;
   border-color: rgb(224, 233, 207);
+}
+
+.popular__list-cols--not-last .popular__list-item {
   padding-right: 30px;
 }
 
@@ -59,15 +64,16 @@ $height: $image-height + $headline-height + $headline-margin-bottom + 5px;
   justify-content: space-between;
 }
 
+.popular__title {
+  padding-bottom: 30px;
+}
+
 @media (min-width: $tablet-min-width) {
   .popular {
+    margin: 55px $margin-horizontal-tablet;
     height: $height;
-    // height: 750px;
+    align-content: space-between;
   }
-
-  // .popular__item {
-  //   width: 45%;
-  // }
 
   .popular__column {
     width: 45%;
@@ -90,6 +96,7 @@ $height: $image-height + $headline-height + $headline-margin-bottom + 5px;
       @if $item == title {
         display: flex;
         justify-content: flex-end;
+        padding-bottom: 0px;
       }
     }
   }
@@ -97,6 +104,7 @@ $height: $image-height + $headline-height + $headline-margin-bottom + 5px;
 
 @media (min-width: $desktop-min-width) {
   .popular {
+    margin: 55px $margin-horizontal-desktop 70px;
     height: 636px;
   }
 

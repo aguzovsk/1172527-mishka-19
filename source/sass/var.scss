@@ -1,11 +1,11 @@
-$desktop-min-width: 1020px;
+$desktop-min-width: 1024px;
 $tablet-min-width: 768px;
 $mobile-max-width: $tablet-min-width - 1;
 
 $margin-horizontal-mobile: 30px;
 $margin-horizontal-tablet: 50px;
 $margin-horizontal-desktop: 50px;
-$indent-horizontal-desktop: 175px;
+$indent-horizontal-desktop: 16vw;
 $indent-vertical-index-desktop: 63px;
 // $menu-height-mobile: 79px;
 $menu-second-line-height-tablet: 63px;
@@ -16,11 +16,14 @@ $black: rgba(0, 0, 0, 1);
 $black-60: rgba(0, 0, 0, 0.6);
 $black-30: rgba(0, 0, 0, 0.3);
 $black-44: #444444;
+$light-grey: #C8C8C8;
 $very-dark-brown: #010000;
 
+$white: #f1f1f1;
 $white-three: #ffffff;
 $white-30: rgba(255, 255, 255, 0.3);
 
 $seafoam-blue: #63d1bb;
+$seafoam-blue-two: #62d1ba;
 $greeny-blue: #56c3b2;
 $delimiter-color: #EDEDED;

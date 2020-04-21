@@ -40,7 +40,6 @@
 .text__popular-title {
   @include bold($seafoam-blue);
   @include height-size(1.18, 17px);
-  text-align: center;
 }
 
 .text__green-btn {
@@ -162,6 +161,7 @@
   }
 
   .text__popular-title {
+    text-align: center;
     width: min-content;
     line-height: 1;
   }

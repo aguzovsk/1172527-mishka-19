@@ -1,6 +1,7 @@
 // @import "./var.scss";
 
 @mixin before-icon-base {
+  @warn "Deprecated";
   &::before {
     content: "";
     display: inline-block;
@@ -9,6 +10,7 @@
 }
 
 @mixin before-icon-params ($width, $height, $background-image) {
+  @warn "Deprecated";
   &::before {
     width: $width;
     height: $height;
@@ -17,9 +19,138 @@
 }
 
 @mixin before-icon($width, $height, $background-image) {
+  @warn "Deprecated";
   @include before-icon-base();
   @include before-icon-params ($width, $height, $background-image);
 }
+
+@mixin icon-base($side, $params: null) {
+  @warn "deprecated";
+  &::#{$side} {
+    content: "";
+    display: inline-block;
+    background-repeat: no-repeat;
+  }
+
+  @if $params {
+    $width: map-get($params, width);
+    $height: map-get($params, height);
+    $img: map-get($params, img);
+
+    @include icon-params($side, $width, $height, $img);
+  }
+}
+
+@mixin icon-params($side, $width, $height, $background-image) {
+  @warn "deprecated";
+  @debug $background-image;
+  @debug url($background-image);
+  &::#{$side} {
+    width: $width;
+    height: $height;
+    background-image: url($background-image);
+  }
+}
+
+@mixin base-icon ($params: null) {
+  content: "";
+  @if $params {
+    @if not (map-has-key($params, background-repeat) or map-has-key($params, repeat)) {
+      background-repeat: no-repeat;
+    }
+
+    @if not map-has-key($params, display) {
+      display: inline-block;
+    }
+  } @else {
+    background-repeat: no-repeat;
+    display: inline-block;
+  }
+}
+
+// @mixin insert-icon-base($params: null, $side: null) {
+//   @if $side {
+//     &::#{$side} {
+//       @include base-icon($params);
+//     }
+//   } @else {
+//     @include base-icon($params);
+//   }
+// }
+
+@mixin properties-icon($params: null) {
+  @each $property, $value in $params {
+    @if $property == img or $property == background-image {
+      background-image: url($value);
+    } @else if $property == repeat {
+      background-repeat: $value;
+    }
+    @else {
+      #{$property}: $value;
+    }
+  }
+}
+
+// @mixin insert-icon-properties($params: null, $side: null) {
+//   @if $side {
+//     &::#{$side} {
+//       @include icon-properties($params);
+//     }
+//   } @else {
+//     @include icon-properties($params);
+//   }
+// }
+
+@mixin insert-icon ($side, $params: null, $base: null) {
+  &::#{$side} {
+    @if not $params {
+      @include base-icon($base);
+    } @else if not $base {
+      @include properties-icon($params);
+    } @else {
+      @include base-icon($base);
+      @include properties-icon($params);
+    }
+  }
+}
+  // @if not $params {
+  //   @include insert-icon-base($base, $side);
+  // } @else if not $base {
+  //   @include insert-icon-properties($params, $side);
+  // } @else {
+  //   &::#{$side} {
+  //     @include insert-icon-base($base);
+  //     @include insert-icon-properties($params);
+  //   }
+  // }
+// }
+
+// @mixin insert-icon ($side, $params: null) {
+//   &::#{$side} {
+//     content: "";
+
+//     @if $params {
+//       @each $property, $value in $params {
+//         @if $property == img or $property == background-image {
+//           background-image: url($value);
+//         } @else if $property == repeat {
+//           background-repeat: $value;
+//         }
+//         @else {
+//           #{$property}: $value;
+//         }
+//       }
+//     }
+
+//     @if not (map-has-key($params, background-repeat) or map-has-key($params, repeat)) {
+//       background-repeat: no-repeat;
+//     }
+
+//     @if not map-has-key($params, display) {
+//       display: inline-block;
+//     }
+//   }
+// }
 
 // @mixin before-icon-on-modifiers($modifiers-with-values) {
 //   @include before-icon-base();

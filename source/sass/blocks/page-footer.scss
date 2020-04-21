@@ -36,11 +36,13 @@
   }
 
   .page-footer__wrapper {
-    @include before-icon(
-      $width: 102px,
-      $height: 34px,
-      $background-image: "../../img/logo-footer.svg"
-    );
+    // @include before-icon(
+    //   $width: 102px,
+    //   $height: 34px,
+    //   $background-image: "../../img/logo-footer.svg"
+    // );
+    @include insert-icon(before,
+      (width: 102px, height: 34px, img: "../../img/logo-footer.svg"), ());
     flex-direction: row;
     justify-content: space-between;
     padding: 0 50px;

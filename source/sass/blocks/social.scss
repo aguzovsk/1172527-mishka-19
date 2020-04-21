@@ -25,15 +25,22 @@
 
   text-decoration: none;
 
-  @include before-icon-base();
+  // @include before-icon-base();
+  @include insert-icon(before);
 
   @each $network, $params in $social-networks {
     $icon-suffix: map-get($params, suffix);
 
-    &--#{$network}::before {
-      width: map-get($params, width);
-      height: map-get($params, height);
-      background-image: url("../../img/icon-#{$icon-suffix}.svg");
+    // &--#{$network}::before {
+    //   width: map-get($params, width);
+    //   height: map-get($params, height);
+    //   background-image: url("../../img/icon-#{$icon-suffix}.svg");
+    // }
+
+    &--#{$network} {
+      @include insert-icon(before,
+        map-merge($params, (img: "../../img/icon-#{$icon-suffix}.svg"))
+      );
     }
   }
 }

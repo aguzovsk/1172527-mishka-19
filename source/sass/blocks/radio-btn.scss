@@ -1,47 +1,50 @@
 @import "../var.scss";
+@import "../button-utils.scss";
 
-$shell-diameter-mobile: 40px;
-$shell-diameter: 53px;
+$shell-diameter-mobile: $radio-btn-height-mobile;
+$shell-diameter: $radi0-btn-height;
 $checkmark-diameter-mobile: 16px;
 $checkmark-diameter: 22px;
-$shell-border-width: 2px;
+$shell-border-width: $button-border-width;
 
 @mixin diameter($diameter) {
   width: $diameter;
+  min-width: $diameter;
   height: $diameter;
 }
 
 @mixin centered($parent-diameter, $diameter, $is-border-box: true) {
   $offset: ($parent-diameter / 2 - $diameter / 2)
     - if($is-border-box, $shell-border-width, 0);
-  left: $offset;
-  top: $offset;
+  padding: $offset;
+  // left: $offset;
+  // top: $offset;
 }
 
 .radio-btn {
-  &:hover .radio-btn__shell {
-    border-color: $seafoam-blue-two;
-  }
+  // @include vertically-aligned;
 
-  &:active .radio-btn__shell {
-    border-color: $light-grey;
-  }
+  // &:hover .radio-btn__shell {
+  //   border-color: $seafoam-blue-two;
+  // }
+
+  // &:active .radio-btn__shell {
+  //   border-color: $light-grey;
+  // }
+  @include selection-button-styles();
+  margin: 0 0 20px;
 }
 
 .radio-btn__shell {
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  @include diameter($shell-diameter-mobile);
-  border-style: solid;
-  border-width: $shell-border-width;
+  @include shell();
   border-radius: 50%;
+  @include diameter($shell-diameter-mobile);
+  @include centered($shell-diameter-mobile, $checkmark-diameter-mobile);
   &::before {
     content: none;
-    position: absolute;
+    // position: absolute;
     display: inline-block;
     @include diameter($checkmark-diameter-mobile);
-    @include centered($shell-diameter-mobile, $checkmark-diameter-mobile);
     background-color: $seafoam-blue-two;
     border-radius: 50%;
   }
@@ -52,11 +55,16 @@ $shell-border-width: 2px;
 }
 
 @media (min-width: $tablet-min-width) {
+  .radio-btn {
+    // width: 100%;0
+    margin: 0 0 23px;
+  }
+
   .radio-btn__shell {
     @include diameter($shell-diameter);
+    @include centered($shell-diameter, $checkmark-diameter);
     &::before {
       @include diameter($checkmark-diameter);
-      @include centered($shell-diameter, $checkmark-diameter);
     }
   }
 }

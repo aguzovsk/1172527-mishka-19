@@ -113,6 +113,7 @@
 .text__knitting-sub-header {
   @include bold($seafoam-blue);
   @include height-size(0.94, 17px);
+  text-transform: uppercase;
 }
 
 .text__knitting-description {
@@ -128,7 +129,7 @@
   color: rgba(68, 68, 68, 0.3);
 }
 
-.text__knitting-input--tel {
+.text__knitting-input-tel {
   @include height-size(0.95, 19px);
   // color: rgba(68, 68, 68, 0.3);
 }

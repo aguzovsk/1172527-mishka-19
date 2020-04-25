@@ -20,6 +20,22 @@
   align-items: center;
 }
 
+.page-footer__link-unit {
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.page-footer__icon {
+  fill: #231F20;
+  &--copyright {
+    fill: $seafoam-blue;
+  }
+  &:hover, &:active {
+    fill: $seafoam-blue-two;
+  }
+}
+
 .page-footer__copyright {
   display: flex;
   justify-content: center;
@@ -41,8 +57,8 @@
     //   $height: 34px,
     //   $background-image: "../../img/logo-footer.svg"
     // );
-    @include insert-icon(before,
-      (width: 102px, height: 34px, img: "../../img/logo-footer.svg"), ());
+    // @include insert-icon(before,
+    //   (width: 102px, height: 34px, img: "../../img/logo-footer.svg"), ());
     flex-direction: row;
     justify-content: space-between;
     padding: 0 50px;

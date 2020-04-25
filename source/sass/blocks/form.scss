@@ -1,0 +1,238 @@
+@import "../var.scss";
+@import "../utils.scss";
+
+$column-item-margin-top-mobile: 24px;
+$column-item-margin-top: 41px;
+
+.form {
+  margin-top: calc(29px + (100vw - #{$mobile-width}) / 9);
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  // align-items: center;
+}
+
+.form__group {
+  // border-style: solid;
+  // border-width: 1px 0 0 0;
+  // border-color: $seafoam-blue;
+  &--with-icon {
+    position: relative;
+  }
+}
+
+.form__legend {
+  display: flex;
+  align-items: center;
+  // padding-right: 25px;
+  &::after {
+    content: "";
+    margin-left: 20px;
+    display: inline-block;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: $seafoam-blue;
+    flex-grow: 1;
+  }
+}
+
+.form__icon {
+  position: absolute;
+  opacity: 0.2;
+  &--tel {
+    right: 8px;
+    bottom: 17px;
+  }
+
+  &--email {
+    right: 4px;
+    bottom: 15px;
+  }
+}
+
+.form__input {
+  box-shadow: inset 0px -2px 0 0 $black;
+  height: $input-field-height;
+  box-sizing: border-box;
+  width: 100%;
+  // flex-grow: 1;
+
+  &:hover, &:active {
+    box-shadow: inset 0px -2px 0 0 $seafoam-blue-two;
+    & ~ .form__icon {
+      opacity: 1;
+      fill: $seafoam-blue-two;
+    }
+  }
+}
+
+.form__textarea {
+  border: solid 2px $black-44;
+  // box-shadow: inset 0px -2px 0 0 $black;
+  height: 142px;
+  width: 100%;
+  &:hover, &:active {
+    border-color: $seafoam-blue-two;
+  }
+}
+
+.form__column-item {
+  &:not(:first-child) {
+    margin-top: $column-item-margin-top-mobile;
+  }
+  width: 100%;
+}
+
+.form__submission {
+  margin-top: 18px;
+  margin-bottom: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form__note {
+  margin-bottom: 31px;
+}
+
+// .form__row-container {
+
+// }
+
+@media (max-width: $tablet-min-width - 1) {
+  .form {
+    margin-top: calc(80px + (100vw - #{$tablet-min-width}) / 7.6);
+  }
+
+  .form__textarea {
+    margin-top: 23px;
+  }
+  .form__group {
+    // &:not(:first-of-type) {
+    //   margin-top: 34px;
+    // }
+    margin-top: 34px;
+  }
+
+  .form__column-container {
+    margin-top: 33px;
+  }
+
+  .form__fieldlist {
+    margin-top: 23px;
+  }
+
+  .form__column-of-types {
+    margin-top: 27px;
+  }
+}
+
+@media (min-width: $tablet-min-width) {
+  .form__submission {
+    margin-top: 0px;
+    flex-direction: row-reverse;
+  }
+
+  .form__group {
+    border-style: none;
+    display: flex;
+    align-items: flex-start;
+    // flex-flow: column wrap;
+    // &--1 {
+    //   height: 300px;
+    // }
+  }
+
+  .form__fieldlist {
+    display: flex;
+    flex-wrap: wrap;
+    & li {
+      flex: 1 1 45%;
+    }
+  }
+
+  .form__column-item {
+    &:not(:first-child) {
+      margin-top: $column-item-margin-top;
+    }
+  }
+
+  .form__column-container {
+    width: 100%;
+    // &:first-child {
+    //   margin-top: 0;
+    // }
+  }
+
+  .form__label {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .form__legend {
+    // display: inline-block;
+    margin-top: 19px;
+    width: 167px;
+    flex-shrink: 0;
+    // height: 100%;
+    // float: left;
+    // width: 165px;
+    &::after {
+      content: none;
+    }
+  }
+
+  .form__input {
+    margin-left: 26px;
+    &--tel {
+      margin-left: 0;
+    }
+
+    &--email {
+      margin-left: 0;
+    }
+  }
+
+  .form__group-wrapper {
+    padding: 50px 0;
+    &--2 {
+      background-color: $white;
+      box-shadow: $margin-horizontal-tablet 0 $white, -$margin-horizontal-tablet 0 $white;
+      & .form__input {
+        background-color: $white;
+      }
+    }
+  }
+
+  // .form__label {
+  //   float: left;
+  //   flex-direction: row;
+  //   align-items: center;
+  // }
+}
+
+@media (min-width: $tablet-min-width) and (max-width: $desktop-min-width - 1) {
+  .form__icon {
+    &--tel {
+      right: 26px;
+      // bottom: 17px
+    }
+
+    &--email {
+      right: 22px;
+      // bottom: 15px;
+    }
+  }
+}
+
+@media (min-width: $desktop-min-width) {
+  .form__fieldlist {
+    & li {
+      flex-basis: 30%;
+    }
+  }
+}

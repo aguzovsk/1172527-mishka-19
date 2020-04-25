@@ -1,4 +1,13 @@
-// @import "./var.scss";
+@import "./var.scss";
+
+@mixin discard-page-horizontal-margins {
+  margin-left: -$margin-horizontal-mobile;
+  margin-right: -$margin-horizontal-mobile;
+  @media (min-width: $tablet-min-width) {
+    margin-left: -$margin-horizontal-tablet;
+    margin-right: -$margin-horizontal-tablet;
+  }
+}
 
 @mixin before-icon-base {
   @warn "Deprecated";

@@ -1,0 +1,129 @@
+@import "../var.scss";
+@import "../utils.scss";
+
+$video-btn-width: 101px;
+$video-btn-height: 77px;
+
+.catalog__list {
+  @include discard-page-horizontal-margins();
+  margin-bottom: 30px;
+}
+
+.catalog__order-btn {
+  width: 100%;
+}
+
+.catalog__item-name {
+  &--video {
+    display: flex;
+    align-items: center;
+    @include insert-icon(before, (width: 32px, height: 32px, margin-right: 25px, img: "../../img/icon-video.svg"), ());
+  }
+}
+
+.catalog__video-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catalog__video-btn {
+  position: absolute;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:active {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+.catalog__item {
+  margin: 30px;
+  border: solid 1px $white-two;
+}
+
+.catalog__item-info {
+  padding: 30px 28px;
+  // border: solid 1px $white-two;
+}
+
+.catalog__video-info {
+
+  padding: 34px;
+}
+
+.catalog__description {
+  margin: 17px 0 27px;
+}
+
+.catalog__price-wrapper {
+  border-top: solid;
+  border-top-width: 1px;
+  border-top-color: $white-two;
+  padding-top: 27px;
+  // width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: $tablet-min-width) {
+  .catalog__picture {
+    // flex-grow: 0;
+    width: min-content;
+    margin: 0;
+  }
+
+  .catalog__item {
+    height: 334px;
+    // width: min-content;
+    margin: 52px 50px;
+    display: flex;
+    flex-flow: column wrap;
+    // justify-content: space-between;
+    align-content: flex-start;
+    &--video {
+      height: 100%;
+      $ordered-list: video-container, item-name, video-info;
+      @for $order from 1 through length($ordered-list) {
+        $item: nth($ordered-list, $order);
+        .catalog__#{$item} {
+          order: $order;
+        }
+      }
+    }
+  }
+
+  // .catalog__item-info {
+  //   padding: 29px 34px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  //   flex-grow: 1;
+  // }
+
+  .catalog__description {
+    margin: 15px 0;
+  }
+
+  .catalog__video-info {
+    padding: 40px 42px 46px;
+  }
+
+  .catalog__price-wrapper {
+    margin-bottom: 2px;
+  }
+}
+
+@media (min-width: $desktop-min-width) {
+  .catalog__video-info {
+    padding: 47px 57px 60px 80px;
+  }
+
+  .catalog__item-info {
+    margin: 29px 32px 29px 28px;
+  }
+}

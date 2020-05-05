@@ -3,6 +3,7 @@ $desktop-min-width: 1024px;
 $tablet-min-width: 768px;
 $mobile-max-width: $tablet-min-width - 1;
 $mobile-width: 320px;
+$desktop-maquette-width: 1150px;
 
 $margin-horizontal-mobile: 30px;
 $margin-horizontal-tablet: 50px;
@@ -27,7 +28,7 @@ $black-60: rgba(0, 0, 0, 0.6);
 $black-30: rgba(0, 0, 0, 0.3);
 $black-44: #444444;
 $black-10: rgba(0, 0, 0, 0.1);
-$light-grey: #C8C8C8;
+$light-grey: #c8c8c8;
 $very-dark-brown: #010000;
 
 $white: #f1f1f1;
@@ -38,4 +39,4 @@ $white-30: rgba(255, 255, 255, 0.3);
 $seafoam-blue: #63d1bb;
 $seafoam-blue-two: #62d1ba;
 $greeny-blue: #56c3b2;
-$delimiter-color: #EDEDED;
+$delimiter-color: #ededed;

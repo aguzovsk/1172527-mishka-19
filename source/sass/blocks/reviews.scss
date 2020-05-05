@@ -1,12 +1,13 @@
 @import "../var.scss";
+@import "../utils.scss";
 
-// .reviews {
-
-// }
+.reviews {
+  margin: 60px 0 45px;
+}
 
 .reviews__wrapper {
   height: 100%;
-  margin: 30px;
+  margin: 30px 0;
 }
 
 .reviews__author {
@@ -18,13 +19,47 @@
 
 .reviews__arrows {
   width: 260px;
-  height: 52px;
+  // height: 52px;
   display: flex;
-  justify-content: space-around;
+  // justify-content: space-around;
+}
+
+$arrow-height: 52px;
+$arrow-image-height: 26px;
+$arrow-border-width: 1px;
+$arrow-padding-vertical-total: $arrow-height - $arrow-image-height - 2 * $arrow-border-width;
+$arrow-padding-vertical: $arrow-padding-vertical-total / 2;
+
+.reviews__arrow {
+  width: 50%;
+  border: solid $arrow-border-width $white-two;
+  height: $arrow-height;
+  padding: $arrow-padding-vertical 0;
+  box-sizing: border-box;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+@media (min-width: $tablet-min-width) and (max-width: $desktop-min-width - 1) {
+  .reviews {
+    margin-left: -$margin-horizontal-tablet;
+  }
+
+  .reviews__wrapper {
+    margin-left: $margin-horizontal-tablet;
+  }
 }
 
 @media (min-width: $tablet-min-width) {
   .reviews {
+    margin-top: 80px;
+    margin-bottom: 60px;
     height: 457px;
     background-image: url("../../img/review@1x.jpg");
     background-repeat: no-repeat;
@@ -35,30 +70,39 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-around;
+
+    &::before {
+      content: "";
+      display: block;
+      flex-basis: 100%;
+    }
+
+    & > * {
+      margin: auto 0;
+    }
   }
 
-  // .reviews__header {
-  //   order: 1;
-  // }
+  $ordered-list: header, write, comment, author, arrows;
 
-  .reviews__write {
-    order: 2;
-  }
-
-  .reviews__comment {
-    order: 3;
-  }
-
-  .reviews__author {
-    order: 4;
-  }
-
-  .reviews__arrows {
-    order: 5;
-  }
+  @include flex-order($ordered-list, $block: reviews);
 
   .reviews__arrows {
     width: 137px;
     justify-content: space-between;
+  }
+
+  .reviews__arrow {
+    width: 50px;
+    padding: 0;
+    border: none;
+    height: 100%;
+    box-sizing: content-box;
+  }
+}
+
+@media (min-width: $desktop-min-width) {
+  .reviews {
+    margin-top: 90px;
+    margin-bottom: 65px;
   }
 }

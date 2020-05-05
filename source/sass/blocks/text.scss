@@ -1,8 +1,9 @@
 @import "../var.scss";
 
 @mixin bold($color: false) {
-  font-family: "OpenSans-Bold";
+  // font-family: "OpenSans-Bold";
   font-weight: bold;
+
   @if ($color) {
     color: $color;
   }
@@ -24,12 +25,18 @@
   @include bold($black);
 }
 
-.text__big-header, .text__add-to-basket { // use with text__bold-black
+.text__big-header { // use with text__bold-black
   @include height-size(1.2, 25px);
+}
+
+.text__add-to-basket {
+  @include height-size(1.2, 25px);
+  text-transform: uppercase;
 }
 
 .text__main-header { // use with .text__bold-black
   text-align: center;
+
   @include height-size(1.11, 27px);
 }
 
@@ -66,7 +73,9 @@
   @include height-size(1.18, 17px);
 }
 
-.text__comment, .text__contacts-table, .text__select-size {
+.text__comment,
+.text__contacts-table,
+.text__select-size {
   line-height: 2;
 }
 
@@ -86,7 +95,8 @@
   @include height-size(0.95, 19px);
 }
 
-.text__menu-item, .text__catalog-item-name { //use with text__bold-black
+.text__menu-item,
+.text__catalog-item-name { //use with text__bold-black
   // @include bold($black);
   @include height-size(1.41, 17px);
 }
@@ -108,6 +118,17 @@
   @include height-size(0.94, 17px);
 
   text-align: center;
+}
+
+.text__select-size {
+  @include height-size(2, 15px);
+  text-align: center;
+}
+
+.text__add-button {
+  @include bold($white-three);
+  @include height-size(0.94, 17px);
+  text-transform: uppercase;
 }
 
 .text__knitting-sub-header {
@@ -141,8 +162,6 @@
 .text__ghost-btn {
   @include bold();
   @include height-size(1.18, 17px);
-
-  vertical-align: middle
 }
 
 /* ========= Mobile Version ends here ================= */
@@ -152,7 +171,9 @@
     @include height-size(1.6, 15px);
   }
 
-  .text__main-header, .text__big-header, .text__contacts-header{
+  .text__main-header,
+  .text__big-header,
+  .text__contacts-header {
     @include height-size(1.16, 43px);
     color: $black;
   }
@@ -167,11 +188,15 @@
     line-height: 1;
   }
 
-  .text__popular-description, .text__comment, .text__contacts-table, .text__select-size {
+  .text__popular-description,
+  .text__comment,
+  .text__contacts-table,
+  .text__select-size {
     @include height-size(1.76, 17px);
   }
 
-  .text__popular-price, .text__catalog-item-name {
+  .text__popular-price,
+  .text__catalog-item-name {
     @include height-size(1.2, 20px);
   }
 
@@ -187,7 +212,12 @@
     @include height-size(1.9, 30px);
   }
 
-  .text__catalog-item-description, .text__catalog-item-description--video {
+  .text__select-size {
+    @include height-size(1.76, 17px);
+  }
+
+  .text__catalog-item-description,
+  .text__catalog-item-description--video {
     @include height-size(2, 15px);
   }
 
@@ -195,11 +225,13 @@
     @include height-size(1.41, 17px);
   }
 
-  .text__knitting-description, .text__knitting-order-info {
+  .text__knitting-description,
+  .text__knitting-order-info {
     @include height-size(1.76, 17px);
   }
 
-  .text__knitting-item-name, .text__knitting-input {
+  .text__knitting-item-name,
+  .text__knitting-input {
     @include height-size(0.95, 19px);
   }
 }
@@ -207,7 +239,9 @@
 /*================ Tablet version ends here ================ */
 
 @media (min-width: $desktop-min-width) {
-  .text__main-header, .text__big-header, .text__contacts-header {
+  .text__main-header,
+  .text__big-header,
+  .text__contacts-header {
     @include height-size(1.08, 53px);
   }
 

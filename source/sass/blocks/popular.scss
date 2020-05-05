@@ -8,19 +8,13 @@ $value-width: (100% - $field-width) / $no-columns;
 $image-height: 404px;
 $headline-height: 60px;
 $headline-margin-bottom: 20px;
-$height: $image-height + $headline-height + $headline-margin-bottom + 5px;
+$height: $image-height + $headline-height + $headline-margin-bottom;
 
 .popular {
-  margin: 34px $margin-horizontal-mobile;
+  margin: 34px 0;
   display: flex;
   flex-flow: column wrap;
-  // @include insert-icon(after, (width: 100%, height: 6px, transform: transte))
-  // height: 750px;
 }
-
-// .popular__item {
-//   display: flex;
-// }
 
 .popular__header {
   margin: 0;
@@ -48,6 +42,7 @@ $height: $image-height + $headline-height + $headline-margin-bottom + 5px;
   align-items: center;
   border-bottom: 1px solid;
   border-color: rgb(224, 233, 207);
+  padding: 10px 0;
 }
 
 .popular__list-cols--not-last .popular__list-item {
@@ -68,16 +63,43 @@ $height: $image-height + $headline-height + $headline-margin-bottom + 5px;
   padding-bottom: 30px;
 }
 
+// .popular__image {
+//   display: block;
+// }
+
+// $ordered-items: header, description, list-wrapper, order, separator, title, image-wrapper;
+$ordered-items: title, image-wrapper, header, description, list-wrapper, order;
+
 @media (min-width: $tablet-min-width) {
   .popular {
-    margin: 55px $margin-horizontal-tablet;
+    margin: 55px 0;
+    // height: $height;
     height: $height;
     align-content: space-between;
+    flex-wrap: wrap-reverse;
+    // justify-content: space-between;
+  }
+
+  .popular__list-wrapper,
+  .popular__order {
+    margin-top: auto;
+  }
+
+  .popular__order-price {
+    margin-bottom: 34px;
+  }
+
+  .popular__order {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    align-items: center;
   }
 
   .popular__column {
     width: 45%;
   }
+
   .popular__headline {
     display: flex;
     flex-direction: column;
@@ -86,44 +108,54 @@ $height: $image-height + $headline-height + $headline-margin-bottom + 5px;
     margin-bottom: 20px;
   }
 
-  $ordered-items: header, description, list-wrapper, order, separator, title, image;
+  @include flex-order($ordered-items, $block: popular);
 
-  @for $order from 1 through length($ordered-items) {
-    $item: nth($ordered-items, $order);
-
-    .popular__#{$item} {
-      order: $order;
-      @if $item == title {
-        display: flex;
-        justify-content: flex-end;
-        padding-bottom: 0px;
-      }
-    }
+  .popular__title {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 0;
   }
 }
 
 @media (min-width: $desktop-min-width) {
   .popular {
-    margin: 55px $margin-horizontal-desktop 70px;
+    // align-items: flex-start;
+    // align-content: flex-start;
+    // margin: 55px $margin-horizontal-desktop 70px;
+    margin: 55px 0 70px;
     height: 636px;
+    // flex-wrap: wrap;
   }
+
+  // $ordered-list: title, header, description, list-wrapper, order, image-wrapper;
+  // @include flex-order($ordered-list, $block: popular);
 
   .popular__title {
     justify-content: start;
-    order: -1;
+    // align-items: flex-end;
+    // order: -1;
     height: 100%;
-    width: 10vw;
+    // width: 10vw;
+    order: length($ordered-items) + 1;
   }
 
   // .popular__header, .popular__info, .popular__order {
   //   width: 25vw;
   // }
+  // .popular__column {
+  //   width: 25vw;
+  // }
+
   .popular__column {
-    width: 25vw;
+    $parent-width: $desktop-maquette-width - 2 * $margin-horizontal-desktop;
+    $width-maquette: 292px;
+    $width-in-percentages: round(percentage($width-maquette/$parent-width));
+    width: $width-in-percentages;
   }
 
   .popular__headline {
     height: $headline-height + $indent-vertical-index-desktop;
+
     &::before {
       content: "";
       display: inline-block;
@@ -131,7 +163,9 @@ $height: $image-height + $headline-height + $headline-margin-bottom + 5px;
     }
   }
 
-  .popular__image {
+  .popular__image-wrapper {
+    // width: 50%;
+    margin-left: auto;
     z-index: -1;
   }
 }

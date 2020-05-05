@@ -43,19 +43,19 @@ $border-width: button-border-width;
 }
 
 .checkbox__input:checked ~ .checkbox__shell {
-  background-image: url("../../img/icon-tick.svg");
+  background-image: url("../../img/icon-tick.svg") no-repeat center;
   background-size: $tick-width-mobile $tick-height-mobile;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 @media (min-width: $tablet-min-width) {
   .checkbox {
     margin: 0 0 24px;
   }
+
   .checkbox__shell {
     @include edges($edge-x, $edge-y);
   }
+
   .checkbox__input:checked ~ .checkbox__shell {
     background-size: $tick-width $tick-height;
   }

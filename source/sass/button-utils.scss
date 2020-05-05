@@ -20,6 +20,7 @@
 
 @mixin selection-button-styles {
   @include vertically-aligned();
+
   &:hover &__shell {
     border-color: $seafoam-blue-two;
   }

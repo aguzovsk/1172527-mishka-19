@@ -37,13 +37,16 @@ $shell-border-width: $button-border-width;
 
 .radio-btn__shell {
   @include shell();
-  border-radius: 50%;
   @include diameter($shell-diameter-mobile);
   @include centered($shell-diameter-mobile, $checkmark-diameter-mobile);
+
+  border-radius: 50%;
+
   &::before {
     content: none;
     // position: absolute;
     display: inline-block;
+
     @include diameter($checkmark-diameter-mobile);
     background-color: $seafoam-blue-two;
     border-radius: 50%;
@@ -63,6 +66,7 @@ $shell-border-width: $button-border-width;
   .radio-btn__shell {
     @include diameter($shell-diameter);
     @include centered($shell-diameter, $checkmark-diameter);
+
     &::before {
       @include diameter($checkmark-diameter);
     }

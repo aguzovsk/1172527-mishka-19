@@ -1,0 +1,107 @@
+@import "../var.scss";
+@import "../button-utils.scss";
+@import "../utils.scss";
+
+$container-border-width: 1px;
+$max-width: 355px;
+$padding-horizontal-mobile: 30px;
+
+.select-size {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // width: 100vw;
+  // height: 100vh;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  // position: fixed;
+
+  background-color: transparentize($white-three, 0.1);
+  display: none;
+
+  &--revealed {
+    display: flex;
+  }
+}
+
+.select-size__form {
+  padding: 36px $padding-horizontal-mobile 46px;
+  // @include discard-page-horizontal-margins();
+  // position: absolute;
+  margin: 0 -31px;
+  max-width: $max-width;
+  // display: none;
+  // border-top: solid $container-border-width #c6c6c6;
+  // border-bottom: solid $container-border-width #c6c6c6;
+  border: solid $container-border-width #c6c6c6;
+  background-color: $white-three;
+  // &--revealed {
+  //   display: block;
+  // }
+}
+
+.select-size__header {
+  text-align: center;
+}
+
+.select-size__subheader {
+  text-align: center;
+}
+
+.select-size__choices {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select-size__radio-btn {
+  @include selection-button-styles();
+}
+
+.select-size__radio-shell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 52px;
+  width: 82px;
+  border: solid 2px transparentize($black-44, 0.9);
+
+  &:hover {
+    border-color: transparentize($black-44, 0.7);
+  }
+
+  &:active {
+    border-color: $seafoam-blue;
+  }
+}
+
+.select-size__radio-input:checked ~ .select-size__radio-shell {
+  border-color: $seafoam-blue;
+}
+
+.select-size__submit {
+  height: 52px;
+  margin-top: 30px;
+  width: 100%;
+  background-color: $seafoam-blue;
+  margin-bottom: 46px;
+}
+
+@media (min-width: $max-width + 2 * $padding-horizontal-mobile + 2 * $border-width) {
+  .select-size__form {
+    border: solid $container-border-width #c6c6c6;
+  }
+}
+
+@media (min-width: $tablet-min-width) {
+  .select-size__form {
+    // top: 747px;
+    padding: 51px 108px 46px;
+  }
+}

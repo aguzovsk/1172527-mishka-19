@@ -93,9 +93,8 @@
           Каталог товаров
         </h1>
       </header>
-
       <ul class="catalog__list">
-        <li class="catalog__item catalog__item--casual">
+        <li class="catalog__item catalog__item--casual ">
             <picture class="catalog__picture">
               <source
                 media="(min-width: 1024px)"
@@ -111,9 +110,9 @@
               >
             </picture>
 
-          <div class="catalog__item-info">
+          <div class="catalog__item-info js-purchase">
             <div class="catalog__item-header">
-              <h4 class="catalog__item-name text__catalog-item-name text__bold-black">
+              <h4 class="catalog__item-name text__catalog-item-name text__bold-black js-purchase__name">
                 Зайчик-попрыгайчик
               </h4>
               <p class="catalog__description text__catalog-item-description">
@@ -124,9 +123,11 @@
               <span class="catalog__price text__catalog-item-price text__bold-black">
                 1 200 руб.
               </span>
-              <svg class="catalog__icon-cart" width="21" height="18">
-                <use href="./img/icon-cart.svg#Layer_1"></use>
-              </svg>
+                <a class="js-purchase__link" href="./select-form.html?item=1">
+                  <svg class="catalog__icon-cart" width="21" height="18">
+                    <use href="./img/icon-cart.svg#Layer_1"></use>
+                  </svg>
+                </a>
             </div>
           </div>
         </li>
@@ -145,9 +146,9 @@
               alt="корзина"
             >
           </picture>
-          <div class="catalog__item-info">
+          <div class="catalog__item-info js-purchase">
             <div class="catalog__item-header">
-              <h4 class="catalog__item-name text__catalog-item-name text__bold-black">
+              <h4 class="catalog__item-name text__catalog-item-name text__bold-black js-purchase__name">
                 Корзинка для белья
               </h4>
               <p class="catalog__description text__catalog-item-description">
@@ -158,9 +159,11 @@
               <span class="catalog__price text__catalog-item-price text__bold-black">
                 690 руб.
               </span>
-              <svg class="catalog__icon-cart" width="21" height="18">
-                <use href="./img/icon-cart.svg#Layer_1"></use>
-              </svg>
+              <a class="js-purchase__link" href="./select-form.html?item=2">
+                <svg class="catalog__icon-cart" width="21" height="18">
+                  <use href="./img/icon-cart.svg#Layer_1"></use>
+                </svg>
+              </a>
             </div>
           </div>
         </li>
@@ -180,9 +183,9 @@
             >
           </picture>
 
-          <div class="catalog__item-info">
+          <div class="catalog__item-info js-purchase">
             <div class="catalog__item-header">
-              <h4 class="catalog__item-name text__catalog-item-name text__bold-black">
+              <h4 class="catalog__item-name text__catalog-item-name text__bold-black js-purchase__name">
                 Большая корзинка для игрушек
               </h4>
               <p class="catalog__description text__catalog-item-description">
@@ -193,9 +196,11 @@
               <span class="catalog__price text__catalog-item-price text__bold-black">
                 1 500 руб.
               </span>
-              <svg class="catalog__icon-cart" width="21" height="18">
-                <use href="./img/icon-cart.svg#Layer_1"></use>
-              </svg>
+              <a class="js-purchase__link" href="./select-form.html?item=3">
+                <svg class="catalog__icon-cart" width="21" height="18">
+                  <use href="./img/icon-cart.svg#Layer_1"></use>
+                </svg>
+              </a>
             </div>
           </div>
         </li>
@@ -224,7 +229,7 @@
             </picture>
           </div>
           <div class="catalog__video-info">
-            <p class="catalog__description text__catalog-item-description">
+            <p class="catalog__description text__catalog-item-description text__catalog-item-description--video">
               По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
             </p>
             <button class="catalog__order-btn ghost-btn text__ghost-btn" type="button">
@@ -234,6 +239,34 @@
         </li>
       </ul>
     </main>
+    <aside class="select-size">
+      <form class="select-size__form">
+        <p class="select-size__header text__add-to-basket text__bold-black">Добавить в корзину</p>
+        <p class="select-size__subheader text__select-size">Выберите размер:</p>
+        <ul class="select-size__choices">
+          <li>
+            <label class="select-size__radio-btn">
+              <input class="visually-hidden select-size__radio-input" type="radio" name="item-size" value="S" checked required>
+              <span class="text__size-item select-size__radio-shell">S</span>
+            </label>
+          </li>
+          <li>
+            <label class="select-size__radio-btn">
+              <input class="visually-hidden select-size__radio-input" type="radio" name="item-size" value="M" required>
+              <span class="text__size-item select-size__radio-shell">M</span>
+            </label>
+          </li>
+          <li>
+            <label class="select-size__radio-btn">
+              <input class="visually-hidden select-size__radio-input" type="radio" name="item-size" value="L" required>
+              <span class="text__size-item select-size__radio-shell">L</span>
+            </label>
+          </li>
+        </ul>
+        <input class="select-size__item" type="hidden" value="" name="item-name" required>
+        <input class="select-size__submit text__add-button" type="submit" value="Добавить">
+      </form>
+    </aside>
     <footer class="page-footer">
       <div class="page-footer__wrapper">
         <svg class="page-footer__link-unit page-footer__icon mobile-hide" width="109" height="34">
@@ -278,5 +311,6 @@
       </div>
     </footer>
     <script src="./js/menu-toggle.js"></script>
+    <script src="./js/link.js""></script>"
   </body>
 </html>

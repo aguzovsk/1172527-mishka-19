@@ -3,174 +3,96 @@
 @mixin discard-page-horizontal-margins {
   margin-left: -$margin-horizontal-mobile;
   margin-right: -$margin-horizontal-mobile;
+
   @media (min-width: $tablet-min-width) {
     margin-left: -$margin-horizontal-tablet;
     margin-right: -$margin-horizontal-tablet;
   }
 }
 
-@mixin before-icon-base {
-  @warn "Deprecated";
-  &::before {
-    content: "";
-    display: inline-block;
-    background-repeat: no-repeat;
+@mixin discard-horizontal-margins-but-desktop {
+  @include discard-page-horizontal-margins();
+
+  @media (min-width: $desktop-min-width) {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
-@mixin before-icon-params ($width, $height, $background-image) {
-  @warn "Deprecated";
-  &::before {
-    width: $width;
-    height: $height;
-    background-image: url($background-image);
+@mixin __flex-order-internal($list, $prefix) {
+  @for $order from 1 through length($list) {
+    $item: nth($list, $order);
+
+    #{".#{$prefix}#{$item}"} {
+      order: $order;
+    }
   }
 }
 
-@mixin before-icon($width, $height, $background-image) {
-  @warn "Deprecated";
-  @include before-icon-base();
-  @include before-icon-params ($width, $height, $background-image);
+@function append($string1, $string2) {
+  @return str-insert($string1, $string2, str-length($string1) + 1);
 }
 
-@mixin icon-base($side, $params: null) {
-  @warn "deprecated";
-  &::#{$side} {
-    content: "";
-    display: inline-block;
-    background-repeat: no-repeat;
+@function concat($strings...) {
+  $result: "";
+
+  @each $string in $strings {
+    $result: append($result, $string);
   }
 
-  @if $params {
-    $width: map-get($params, width);
-    $height: map-get($params, height);
-    $img: map-get($params, img);
-
-    @include icon-params($side, $width, $height, $img);
-  }
+  @return $result;
 }
 
-@mixin icon-params($side, $width, $height, $background-image) {
-  @warn "deprecated";
-  @debug $background-image;
-  @debug url($background-image);
-  &::#{$side} {
-    width: $width;
-    height: $height;
-    background-image: url($background-image);
-  }
-}
+@mixin flex-order($list, $prefix: null, $block: null, $element: null) {
+  $correct: true;
 
-@mixin base-icon ($params: null) {
-  content: "";
-  @if $params {
-    @if not (map-has-key($params, background-repeat) or map-has-key($params, repeat)) {
-      background-repeat: no-repeat;
+  @if not ($prefix or $block or $element) {
+    @error "Prefix or block w/- or w/o element should be provided";
+    $correct: false;
+  }
+
+  @else if $block or $element {
+    @if $prefix {
+      @error "prefix argument provided with block or element is ambiguous.";
+      $correct: false;
     }
 
-    @if not map-has-key($params, display) {
-      display: inline-block;
-    }
-  } @else {
-    background-repeat: no-repeat;
-    display: inline-block;
-  }
-}
-
-// @mixin insert-icon-base($params: null, $side: null) {
-//   @if $side {
-//     &::#{$side} {
-//       @include base-icon($params);
-//     }
-//   } @else {
-//     @include base-icon($params);
-//   }
-// }
-
-@mixin properties-icon($params: null) {
-  @each $property, $value in $params {
-    @if $property == img or $property == background-image {
-      background-image: url($value);
-    } @else if $property == repeat {
-      background-repeat: $value;
-    }
     @else {
-      #{$property}: $value;
+      @if not $block {
+        $index: str-index($element, "__");
+
+        @if $index and $index != 1 and $index != (str-length($element) - 1) {
+          $prefix: str-insert($elelmnt, "--", str-length($elelmnt));
+          $prefix: concat($elelmnt, "--");
+        }
+
+        @else {
+          @error "Element without block was given";
+          $correct: false;
+        }
+      }
+
+      @else {
+        $prefix: concat($block, "__");
+
+        @if $element {
+          $prefix: concat($prefix, $element, "--");
+        }
+      }
     }
+  }
+
+  @if $correct {
+    @include __flex-order-internal($list, $prefix);
   }
 }
 
-// @mixin insert-icon-properties($params: null, $side: null) {
-//   @if $side {
-//     &::#{$side} {
-//       @include icon-properties($params);
-//     }
-//   } @else {
-//     @include icon-properties($params);
-//   }
-// }
-
-@mixin insert-icon ($side, $params: null, $base: null) {
+@mixin insert-icon($side, $display: block, $partial: false) {
   &::#{$side} {
-    @if not $params {
-      @include base-icon($base);
-    } @else if not $base {
-      @include properties-icon($params);
-    } @else {
-      @include base-icon($base);
-      @include properties-icon($params);
+    @if not $partial {
+      content: "";
+      display: $display;
     }
+    @content;
   }
 }
-  // @if not $params {
-  //   @include insert-icon-base($base, $side);
-  // } @else if not $base {
-  //   @include insert-icon-properties($params, $side);
-  // } @else {
-  //   &::#{$side} {
-  //     @include insert-icon-base($base);
-  //     @include insert-icon-properties($params);
-  //   }
-  // }
-// }
-
-// @mixin insert-icon ($side, $params: null) {
-//   &::#{$side} {
-//     content: "";
-
-//     @if $params {
-//       @each $property, $value in $params {
-//         @if $property == img or $property == background-image {
-//           background-image: url($value);
-//         } @else if $property == repeat {
-//           background-repeat: $value;
-//         }
-//         @else {
-//           #{$property}: $value;
-//         }
-//       }
-//     }
-
-//     @if not (map-has-key($params, background-repeat) or map-has-key($params, repeat)) {
-//       background-repeat: no-repeat;
-//     }
-
-//     @if not map-has-key($params, display) {
-//       display: inline-block;
-//     }
-//   }
-// }
-
-// @mixin before-icon-on-modifiers($modifiers-with-values) {
-//   @include before-icon-base();
-
-//   @each $modifier, $params-map in $modifiers-with-values {
-//     &--#{$modifier} {
-//       @include before-icon-params(
-//         map-get($params-map, width),
-//         map-get($params-map, height),
-//         map-get($params-map, background-image)
-//       );
-//     }
-//   }
-// }

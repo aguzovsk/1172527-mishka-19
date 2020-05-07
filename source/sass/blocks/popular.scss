@@ -11,9 +11,11 @@ $headline-margin-bottom: 20px;
 $height: $image-height + $headline-height + $headline-margin-bottom;
 
 .popular {
-  margin: 34px 0;
+  margin: 34px calc((100% +  #{2 * $margin-horizontal-mobile - $mobile-min-width}) / 4);
+  // width: calc((100vw - #{2 * $margin-horizontal-mobile}) / 2);
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 .popular__header {
@@ -26,8 +28,6 @@ $height: $image-height + $headline-height + $headline-margin-bottom;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  // align-items: center;
-  height: 92px;
   margin-bottom: 42px;
 }
 
@@ -63,37 +63,45 @@ $height: $image-height + $headline-height + $headline-margin-bottom;
   padding-bottom: 30px;
 }
 
-// .popular__image {
-//   display: block;
-// }
+.popular__image {
+  width: 100%;
+}
 
-// $ordered-items: header, description, list-wrapper, order, separator, title, image-wrapper;
+.popular__list-wrapper {
+  margin: 33px 0 42px;
+}
+
+.popular__order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 29px;
+}
+
+.popular__order-price {
+  margin-bottom: 28px;;
+}
+
 $ordered-items: title, image-wrapper, header, description, list-wrapper, order;
 
 @media (min-width: $tablet-min-width) {
   .popular {
+    justify-content: flex-start;
     margin: 55px 0;
-    // height: $height;
     height: $height;
     align-content: space-between;
     flex-wrap: wrap-reverse;
-    // justify-content: space-between;
+    width: auto;
   }
 
   .popular__list-wrapper,
   .popular__order {
+    margin: 0;
     margin-top: auto;
   }
 
   .popular__order-price {
     margin-bottom: 34px;
-  }
-
-  .popular__order {
-    display: flex;
-    flex-direction: column;
-    // justify-content: space-between;
-    align-items: center;
   }
 
   .popular__column {

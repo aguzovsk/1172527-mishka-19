@@ -33,24 +33,24 @@ li {
   padding-inline-start: 0;
 }
 
-@font-face {
-  font-family: "OpenSans";
-  // src: url("../../source/fonts/opensans.woff");
-  src: url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff") format("woff");
-  // font-weight: normal;
-  // font-style: normal;
-}
+$fallback-family: serif;
 
 @font-face {
-  font-family: "OpenSans-Bold";
-  // src: url("../../source/fonts/opensansbold.woff");
+  font-family: "OpenSans-Bold", $fallback-family;
   src: url("../fonts/opensansbold.woff2") format("woff2"), url("../fonts/opensansbold.woff") format("woff");
-  // font-weight: normal;
-  // font-style: normal;
+  font-weight: bold;
+  font-style: normal;
 }
 
 a {
   text-decoration: none;
+}
+
+@font-face {
+  font-family: "OpenSans", $fallback-family;
+  src: url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 p,
@@ -65,7 +65,7 @@ button,
 a,
 cite,
 address {
-  // font-family: "OpenSans";
+  font-family: "OpenSans";
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

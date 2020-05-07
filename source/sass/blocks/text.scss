@@ -1,7 +1,7 @@
 @import "../var.scss";
 
 @mixin bold($color: false) {
-  // font-family: "OpenSans-Bold";
+  font-family: "OpenSans-Bold";
   font-weight: bold;
 
   @if ($color) {
@@ -97,7 +97,6 @@
 
 .text__menu-item,
 .text__catalog-item-name { //use with text__bold-black
-  // @include bold($black);
   @include height-size(1.41, 17px);
 }
 

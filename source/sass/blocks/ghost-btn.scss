@@ -1,11 +1,9 @@
 @import "../var.scss";
 
 .ghost-btn {
-  display: block;
-
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: $white-three;
   border: 2px solid $black-44;
   text-align: center;
@@ -15,12 +13,13 @@
   height: 52px;
   max-width: 100%;
 
-  &::after {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-  }
+  // display: block;
+  // &::after {
+  //   content: "";
+  //   display: inline-block;
+  //   vertical-align: middle;
+  //   height: 100%;
+  // }
 
   &:hover {
     background-color: $black-44;

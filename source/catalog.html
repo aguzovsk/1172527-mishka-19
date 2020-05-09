@@ -95,21 +95,21 @@
       </header>
       <ul class="catalog__list">
         <li class="catalog__item catalog__item--casual ">
-            <picture class="catalog__picture">
-              <source
-                media="(min-width: 1024px)"
-                srcset="../img/photo-hare-desktop@1x.jpg"
-              >
-              <source
-                media="(min-width: 768px)"
-                srcset="../img/photo-hare-tablet@1x.jpg"
-              >
-              <img
-                src="../img/photo-hare-mobile@1x.jpg"
-                alt="зайчик"
-              >
-            </picture>
-
+          <picture class="catalog__picture catalog__picture--casual">
+            <source
+              media="(min-width: 1024px)"
+              srcset="../img/photo-hare-desktop@1x.jpg"
+            >
+            <source
+              media="(min-width: 768px)"
+              srcset="../img/photo-hare-tablet@1x.jpg"
+            >
+            <img
+              class="catalog__image catalog__image--video"
+              src="../img/photo-hare-mobile@1x.jpg"
+              alt="зайчик"
+            >
+          </picture>
           <div class="catalog__item-info js-purchase">
             <div class="catalog__item-header">
               <h4 class="catalog__item-name text__catalog-item-name text__bold-black js-purchase__name">
@@ -132,7 +132,7 @@
           </div>
         </li>
         <li class="catalog__item catalog__item--casual">
-          <picture class="catalog__picture">
+          <picture class="catalog__picture catalog__picture--casual">
             <source
               media="(min-width: 1024px)"
               srcset="../img/photo-bowl-desktop@1x.jpg"
@@ -142,6 +142,7 @@
               srcset="../img/photo-bowl-tablet@1x.jpg"
             >
             <img
+              class="catalog__image catalog__image--video"
               src="../img/photo-bowl-mobile@1x.jpg"
               alt="корзина"
             >
@@ -168,7 +169,7 @@
           </div>
         </li>
         <li class="catalog__item catalog__item--casual">
-          <picture class="catalog__picture">
+          <picture class="catalog__picture catalog__pictre--casual">
             <source
               media="(min-width: 1024px)"
               srcset="../img/photo-toys-desktop@1x.jpg"
@@ -178,6 +179,7 @@
               srcset="../img/photo-toys-tablet@1x.jpg"
             >
             <img
+              class="catalog__image catalog__image--video"
               src="../img/photo-toys-mobile@1x.jpg"
               alt="корзина с игрушками"
             >
@@ -205,15 +207,15 @@
           </div>
         </li>
         <li class="catalog__item catalog__item--video">
-          <h4 class="catalog__item-name catalog__item-name--video text__catalog-item-name text__bold-black">
+          <h4 class="catalog__item-name catalog__item-name--video catalog__video-info catalog__video-info--header text__catalog-item-name text__bold-black">
             <!-- <span>Процесс производства</span> -->
             Процесс производства
           </h4>
           <div class="catalog__video-container">
-            <svg class="catalog__video-btn" width="101" height="77">
+            <svg class="catalog__play-btn" width="101" height="77">
               <use href="./img/icon-play.svg#Laag_1"></use>
             </svg>
-            <picture class="catalog__picture">
+            <picture class="catalog__picture catalog__picture--video">
               <source
                 media="(min-width: 1024px)"
                 srcset="../img/video-desktop@1x.jpg"
@@ -223,12 +225,13 @@
                 srcset="../img/video-tablet@1x.jpg"
               >
               <img
+                class="catalog__image catalog__image--video"
                 src="../img/video-mobile@1x.jpg"
                 alt="изображение процесса производства"
               >
             </picture>
           </div>
-          <div class="catalog__video-info">
+          <div class="catalog__video-info catalog__video-info--body">
             <p class="catalog__description text__catalog-item-description text__catalog-item-description--video">
               По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
             </p>
@@ -311,6 +314,6 @@
       </div>
     </footer>
     <script src="./js/menu-toggle.js"></script>
-    <script src="./js/link.js""></script>"
+    <script src="./js/link.js"></script>
   </body>
 </html>

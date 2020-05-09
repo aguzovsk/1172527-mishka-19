@@ -29,18 +29,6 @@
   }
 }
 
-// @mixin __flex-order-internal-2($list, $prefix) {
-//   @for $order from 1 through length($list) {
-//     $item: nth($list, $order);
-
-//     #{".#{$prefix}#{$item}"} {
-//       order: $order;
-//       @content;
-//       // @content($item);
-//     }
-//   }
-// }
-
 @function str-append($string1, $string2) {
   @return str-insert($string1, $string2, str-length($string1) + 1);
 }

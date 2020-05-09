@@ -1,7 +1,7 @@
 @import "../var.scss";
 
 @mixin bold($color: false) {
-  font-family: "OpenSans-Bold";
+  font-family: "OpenSans-Bold", $fallback-family;
   font-weight: bold;
 
   @if ($color) {

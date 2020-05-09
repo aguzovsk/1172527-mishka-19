@@ -33,8 +33,6 @@ li {
   padding-inline-start: 0;
 }
 
-$fallback-family: serif;
-
 @font-face {
   font-family: "OpenSans-Bold", $fallback-family;
   src: url("../fonts/opensansbold.woff2") format("woff2"), url("../fonts/opensansbold.woff") format("woff");
@@ -65,7 +63,7 @@ button,
 a,
 cite,
 address {
-  font-family: "OpenSans";
+  font-family: "OpenSans", $fallback-family;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

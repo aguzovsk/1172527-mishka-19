@@ -1,0 +1,121 @@
+@import "../var.scss";
+@import "../zig-zag-line.scss";
+
+@function max-side-value($map, $position) {
+  $max: 0;
+  $map-values: map-values($map);
+
+  @if $position == width {
+    $position: 1;
+  }
+
+  @else if $position == height {
+    $position: 2;
+  }
+
+  @each $list in $map-values {
+    $value: nth($list, $position);
+    $max: max($max, $value);
+  }
+
+  @return $max * 1px;
+}
+
+.about {
+  @include zig-zag-line();
+  margin: 36px 0 60px;
+}
+
+.about__wrapper {
+  margin: 34px 0 60px;
+}
+
+.about__header {
+  margin-bottom: 30px;
+}
+
+// $icon-list: flower, money, heart, ball, rocket, gift;
+$icon-list: (flower: (32, 37), money: (47, 27), heart: (33, 28), ball: (34, 34), rocket: (54, 23), gift: (33, 32));
+$max-width: max-side-value($icon-list, width);
+$max-height: max-side-value($icon-list, height);
+$margin-top: 30px;
+$margin-internal: 20px;
+// $paragraph-indent: $margin-top + $max-height + $margin-internal;
+
+.about__item {
+  margin-top: $margin-top;
+}
+
+@each $icon, $sizes in $icon-list {
+  .about__item--icon-#{$icon} {
+    @include insert-icon(before) {
+      $path: "../img/icon-feature-#{$icon}.svg";
+      $width: nth($sizes, 1) * 1px;
+      $height: nth($sizes, 2) * 1px;
+
+      background: url($path) no-repeat center;
+      background-size: $width $height;
+      width: $max-width;
+      height: $max-height;
+      margin-bottom: $margin-internal;
+    }
+  }
+}
+
+.about__item-image {
+  margin-bottom: 10px;
+}
+
+@media (min-width: $tablet-min-width) {
+  .about {
+    margin: 53px 0 82px;
+  }
+
+  .about__wrapper {
+    margin: 60px 0 80px;
+  }
+
+  .about__header {
+    margin-bottom: 45px;
+  }
+
+  .about__list {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    // align-items: center;
+  }
+
+  .about__item {
+    $n: 3;
+    $margin-in-between: 2%;
+
+    width: 45%;
+    min-width: 16em;
+
+    @for $i from 1 through $n {
+      &:nth-child(#{$n}n+#{$i}) {
+        order: #{$i};
+      }
+    }
+
+    &:nth-of-type(-n+#{$n}) {
+      margin-right: $margin-in-between;
+    }
+
+    &:nth-last-of-type(-n+#{$n}) {
+      margin-left: $margin-in-between;
+    }
+  }
+}
+
+
+@media (min-width: $desktop-min-width) {
+  .about {
+    margin: 73px 0 90px;
+  }
+
+  .about__wrapper {
+    margin: 70px 0 90px;
+  }
+}

@@ -2,11 +2,11 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Мишка</title>
-    <link href="./css/style.css" rel="stylesheet">
+    <title>HTML Academy: Мишка - каталог</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/style.css" rel="stylesheet">
   </head>
-  <body class="page-body">
+  <body>
     <header class="page-header">
       <nav class="main-nav">
         <ul class="main-nav__list">
@@ -88,169 +88,159 @@
       </nav>
     </header>
     <main class="page-main">
-      <header class="page-main__header page-main__header--index">
-          <h1 class="text__main-header text__main-header--index text__bold-black page-main__header-text page-main__header-text--index">
-            Милые штуки ручной работы&nbspдля&nbspдома
-          </h1>
+      <header class="page-main__header page-main__header--casual">
+        <h1 class="page-main__header-text page-main__header-text--casual text__main-header text__bold-black">
+          Каталог товаров
+        </h1>
       </header>
-      <section class="page-main__catalog">
-        <button class="green-btn green-btn--left">
-          <span class="text__green-btn green-btn__text">Предметы интерьера</span>
-        </button>
-        <button class="green-btn green-btn--right">
-          <span class="text__green-btn green-btn__text">Детские игрушки</span>
-        </button>
-      </section>
-      <article class="popular js-purchase">
-        <header class="popular__header popular__headline popular__column popular__item">
-          <h2 class="text__big-header text__bold-black js-purchase__name">
-            Вязаные корзинки
-          </h2>
-        </header>
-        <div class="popular__title popular__item desktop__first-column">
-          <div class="popular__headline">
-            <p class="text__popular-title">
-              ТОВАР НЕДЕЛИ
-            </p>
-          </div>
-        </div>
-        <p class="popular__description popular__column text__popular-description">
-          Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трех размерах.
-        </p>
-        <div class="popular__list-wrapper popular__column">
-          <div class="popular__list text__popular-table">
-            <div class="popular__list-cols popular__list-cols--not-last">
-              <span class="popular__list-item">Цвет:</span>
-              <span class="popular__list-item">Диаметр:</span>
-              <span class="popular__list-item">Высота:</span>
-            </div>
-            <div class="popular__list-cols popular__list-cols--last">
-              <span class="popular__list-item">«Тиффани»/серый</span>
-              <span class="popular__list-item">25 см</span>
-              <span class="popular__list-item">15 см</span>
-            </div>
-          </div>
-        </div>
-        <!-- </section> -->
-        <picture class="popular__image-wrapper popular__item">
-          <source media="(min-width: 1020px)" srcset="./img/triple-set-desktop@1x.jpg">
-          <source media="(min-width: 768px)" srcset="./img/triple-set-tablet@1x.jpg">
-          <img
-            class="popular__image"
-            src="./img/triple-set-mobile@1x.jpg"
-            alt="Изображение вязаной корзины"
-          >
-        </picture>
-        <div class="popular__order popular__column popular__item">
-          <p class="popular__order-price text__popular-price">
-            Цена: 990 руб.
-          </p>
-          <a class="ghost-btn text__ghost-btn full-width js-purchase__link" href="./select-form.html?item=popular">
-            ЗАКАЗАТЬ
-          </a>
-        </div>
-      </article>
-      <section class="about">
-        <div class="about__wrapper desktop__indented">
-          <header class="about__header">
-            <h4 class="text__big-header text__bold-black">
-              Коротко о нас:
-            </h4>
-          </header>
-          <ul class="about__list">
-            <li class="about__item about__item--icon-flower text__about-item text__bold-black">
-              Экологически чистые&nbspматериалы
-            </li>
-            <li class="about__item about__item--icon-money text__about-item text__bold-black">
-              Скандинавский стиль по&nbspроссийской цене
-            </li>
-            <li class="about__item about__item--icon-heart text__about-item text__bold-black">
-              Увеличивает лайки на&nbspфотографиях
-            </li>
-            <li class="about__item about__item--icon-ball text__about-item text__bold-black">
-              Связано вручную с любовью&nbspи&nbspумилением
-            </li>
-            <li class="about__item about__item--icon-rocket text__about-item text__bold-black">
-              Поддержка отечественного производителя
-            </li>
-            <li class="about__item about__item--icon-gift text__about-item text__bold-black">
-              Поставляется в подарочной&nbspупаковке
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="reviews">
-        <div class="reviews__wrapper desktop__indented">
-          <h4 class="reviews__header text__big-header text__bold-black">
-            Отзывы
-          </h4>
-          <p class="reviews__comment text__comment">
-            Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!
-          </p>
-          <div class="reviews__author">
-            <span class="text__author-name text__bold-black">Анастасия Красильникова</span>
-            <span class="text__author-address">@misssssiskras</span>
-          </div>
-          <div class="reviews__arrows">
-            <input class="reviews__arrow reviews__arrow--left"
-              type="image"
-              src="./img/icon-left-arrow.svg"
-              alt="Предыдущий отзыв"
-              width="52" height="26"
+      <ul class="catalog__list">
+        <li class="catalog__item catalog__item--casual ">
+          <picture class="catalog__picture catalog__picture--casual">
+            <source
+              media="(min-width: 1024px)"
+              srcset="../img/photo-hare-desktop@1x.jpg"
             >
-            <input class="reviews__arrow reviews__arrow--right"
-              type="image"
-              src="./img/icon-right-arrow.svg"
-              alt="Следующий отзыв"
-              width="52" height="26"
+            <source
+              media="(min-width: 768px)"
+              srcset="../img/photo-hare-tablet@1x.jpg"
             >
-          </div>
-          <a class="reviews__write text__ghost-btn ghost-btn" href="#">
-            Написать
-          </a>
-        </div>
-      </section>
-
-      <section class="contacts">
-        <div class="contacts__wrapper">
-          <header class="contacts__header-wrapper">
-            <h5 class="contacts__header text__contacts-header text__bold-black">
-              Контакты
-            </h5>
-          </header>
-
-          <div class="contacts__icon-flag desktop__first-column">
-            <svg  width="47" height="82">
-              <use href="./img/icon-flag.svg#Layer_1"></use>
-            </svg>
-          </div>
-
-          <ul class="contacts__list text__contacts-table">
-            <li class="contacts__list-item">
-              <span class="contacts__list-key">e-mail:</span>
-              <span class="contacts__list-value">
-                <a href="mailto:info@mimimishkashop.ru">
-                info@mimimishkashop.ru
+            <img
+              class="catalog__image catalog__image--video"
+              src="../img/photo-hare-mobile@1x.jpg"
+              alt="зайчик"
+            >
+          </picture>
+          <div class="catalog__item-info js-purchase">
+            <div class="catalog__item-header">
+              <h4 class="catalog__item-name text__catalog-item-name text__bold-black js-purchase__name">
+                Зайчик-попрыгайчик
+              </h4>
+              <p class="catalog__description text__catalog-item-description">
+                Рост 30 см, вес 200 г
+              </p>
+            </div>
+            <div class="catalog__price-wrapper">
+              <span class="catalog__price text__catalog-item-price text__bold-black">
+                1 200 руб.
+              </span>
+                <a class="js-purchase__link" href="./select-form.html?item=1">
+                  <svg class="catalog__icon-cart" width="21" height="18">
+                    <use href="./img/icon-cart.svg#Layer_1"></use>
+                  </svg>
                 </a>
-              </span>
-            </li>
-            <li class="contacts__list-item">
-              <span class="contacts__list-key">адрес:</span>
-              <span class="contacts__list-value">
-                г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101
-              </span>
-            </li>
-          </ul>
-          <div class="contacts__map">
+            </div>
           </div>
-          <a
-            class="contacts__write-btn ghost-btn text__ghost-btn"
-            href="mailto:info@mimimishkashop.ru">
-            Напишите нам
-          </a>
-        </div>
-      </section>
+        </li>
+        <li class="catalog__item catalog__item--casual">
+          <picture class="catalog__picture catalog__picture--casual">
+            <source
+              media="(min-width: 1024px)"
+              srcset="../img/photo-bowl-desktop@1x.jpg"
+            >
+            <source
+              media="(min-width: 768px)"
+              srcset="../img/photo-bowl-tablet@1x.jpg"
+            >
+            <img
+              class="catalog__image catalog__image--video"
+              src="../img/photo-bowl-mobile@1x.jpg"
+              alt="корзина"
+            >
+          </picture>
+          <div class="catalog__item-info js-purchase">
+            <div class="catalog__item-header">
+              <h4 class="catalog__item-name text__catalog-item-name text__bold-black js-purchase__name">
+                Корзинка для белья
+              </h4>
+              <p class="catalog__description text__catalog-item-description">
+                Диаметр 15 см, высота 10 см
+              </p>
+            </div>
+            <div class="catalog__price-wrapper">
+              <span class="catalog__price text__catalog-item-price text__bold-black">
+                690 руб.
+              </span>
+              <a class="js-purchase__link" href="./select-form.html?item=2">
+                <svg class="catalog__icon-cart" width="21" height="18">
+                  <use href="./img/icon-cart.svg#Layer_1"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="catalog__item catalog__item--casual">
+          <picture class="catalog__picture catalog__pictre--casual">
+            <source
+              media="(min-width: 1024px)"
+              srcset="../img/photo-toys-desktop@1x.jpg"
+            >
+            <source
+              media="(min-width: 768px)"
+              srcset="../img/photo-toys-tablet@1x.jpg"
+            >
+            <img
+              class="catalog__image catalog__image--video"
+              src="../img/photo-toys-mobile@1x.jpg"
+              alt="корзина с игрушками"
+            >
+          </picture>
+
+          <div class="catalog__item-info js-purchase">
+            <div class="catalog__item-header">
+              <h4 class="catalog__item-name text__catalog-item-name text__bold-black js-purchase__name">
+                Большая корзинка для игрушек
+              </h4>
+              <p class="catalog__description text__catalog-item-description">
+                Диаметр 30 см, высота 30 см
+              </p>
+            </div>
+            <div class="catalog__price-wrapper">
+              <span class="catalog__price text__catalog-item-price text__bold-black">
+                1 500 руб.
+              </span>
+              <a class="js-purchase__link" href="./select-form.html?item=3">
+                <svg class="catalog__icon-cart" width="21" height="18">
+                  <use href="./img/icon-cart.svg#Layer_1"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="catalog__item catalog__item--video">
+          <h4 class="catalog__item-name catalog__item-name--video catalog__video-info catalog__video-info--header text__catalog-item-name text__bold-black">
+            <!-- <span>Процесс производства</span> -->
+            Процесс производства
+          </h4>
+          <div class="catalog__video-container">
+            <svg class="catalog__play-btn" width="101" height="77">
+              <use href="./img/icon-play.svg#Laag_1"></use>
+            </svg>
+            <picture class="catalog__picture catalog__picture--video">
+              <source
+                media="(min-width: 1024px)"
+                srcset="../img/video-desktop@1x.jpg"
+              >
+              <source
+                media="(min-width: 768px)"
+                srcset="../img/video-tablet@1x.jpg"
+              >
+              <img
+                class="catalog__image catalog__image--video"
+                src="../img/video-mobile@1x.jpg"
+                alt="изображение процесса производства"
+              >
+            </picture>
+          </div>
+          <div class="catalog__video-info catalog__video-info--body">
+            <p class="catalog__description text__catalog-item-description text__catalog-item-description--video">
+              По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
+            </p>
+            <button class="catalog__order-btn ghost-btn text__ghost-btn" type="button">
+              Сделать заказ
+            </button>
+          </div>
+        </li>
+      </ul>
     </main>
     <aside class="select-size">
       <form class="select-size__form">

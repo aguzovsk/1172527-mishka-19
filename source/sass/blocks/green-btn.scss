@@ -1,0 +1,82 @@
+@import "../var.scss";
+@import "../utils.scss";
+
+.green-btn {
+  width: 100%;
+  height: 103px;
+  border: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $margin-horizontal-mobile;
+
+  @include insert-icon(after) {
+    opacity: 0.5;
+  }
+
+  &:hover {
+    padding-bottom: 5px;
+
+    &::after {
+      opacity: 0.7;
+    }
+  }
+
+  &:active {
+    .text__green-btn {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    &::after {
+      opacity: 0.3;
+    }
+  }
+}
+
+.green-btn--left {
+  background-color: $seafoam-blue;
+  $active-color: #59d5bc;
+
+  @include insert-icon(after, $partial: true) {
+    width: 40px;
+    height: 62px;
+    background: url("../../img/icon-interior.svg") no-repeat;
+    padding-left: 10px;
+  }
+
+  &:hover {
+    background-color: $active-color;
+  }
+
+  &:active {
+    background-color: $active-color;
+  }
+}
+
+.green-btn--right {
+  background-color: $greeny-blue;
+  $active-color: #46c1ae;
+
+  @include insert-icon(after, $partial: true) {
+    width: 60px;
+    height: 60px;
+    background: url("../../img/icon-toy.svg") no-repeat;
+  }
+
+  &:hover {
+    background-color: $active-color;
+  }
+
+  &:active {
+    background-color: $active-color;
+  }
+}
+
+@media (min-width: $tablet-min-width) {
+  .green-btn {
+    width: 50%;
+    height: 120px;
+    padding: 0 36px;
+  }
+}

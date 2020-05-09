@@ -1,0 +1,74 @@
+@import "../var.scss";
+@import "../button-utils.scss";
+
+$shell-diameter-mobile: $radio-btn-height-mobile;
+$shell-diameter: $radi0-btn-height;
+$checkmark-diameter-mobile: 16px;
+$checkmark-diameter: 22px;
+$shell-border-width: $button-border-width;
+
+@mixin diameter($diameter) {
+  width: $diameter;
+  min-width: $diameter;
+  height: $diameter;
+}
+
+@mixin centered($parent-diameter, $diameter, $is-border-box: true) {
+  $offset: ($parent-diameter / 2 - $diameter / 2)
+    - if($is-border-box, $shell-border-width, 0);
+  padding: $offset;
+  // left: $offset;
+  // top: $offset;
+}
+
+.radio-btn {
+  // @include vertically-aligned;
+
+  // &:hover .radio-btn__shell {
+  //   border-color: $seafoam-blue-two;
+  // }
+
+  // &:active .radio-btn__shell {
+  //   border-color: $light-grey;
+  // }
+  @include selection-button-styles();
+  margin: 0 0 20px;
+}
+
+.radio-btn__shell {
+  @include shell();
+  @include diameter($shell-diameter-mobile);
+  @include centered($shell-diameter-mobile, $checkmark-diameter-mobile);
+
+  border-radius: 50%;
+
+  &::before {
+    content: none;
+    // position: absolute;
+    display: inline-block;
+
+    @include diameter($checkmark-diameter-mobile);
+    background-color: $seafoam-blue-two;
+    border-radius: 50%;
+  }
+}
+
+.radio-btn__input:checked ~ .radio-btn__shell::before {
+  content: "";
+}
+
+@media (min-width: $tablet-min-width) {
+  .radio-btn {
+    // width: 100%;0
+    margin: 0 0 23px;
+  }
+
+  .radio-btn__shell {
+    @include diameter($shell-diameter);
+    @include centered($shell-diameter, $checkmark-diameter);
+
+    &::before {
+      @include diameter($checkmark-diameter);
+    }
+  }
+}

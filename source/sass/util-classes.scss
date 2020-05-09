@@ -1,0 +1,72 @@
+@import "./var.scss";
+
+// .vertically-aligned {
+//   display: flex;
+//   align-items: center;
+// }
+
+.break-flex {
+  width: 0;
+  height: 0;
+  flex-basis: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.mobile-hide,
+.desktop-show {
+  display: none;
+}
+
+@media (min-width: $tablet-min-width) {
+  .mobile-hide,
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .mobile-show {
+    display: none;
+  }
+}
+
+$indent-column-width: 175px;
+
+@media (min-width: $desktop-min-width) {
+  .desktop__indented {
+    padding-left: $indent-column-width;
+  }
+
+  .desktop__first-column {
+    $padding-left: 62px;
+    width: $indent-column-width - $padding-left;
+    // margin: 0;
+    // padding: 0;
+    padding-left: $padding-left;
+  }
+
+  .desktop-show {
+    display: initial;
+  }
+
+  .desktop-column {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 16vw;
+  }
+}

@@ -1,0 +1,97 @@
+@import "./var.scss";
+
+@mixin discard-page-horizontal-margins {
+  margin-left: -$margin-horizontal-mobile;
+  margin-right: -$margin-horizontal-mobile;
+
+  @media (min-width: $tablet-min-width) {
+    margin-left: -$margin-horizontal-tablet;
+    margin-right: -$margin-horizontal-tablet;
+  }
+}
+
+@mixin discard-horizontal-margins-but-desktop {
+  @include discard-page-horizontal-margins();
+
+  @media (min-width: $desktop-min-width) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@mixin __flex-order-internal($list, $prefix) {
+  @for $order from 1 through length($list) {
+    $item: nth($list, $order);
+
+    #{".#{$prefix}#{$item}"} {
+      order: $order;
+    }
+  }
+}
+
+@function str-append($string1, $string2) {
+  @return str-insert($string1, $string2, str-length($string1) + 1);
+}
+
+@function concat($strings...) {
+  $result: "";
+
+  @each $string in $strings {
+    $result: str-append($result, $string);
+  }
+
+  @return $result;
+}
+
+@mixin flex-order($list, $prefix: null, $block: null, $element: null) {
+  $correct: true;
+
+  @if not ($prefix or $block or $element) {
+    @error "Prefix or block w/- or w/o element should be provided";
+    $correct: false;
+  }
+
+  @else if $block or $element {
+    @if $prefix {
+      @error "prefix argument provided with block or element is ambiguous.";
+      $correct: false;
+    }
+
+    @else {
+      @if not $block {
+        $index: str-index($element, "__");
+
+        @if $index and $index != 1 and $index != (str-length($element) - 1) {
+          $prefix: concat($elelmnt, "--");
+        }
+
+        @else {
+          @error "Element without block was given";
+          $correct: false;
+        }
+      }
+
+      @else {
+        $prefix: concat($block, "__");
+
+        @if $element {
+          $prefix: concat($prefix, $element, "--");
+        }
+      }
+    }
+  }
+
+  @if $correct {
+    @include __flex-order-internal($list, $prefix);
+  }
+}
+
+@mixin insert-icon($side, $display: block, $partial: false) {
+  &::#{$side} {
+    @if not $partial {
+      content: "";
+      display: $display;
+    }
+    @content;
+  }
+}

@@ -43,7 +43,7 @@ $border-width: button-border-width;
 }
 
 .checkbox__input:checked ~ .checkbox__shell {
-  background-image: url("../../img/icon-tick.svg") no-repeat center;
+  background: url("../../img/icon-tick.svg") no-repeat center;
   background-size: $tick-width-mobile $tick-height-mobile;
 }
 

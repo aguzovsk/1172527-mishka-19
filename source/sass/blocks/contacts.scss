@@ -25,16 +25,23 @@
 .contacts__list {
   display: flex;
   flex-wrap: wrap;
+  margin: 21px 0;
 }
 
 .contacts__list-item {
   display: flex;
   flex-wrap: nowrap;
+  margin: 21px 0;
 }
 
 .contacts__list-key {
   margin-right: 1.5em;
   white-space: nowrap;
+}
+
+.contacts__email {
+  padding-bottom: 4px;
+  border-bottom: solid 1px $seafoam-blue-two;
 }
 
 .contacts__map {
@@ -61,6 +68,21 @@
   //   margin: 0 $margin-horizontal-tablet;
   // }
 
+  .contacts__list {
+    margin-bottom: 40px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  // .contacts__list-value {
+  //   width: 220px;
+  // }
+
+  // .contacts__list-value {
+  //   width: 33%;
+  // }
+
   .contacts__icon-flag {
     display: unset;
   }
@@ -74,7 +96,12 @@
   }
 
   .contacts__list-item {
-    width: 45%;
+    // width: 45%;
+
+    &--last {
+      margin-left: 55px;
+      margin-right: 40px;
+    }
   }
 
   .contacts__map {
@@ -100,12 +127,14 @@
   .contacts__wrapper {
     height: 457px;
     flex-direction: column;
+    align-items: flex-start;
     // align-items: center;
   }
 
   .contacts__icon-flag {
     order: 1;
     height: 100%;
+    align-self: center;
   }
 
   $icon-height: 81px;
@@ -126,30 +155,42 @@
   }
 
   .contacts__list {
+    flex-wrap: wrap;
     order: 3;
   }
 
   .contacts__write-btn {
     order: 4;
-    margin: 0;
-    // align-self: flex-start;
+    margin: 20px 0 0;
+    align-self: flex-end;
   }
 
-  .contacts__list,
-  .contacts__header-wrapper {
-    width: 30%;
-  }
+  // .contacts__list,
+  // .contacts__header-wrapper {
+  //   width: 30%;
+  // }
 
-  .contacts__icon-flag::before,
-  .contacts__header-wrapper::before {
+  .contacts__top-indent::before {
     content: "";
     display: block;
     width: 100%;
     height: $before-height;
   }
 
+  // .contacts__icon-flag::before,
+  // .contacts__header-wrapper::before {
+  //   content: "";
+  //   display: block;
+  //   width: 100%;
+  //   height: $before-height;
+  // }
+
   .contacts__list-item {
-    width: initial;
+    width: 100%;
+    margin: 0;
+    &--last {
+      margin-top: 35px;
+    }
   }
 
   .contacts__map {
@@ -157,6 +198,6 @@
     width: 525px;
     background-image: url("../../img/icon-map-pin.svg"), url("../../img/map-desktop@1x.jpg");
     background-size: auto;
-    margin: 0 0;
+    margin: 0;
   }
 }

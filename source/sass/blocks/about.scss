@@ -1,5 +1,6 @@
 @import "../var.scss";
 @import "../zig-zag-line.scss";
+@import "../util-classes.scss";
 
 @function max-side-value($map, $position) {
   $max: 0;
@@ -76,22 +77,22 @@ $margin-internal: 20px;
   }
 
   .about__header {
-    margin-bottom: 45px;
+    margin-bottom: 17px;
   }
 
   .about__list {
-    width: 100%;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
     // align-items: center;
   }
 
   .about__item {
     $n: 3;
-    $margin-in-between: 2%;
+    // $margin-in-between: 2%;
 
-    width: 45%;
-    min-width: 16em;
+    // width: 45%;
+    // min-width: 16em;
 
     @for $i from 1 through $n {
       &:nth-child(#{$n}n+#{$i}) {
@@ -100,12 +101,20 @@ $margin-internal: 20px;
     }
 
     &:nth-of-type(-n+#{$n}) {
-      margin-right: $margin-in-between;
+      @include tablet-first-column();
     }
 
     &:nth-last-of-type(-n+#{$n}) {
-      margin-left: $margin-in-between;
+      width: 333px;
     }
+
+    // &:nth-of-type(-n+#{$n}) {
+    //   margin-right: $margin-in-between;
+    // }
+
+    // &:nth-last-of-type(-n+#{$n}) {
+    //   margin-left: $margin-in-between;
+    // }
   }
 }
 

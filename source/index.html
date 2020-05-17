@@ -102,23 +102,23 @@
         </button>
       </section>
       <article class="popular js-purchase">
-        <header class="popular__header popular__headline popular__column popular__item">
-          <h2 class="text__big-header text__bold-black js-purchase__name">
+        <header class="popular__header popular__headline popular__column popular__item desktop__main-column">
+          <h3 class="text__big-header text__bold-black js-purchase__name">
             Вязаные корзинки
-          </h2>
+          </h3>
         </header>
         <div class="popular__title popular__item desktop__first-column">
           <div class="popular__headline">
-            <p class="text__popular-title">
+            <h2 class="text__popular-title">
               ТОВАР НЕДЕЛИ
-            </p>
+            </h2>
           </div>
         </div>
-        <p class="popular__description popular__column text__popular-description">
+        <p class="popular__description popular__column desktop__main-column text__popular-description">
           Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трех размерах.
         </p>
-        <div class="popular__list-wrapper popular__column">
-          <div class="popular__list text__popular-table">
+        <!-- <div class="popular__list-wrapper "> -->
+          <div class="popular__list popular__column text__popular-table desktop__main-column">
             <div class="popular__list-cols popular__list-cols--not-last">
               <span class="popular__list-item">Цвет:</span>
               <span class="popular__list-item">Диаметр:</span>
@@ -130,7 +130,7 @@
               <span class="popular__list-item">15 см</span>
             </div>
           </div>
-        </div>
+        <!-- </div> -->
         <!-- </section> -->
         <picture class="popular__image-wrapper popular__item">
           <source media="(min-width: 1020px)" srcset="./img/triple-set-desktop@1x.jpg">
@@ -145,7 +145,7 @@
           <p class="popular__order-price text__popular-price">
             Цена: 990 руб.
           </p>
-          <a class="ghost-btn text__ghost-btn full-width js-purchase__link" href="./select-form.html?item=popular">
+          <a class="ghost-btn text__ghost-btn js-purchase__link" href="./select-form.html?item=popular">
             ЗАКАЗАТЬ
           </a>
         </div>
@@ -214,30 +214,30 @@
 
       <section class="contacts">
         <div class="contacts__wrapper">
-          <header class="contacts__header-wrapper">
+          <header class="contacts__header-wrapper contacts__top-indent desktop__main-column">
             <h2 class="contacts__header text__contacts-header text__bold-black">
               Контакты
             </h2>
           </header>
 
-          <div class="contacts__icon-flag desktop__first-column">
+          <div class="contacts__icon-flag contacts__top-indent desktop__first-column">
             <svg  width="47" height="82">
               <use href="./img/icon-flag.svg#Layer_1"></use>
             </svg>
           </div>
 
-          <ul class="contacts__list text__contacts-table">
+          <ul class="contacts__list desktop__main-column">
             <li class="contacts__list-item">
-              <span class="contacts__list-key">e-mail:</span>
+              <span class="contacts__list-key text__contacts-table">e-mail:</span>
               <span class="contacts__list-value">
-                <a href="mailto:info@mimimishkashop.ru">
+                <a class="contacts__email text__contacts-table" href="mailto:info@mimimishkashop.ru">
                 info@mimimishkashop.ru
                 </a>
               </span>
             </li>
-            <li class="contacts__list-item">
-              <span class="contacts__list-key">адрес:</span>
-              <span class="contacts__list-value">
+            <li class="contacts__list-item contacts__list-item--last">
+              <span class="contacts__list-key text__contacts-table">адрес:</span>
+              <span class="contacts__list-value text__contacts-table">
                 г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101
               </span>
             </li>

@@ -5,7 +5,6 @@ $shell-diameter-mobile: $radio-btn-height-mobile;
 $shell-diameter: $radi0-btn-height;
 $checkmark-diameter-mobile: 16px;
 $checkmark-diameter: 22px;
-$shell-border-width: $button-border-width;
 
 @mixin diameter($diameter) {
   width: $diameter;
@@ -15,22 +14,11 @@ $shell-border-width: $button-border-width;
 
 @mixin centered($parent-diameter, $diameter, $is-border-box: true) {
   $offset: ($parent-diameter / 2 - $diameter / 2)
-    - if($is-border-box, $shell-border-width, 0);
+    - if($is-border-box, $button-border-width, 0);
   padding: $offset;
-  // left: $offset;
-  // top: $offset;
 }
 
 .radio-btn {
-  // @include vertically-aligned;
-
-  // &:hover .radio-btn__shell {
-  //   border-color: $seafoam-blue-two;
-  // }
-
-  // &:active .radio-btn__shell {
-  //   border-color: $light-grey;
-  // }
   @include selection-button-styles();
   margin: 0 0 20px;
 }
@@ -44,7 +32,6 @@ $shell-border-width: $button-border-width;
 
   &::before {
     content: none;
-    // position: absolute;
     display: inline-block;
 
     @include diameter($checkmark-diameter-mobile);
@@ -59,7 +46,6 @@ $shell-border-width: $button-border-width;
 
 @media (min-width: $tablet-min-width) {
   .radio-btn {
-    // width: 100%;0
     margin: 0 0 23px;
   }
 

@@ -38,7 +38,7 @@
   background-color: $seafoam-blue;
   $active-color: #59d5bc;
 
-  @include insert-icon(after, $partial: true) {
+  &::after {
     width: 40px;
     height: 62px;
     background: url("../../img/icon-interior.svg") no-repeat;
@@ -58,7 +58,7 @@
   background-color: $greeny-blue;
   $active-color: #46c1ae;
 
-  @include insert-icon(after, $partial: true) {
+  &::after {
     width: 60px;
     height: 60px;
     background: url("../../img/icon-toy.svg") no-repeat;

@@ -35,7 +35,6 @@ $vertical-indent-mobile: -17px;
 
   &--casual {
     background-color: $white;
-    // height: 177px;
     height: calc(177px + (100vw - #{$mobile-width}) / 9);
   }
 }
@@ -78,7 +77,6 @@ $vertical-indent-mobile: -17px;
     }
 
     &--casual {
-      // height: 226px;
       height: calc(226px + (100vw - #{$tablet-min-width}) / 13);
     }
   }

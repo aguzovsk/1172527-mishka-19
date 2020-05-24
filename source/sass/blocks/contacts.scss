@@ -1,15 +1,5 @@
 @import "../var.scss";
 
-// .contacts {
-//   // display: flex;
-//   // flex-direction: column;
-//   // align-items: center;
-// }
-
-// .contacts__wrapper {
-//   margin: 0 $margin-horizontal-mobile;
-// }
-
 .contacts {
   @include zig-zag-line();
 }
@@ -47,7 +37,6 @@
 .contacts__map {
   width: calc(100% + #{2 * $margin-horizontal-mobile});
   height: 457px;
-  // max-width: 322px;
   background-image: url("../../img/icon-map-pin.svg"), url("../../img/map-mobile@1x.jpg");
   background-repeat: no-repeat;
   background-position: 53% 40%, 0 0;
@@ -60,28 +49,12 @@
 }
 
 @media (min-width: $tablet-min-width) {
-  // .contacts {
-  //   margin: 0 $margin-horizontal-tablet;
-  // }
-
-  // .contacts__wrapper {
-  //   margin: 0 $margin-horizontal-tablet;
-  // }
-
   .contacts__list {
     margin-bottom: 40px;
     justify-content: space-between;
     flex-wrap: nowrap;
     width: 100%;
   }
-
-  // .contacts__list-value {
-  //   width: 220px;
-  // }
-
-  // .contacts__list-value {
-  //   width: 33%;
-  // }
 
   .contacts__icon-flag {
     display: unset;
@@ -96,8 +69,6 @@
   }
 
   .contacts__list-item {
-    // width: 45%;
-
     &--last {
       margin-left: 55px;
       margin-right: 40px;
@@ -105,7 +76,6 @@
   }
 
   .contacts__map {
-    // width: 768px;
     width: calc(100% + #{2 * $margin-horizontal-tablet});
     background-image: url("../../img/icon-map-pin.svg"), url("../../img/map-tablet@1x.jpg");
     background-position: 52% 40%, 0 0;
@@ -128,7 +98,6 @@
     height: 457px;
     flex-direction: column;
     align-items: flex-start;
-    // align-items: center;
   }
 
   .contacts__icon-flag {
@@ -162,13 +131,7 @@
   .contacts__write-btn {
     order: 4;
     margin: 20px 0 0;
-    // align-self: flex-end;
   }
-
-  // .contacts__list,
-  // .contacts__header-wrapper {
-  //   width: 30%;
-  // }
 
   .contacts__top-indent::before {
     content: "";
@@ -177,17 +140,10 @@
     height: $before-height;
   }
 
-  // .contacts__icon-flag::before,
-  // .contacts__header-wrapper::before {
-  //   content: "";
-  //   display: block;
-  //   width: 100%;
-  //   height: $before-height;
-  // }
-
   .contacts__list-item {
     width: 100%;
     margin: 0;
+
     &--last {
       margin-top: 35px;
     }

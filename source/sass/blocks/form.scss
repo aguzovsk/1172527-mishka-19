@@ -1,9 +1,6 @@
 @import "../var.scss";
 @import "../utils.scss";
 
-$column-item-margin-top-mobile: 24px;
-$column-item-margin-top: 41px;
-
 .form {
   margin-top: 29px;
 }
@@ -57,7 +54,6 @@ $column-item-margin-top: 41px;
   height: $input-field-height;
   box-sizing: border-box;
   width: 100%;
-  // flex-grow: 1;
 
   &:hover,
   &:active {
@@ -84,7 +80,7 @@ $column-item-margin-top: 41px;
 
 .form__column-item {
   &:not(:first-child) {
-    margin-top: $column-item-margin-top-mobile;
+    margin-top: 24px;
   }
   width: 100%;
 }
@@ -119,7 +115,6 @@ $column-item-margin-top: 41px;
   }
 
   .form__column-container {
-    // margin-top: 33px;
     margin-top: 0;
     width: 100%;
   }
@@ -132,7 +127,6 @@ $column-item-margin-top: 41px;
   }
 
   .form__column-of-types {
-    // margin-top: 27px;
     margin-top: 0;
   }
 
@@ -153,7 +147,7 @@ $column-item-margin-top: 41px;
 
   .form__column-item {
     &:not(:first-child) {
-      margin-top: $column-item-margin-top;
+      margin-top: 41px;
     }
   }
 

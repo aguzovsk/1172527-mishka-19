@@ -12,15 +12,8 @@ $padding-horizontal-mobile: 30px;
   right: 0;
   top: 0;
   bottom: 0;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // width: 100vw;
-  // height: 100vh;
-  // display: flex;
   align-items: center;
   justify-content: center;
-  // position: fixed;
 
   background-color: transparentize($white-three, 0.1);
   display: none;
@@ -32,18 +25,10 @@ $padding-horizontal-mobile: 30px;
 
 .select-size__form {
   padding: 36px $padding-horizontal-mobile 46px;
-  // @include discard-page-horizontal-margins();
-  // position: absolute;
   margin: 0 -31px;
   max-width: $max-width;
-  // display: none;
-  // border-top: solid $container-border-width #c6c6c6;
-  // border-bottom: solid $container-border-width #c6c6c6;
   border: solid $container-border-width #c6c6c6;
   background-color: $white-three;
-  // &--revealed {
-  //   display: block;
-  // }
 }
 
 .select-size__header {
@@ -70,7 +55,9 @@ $padding-horizontal-mobile: 30px;
   box-sizing: border-box;
   height: 52px;
   width: 82px;
-  border: solid 2px transparentize($black-44, 0.9);
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparentize($black-44, 0.9);
 
   &:hover {
     border-color: transparentize($black-44, 0.7);
@@ -95,13 +82,14 @@ $padding-horizontal-mobile: 30px;
 
 @media (min-width: $max-width + 2 * $padding-horizontal-mobile + 2 * $border-width) {
   .select-size__form {
-    border: solid $container-border-width #c6c6c6;
+    border-style: solid;
+    border-width: $container-border-width;
+    border-color: #c6c6c6;
   }
 }
 
 @media (min-width: $tablet-min-width) {
   .select-size__form {
-    // top: 747px;
     padding: 51px 108px 46px;
   }
 }

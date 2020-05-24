@@ -18,7 +18,6 @@ $video-desktop-min-width: 1050px;
 
   margin-top: 0;
   margin-bottom: 30px;
-  // margin: 0 calc((100vw - 320px) / 4) 30px;
 }
 
 .catalog__order-btn {
@@ -147,10 +146,11 @@ $video-desktop-min-width: 1050px;
     &--video {
       height: 100%;
       flex-direction: column;
-      $ordered-list: video-container, video-info;
-
-      @include flex-order($ordered-list, $block: catalog);
     }
+  }
+
+  .catalog__video-container {
+    order: 1;
   }
 
   .catalog__item-info {
@@ -176,6 +176,7 @@ $video-desktop-min-width: 1050px;
 
   .catalog__video-info {
     margin: 40px 42px 20px;
+    order: 2;
 
     &--body {
       margin-top: 20px;
@@ -203,8 +204,6 @@ $video-item-width: $desktop-model-width - 2 * $margin-horizontal-desktop;
 $margin-right-1: percentage(57px / $video-item-width);
 $margin-left-1: percentage(80px / $video-item-width);
 
-// $margin-right:  floor($video-info-margin-right * 100vw);
-// $margin-left: round($video-info-margin-left * 100vw);
 $margin-right:  $video-info-margin-right * 100vw;
 $margin-left: $video-info-margin-left * 100vw;
 $margin-sum: ($video-info-margin-right + $video-info-margin-left) * 100vw;

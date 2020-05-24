@@ -2,26 +2,6 @@
 @import "../zig-zag-line.scss";
 @import "../util-classes.scss";
 
-@function max-side-value($map, $position) {
-  $max: 0;
-  $map-values: map-values($map);
-
-  @if $position == width {
-    $position: 1;
-  }
-
-  @else if $position == height {
-    $position: 2;
-  }
-
-  @each $list in $map-values {
-    $value: nth($list, $position);
-    $max: max($max, $value);
-  }
-
-  @return $max * 1px;
-}
-
 .about {
   @include zig-zag-line();
   margin: 36px 0 60px;
@@ -35,31 +15,53 @@
   margin-bottom: 30px;
 }
 
-// $icon-list: flower, money, heart, ball, rocket, gift;
-$icon-list: (flower: (32, 37), money: (47, 27), heart: (33, 28), ball: (34, 34), rocket: (54, 23), gift: (33, 32));
-$max-width: max-side-value($icon-list, width);
-$max-height: max-side-value($icon-list, height);
-$margin-top: 30px;
-$margin-internal: 20px;
-// $paragraph-indent: $margin-top + $max-height + $margin-internal;
+$icon-list: (flower: (32px 37px), money: (47px 27px), heart: (33px 28px),
+  ball: (34px 34px), rocket: (54px 23px), gift: (33px 32px));
 
 .about__item {
-  margin-top: $margin-top;
-}
+  margin-top: 30px;
 
-@each $icon, $sizes in $icon-list {
-  .about__item--icon-#{$icon} {
-    @include insert-icon(before) {
-      $path: "../img/icon-feature-#{$icon}.svg";
-      $width: nth($sizes, 1) * 1px;
-      $height: nth($sizes, 2) * 1px;
+  @include insert-icon(before) {
+    $icon-sizes: map-values($icon-list);
+    $side-values-list: zip($icon-sizes...);
+    $width-values: nth($side-values-list, 1);
+    $height-values: nth($side-values-list, 2);
 
-      background: url($path) no-repeat center;
-      background-size: $width $height;
-      width: $max-width;
-      height: $max-height;
-      margin-bottom: $margin-internal;
-    }
+    width: max($width-values...);
+    height: max($height-values...);
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--icon-flower::before {
+    background-image: url("../img/icon-feature-flower.svg");
+    background-size: map-get($icon-list, flower);
+  }
+
+  &--icon-money::before {
+    background-image: url("../img/icon-feature-money.svg");
+    background-size: map-get($icon-list, money);
+  }
+
+  &--icon-heart::before {
+    background-image: url("../img/icon-feature-heart.svg");
+    background-size: map-get($icon-list, heart);
+  }
+
+  &--icon-ball::before {
+    background-image: url("../img/icon-feature-ball.svg");
+    background-size: map-get($icon-list, ball);
+  }
+
+  &--icon-rocket::before {
+    background-image: url("../img/icon-feature-rocket.svg");
+    background-size: map-get($icon-list, rocket);
+  }
+
+  &--icon-gift::before {
+    background-image: url("../img/icon-feature-gift.svg");
+    background-size: map-get($icon-list, gift);
   }
 }
 
@@ -84,20 +86,21 @@ $margin-internal: 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    // align-items: center;
   }
 
   .about__item {
     $n: 3;
-    // $margin-in-between: 2%;
 
-    // width: 45%;
-    // min-width: 16em;
+    &:nth-child(#{$n}n+1) {
+      order: 1;
+    }
 
-    @for $i from 1 through $n {
-      &:nth-child(#{$n}n+#{$i}) {
-        order: #{$i};
-      }
+    &:nth-child(#{$n}n+2) {
+      order: 2;
+    }
+
+    &:nth-child(#{$n}n+3) {
+      order: 3;
     }
 
     &:nth-of-type(-n+#{$n}) {
@@ -107,14 +110,6 @@ $margin-internal: 20px;
     &:nth-last-of-type(-n+#{$n}) {
       width: 333px;
     }
-
-    // &:nth-of-type(-n+#{$n}) {
-    //   margin-right: $margin-in-between;
-    // }
-
-    // &:nth-last-of-type(-n+#{$n}) {
-    //   margin-left: $margin-in-between;
-    // }
   }
 }
 

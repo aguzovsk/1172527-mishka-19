@@ -28,10 +28,8 @@
 }
 
 $arrow-height: 52px;
-$arrow-image-height: 26px;
 $arrow-border-width: 1px;
-$arrow-padding-vertical-total: $arrow-height - $arrow-image-height - 2 * $arrow-border-width;
-$arrow-padding-vertical: $arrow-padding-vertical-total / 2;
+$arrow-padding-vertical: ($arrow-height - 26px - 2 * $arrow-border-width) / 2;
 
 .reviews__arrow {
   width: 50%;
@@ -75,26 +73,17 @@ $arrow-padding-vertical: $arrow-padding-vertical-total / 2;
     align-content: center;
     align-items: center;
     padding-top: 11px;
-
-    // &::before {
-    //   content: "";
-    //   display: block;
-    //   flex-basis: 100%;
-    // }
-
-    // & > * {
-    //   margin: auto 0;
-    // }
   }
 
-  $ordered-list: header, write, comment, author, arrows;
-
-  @include flex-order($ordered-list, $block: reviews);
+  .reviews__header {
+    order: 1;
+  }
 
   .reviews__arrows {
     width: 137px;
     justify-content: space-between;
     margin: auto 20px;
+    order: 5;
   }
 
   .reviews__arrow {
@@ -107,10 +96,16 @@ $arrow-padding-vertical: $arrow-padding-vertical-total / 2;
 
   .reviews__comment {
     margin: 65px 0 68px;
+    order: 3;
   }
 
   .reviews__write {
     width: 175px;
+    order: 2;
+  }
+
+  .reviews__author {
+    order: 4;
   }
 }
 

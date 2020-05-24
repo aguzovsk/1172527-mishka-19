@@ -1,21 +1,10 @@
 @import "./var.scss";
 
-// .vertically-aligned {
-//   display: flex;
-//   align-items: center;
-// }
-
 @mixin tablet-first-column() {
-  @media(min-width: $tablet-min-width) and (max-width: $desktop-min-width - 1) {
+  @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width - 1) {
     width: 292px;
     margin-right: 43px;
   }
-}
-
-.break-flex {
-  width: 0;
-  height: 0;
-  flex-basis: 100%;
 }
 
 .full-width {
@@ -49,11 +38,6 @@
   .mobile-show {
     display: none;
   }
-
-  // .first-column {
-  //   width: 292px;
-  //   margin-right: 44px;
-  // }
 }
 
 $indent-column-width: 175px;
@@ -66,8 +50,6 @@ $indent-column-width: 175px;
   .desktop__first-column {
     $padding-left: 62px;
     width: $indent-column-width - $padding-left;
-    // margin: 0;
-    // padding: 0;
     padding-left: $padding-left;
   }
 

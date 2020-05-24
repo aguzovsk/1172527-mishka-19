@@ -9,13 +9,13 @@
   <body class="page-body">
     <header class="page-header">
       <nav class="main-nav">
-        <ul class="main-nav__list">
+        <ul class="list main-nav__list">
           <li class="main-nav__item main-nav__unit main-nav__unit--tablet-first main-nav__unit--desktop-first main-nav__group-1 main-nav__logo">
-            <a class="main-nav__link main-nav__link--logo" href="./index.html">
+            <a class="link main-nav__link main-nav__link--logo" href="./index.html">
               <picture>
                 <source media="(min-width: 1020px)" srcset="./img/logo-desktop.svg">
                 <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg">
-                <img class="page-header__logo-image"
+                <img class="image page-header__logo-image"
                   src="./img/logo-mobile.svg"
                   alt="Мишка"
                 >
@@ -32,93 +32,93 @@
           </li>
 
           <li class="main-nav__group-2 main-nav__group--toggle mobile-toggle">
-            <ul class="main-nav__unit main-nav__unit--space-between main-nav__unit--tablet-second main-nav__unit--desktop-first">
+            <ul class="list main-nav__unit main-nav__unit--space-between main-nav__unit--tablet-second main-nav__unit--desktop-first">
               <li class="main-nav__item main-nav__unit--mobile main-nav__item--horizontally-bordered main-nav__catalog">
-                <a class="main-nav__link" href="./catalog.html">
+                <a class="link main-nav__link" href="./catalog.html">
                   <div class="main-nav__prepend-icon-1"></div>
-                  <p class="text__menu-item text__menu-item-small text__bold-black">Каталог товаров</p>
+                  <p class="text text--menu-item text--menu-item-small text--bold-black">Каталог товаров</p>
                 </a>
               </li>
               <li class="main-nav__item main-nav__unit--mobile main-nav__item--bot-bordered main-nav__knitting">
-                <a class="main-nav__link" href="./knitting.html">
+                <a class="link main-nav__link" href="./knitting.html">
                   <div class="main-nav__prepend-icon-1"></div>
-                  <p class="text__menu-item text__menu-item-small text__bold-black">Вязание на заказ</p>
+                  <p class="text text--menu-item text--menu-item-small text--bold-black">Вязание на заказ</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="main-nav__group-3 main-nav__group--toggle mobile-toggle">
-            <ul class="main-nav__unit main-nav__unit--align-end main-nav__unit--tablet-first main-nav__unit--desktop-first">
+            <ul class="list main-nav__unit main-nav__unit--align-end main-nav__unit--tablet-first main-nav__unit--desktop-first">
               <li class="main-nav__item main-nav__unit--mobile main-nav__item--bot-bordered main-nav__search main-nav__search">
-                <a class="main-nav__link" href="#">
+                <a class="link main-nav__link" href="#">
                   <div class="main-nav__prepend-icon-2 main-nav__prepend-icon-2--search">
                     <svg class="main-nav__icon" width="18" height="18">
                       <use href="./img/icon-search.svg#Layer_1"></use>
                     </svg>
                   </div>
-                  <p class="text__menu-item text__bold-black main-nav__search-text">Поиск по сайту</p>
+                  <p class="text text--menu-item text--bold-black main-nav__search-text">Поиск по сайту</p>
                 </a>
               </li>
               <li class="main-nav__item main-nav__unit--mobile main-nav__item--bot-bordered main-nav__basket main-nav__card">
-                <a class="main-nav__link" href="#">
+                <a class="link main-nav__link" href="#">
                   <div class="main-nav__prepend-icon-2">
                     <svg class="main-nav__icon" width="21" height="18">
                       <use href="./img/icon-cart.svg#Layer_1"></use>
                     </svg>
                   </div>
-                  <p class="text text__menu-item text__bold-black">Корзина: пока пуста</p>
+                  <p class="text text--centered text--menu-item text--bold-black">Корзина: пока пуста</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="main-nav__group-4 desktop-show">
-            <ul class="main-nav__unit main-nav__unit--space-between main-nav__unit--desktop-second">
+            <ul class="list main-nav__unit main-nav__unit--space-between main-nav__unit--desktop-second">
               <li class="main-nav__item main-nav__new">
-                <a class="main-nav__link text__menu-item-small text__bold-black" href="#">Новые поступления</a>
+                <a class="link main-nav__link text text--menu-item-small text--bold-black" href="#">Новые поступления</a>
               </li>
               <li class="main-nav__item main-nav__sale">
-                <a class="main-nav__link text__menu-item-small text__bold-black" href="#">Распродажа</a>
+                <a class="link main-nav__link text text--menu-item-small text--bold-black" href="#">Распродажа</a>
               </li>
             </ul>
           </li>
           <li class="main-nav__item main-nav__group-5 main-nav__unit main-nav__unit--tablet-second main-nav__unit--desktop-second mobile-hide main-nav__delivery">
-            <p class="main-nav__unit main-nav__unit--align-end text__menu-item-small">Бесплатная доставка по России</p>
+            <p class="main-nav__unit main-nav__unit--align-end text text--menu-item-small">Бесплатная доставка по России</p>
           </li>
         </ul>
       </nav>
     </header>
     <main class="page-main">
       <header class="page-main__header page-main__header--index">
-        <h1 class="text__main-header text__main-header--index text__bold-black page-main__header-text page-main__header-text--index">
+        <h1 class="text text--main-header text--main-header--index text--bold-black page-main__header-text page-main__header-text--index">
           Милые штуки ручной работы&nbspдля&nbspдома
         </h1>
       </header>
       <section class="page-main__catalog">
         <button class="green-btn green-btn--left">
-          <span class="text__green-btn green-btn__text">Предметы интерьера</span>
+          <span class="text text--green-btn green-btn__text">Предметы интерьера</span>
         </button>
         <button class="green-btn green-btn--right">
-          <span class="text__green-btn green-btn__text">Детские игрушки</span>
+          <span class="text text--green-btn green-btn__text">Детские игрушки</span>
         </button>
       </section>
       <article class="popular js-purchase">
         <header class="popular__header popular__headline popular__column popular__item desktop__main-column">
-          <h3 class="text__big-header text__bold-black js-purchase__name">
+          <h3 class="text text--big-header text--bold-black js-purchase__name">
             Вязаные корзинки
           </h3>
         </header>
         <div class="popular__title popular__item desktop__first-column">
           <div class="popular__headline">
-            <h2 class="text__popular-title">
+            <h2 class="text text--popular-title">
               ТОВАР НЕДЕЛИ
             </h2>
           </div>
         </div>
-        <p class="popular__description popular__column desktop__main-column text__popular-description">
+        <p class="popular__description popular__column desktop__main-column text text--popular-description">
           Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трех размерах.
         </p>
         <!-- <div class="popular__list-wrapper "> -->
-          <div class="popular__list popular__column text__popular-table desktop__main-column">
+          <div class="popular__list popular__column text text--popular-table desktop__main-column">
             <div class="popular__list-cols popular__list-cols--not-last">
               <span class="popular__list-item">Цвет:</span>
               <span class="popular__list-item">Диаметр:</span>
@@ -136,16 +136,16 @@
           <source media="(min-width: 1020px)" srcset="./img/triple-set-desktop@1x.jpg">
           <source media="(min-width: 768px)" srcset="./img/triple-set-tablet@1x.jpg">
           <img
-            class="popular__image"
+            class="image image--bc-seafoam-blue popular__image"
             src="./img/triple-set-mobile@1x.jpg"
             alt="Изображение вязаной корзины"
           >
         </picture>
         <div class="popular__order popular__column popular__item">
-          <p class="popular__order-price text__popular-price">
+          <p class="popular__order-price text text--popular-price">
             Цена: 990 руб.
           </p>
-          <a class="ghost-btn text__ghost-btn js-purchase__link" href="./select-form.html?item=popular">
+          <a class="link ghost-btn text text--ghost-btn js-purchase__link" href="./select-form.html?item=popular">
             ЗАКАЗАТЬ
           </a>
         </div>
@@ -153,27 +153,27 @@
       <section class="about">
         <div class="about__wrapper desktop__indented">
           <header class="about__header">
-            <h2 class="text__big-header text__bold-black">
+            <h2 class="text text--big-header text--bold-black">
               Коротко о нас:
             </h2>
           </header>
-          <ul class="about__list">
-            <li class="about__item about__item--icon-flower text__about-item text__bold-black">
+          <ul class="list about__list">
+            <li class="about__item about__item--icon-flower text text--about-item text--bold-black">
               Экологически чистые&nbspматериалы
             </li>
-            <li class="about__item about__item--icon-money text__about-item text__bold-black">
+            <li class="about__item about__item--icon-money text text--about-item text--bold-black">
               Скандинавский стиль по&nbspроссийской цене
             </li>
-            <li class="about__item about__item--icon-heart text__about-item text__bold-black">
+            <li class="about__item about__item--icon-heart text text--about-item text--bold-black">
               Увеличивает лайки на&nbspфотографиях
             </li>
-            <li class="about__item about__item--icon-ball text__about-item text__bold-black">
+            <li class="about__item about__item--icon-ball text text--about-item text--bold-black">
               Связано вручную с любовью&nbspи&nbspумилением
             </li>
-            <li class="about__item about__item--icon-rocket text__about-item text__bold-black">
+            <li class="about__item about__item--icon-rocket text text--about-item text--bold-black">
               Поддержка отечественного производителя
             </li>
-            <li class="about__item about__item--icon-gift text__about-item text__bold-black">
+            <li class="about__item about__item--icon-gift text text--about-item text--bold-black">
               Поставляется в подарочной&nbspупаковке
             </li>
           </ul>
@@ -182,15 +182,15 @@
 
       <section class="reviews">
         <div class="reviews__wrapper desktop__indented">
-          <h2 class="reviews__header text__big-header text__bold-black">
+          <h2 class="reviews__header text text--big-header text--bold-black">
             Отзывы
           </h2>
-          <p class="reviews__comment text__comment">
+          <p class="reviews__comment text text--comment">
             Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!
           </p>
           <div class="reviews__author">
-            <span class="text__author-name text__bold-black">Анастасия Красильникова</span>
-            <span class="text__author-address">@misssssiskras</span>
+            <span class="text text--author-name text--bold-black">Анастасия Красильникова</span>
+            <span class="text text--author-address">@misssssiskras</span>
           </div>
           <div class="reviews__arrows">
             <input class="reviews__arrow reviews__arrow--left"
@@ -206,7 +206,7 @@
               width="52" height="26"
             >
           </div>
-          <a class="reviews__write text__ghost-btn ghost-btn" href="#">
+          <a class="link reviews__write text text--ghost-btn ghost-btn" href="#">
             Написать
           </a>
         </div>
@@ -215,7 +215,7 @@
       <section class="contacts">
         <div class="contacts__wrapper">
           <header class="contacts__header-wrapper contacts__top-indent desktop__main-column">
-            <h2 class="contacts__header text__contacts-header text__bold-black">
+            <h2 class="contacts__header text text--contacts-header text--bold-black">
               Контакты
             </h2>
           </header>
@@ -226,18 +226,18 @@
             </svg>
           </div>
 
-          <ul class="contacts__list desktop__main-column">
+          <ul class="list contacts__list desktop__main-column">
             <li class="contacts__list-item">
-              <span class="contacts__list-key text__contacts-table">e-mail:</span>
+              <span class="contacts__list-key text text--contacts-table">e-mail:</span>
               <span class="contacts__list-value">
-                <a class="contacts__email text__contacts-table" href="mailto:info@mimimishkashop.ru">
+                <a class="link contacts__email text text--contacts-table" href="mailto:info@mimimishkashop.ru">
                 info@mimimishkashop.ru
                 </a>
               </span>
             </li>
             <li class="contacts__list-item contacts__list-item--last">
-              <span class="contacts__list-key text__contacts-table">адрес:</span>
-              <span class="contacts__list-value text__contacts-table">
+              <span class="contacts__list-key text text--contacts-table">адрес:</span>
+              <span class="contacts__list-value text text--contacts-table">
                 г. Санкт-Петербург, ул. Большая Конюшенная, д. 19/8, офис 101
               </span>
             </li>
@@ -245,7 +245,7 @@
           <div class="contacts__map">
           </div>
           <a
-            class="contacts__write-btn ghost-btn text__ghost-btn"
+            class="contacts__write-btn ghost-btn text text--ghost-btn"
             href="mailto:info@mimimishkashop.ru">
             Напишите нам
           </a>
@@ -254,30 +254,30 @@
     </main>
     <aside class="select-size">
       <form class="select-size__form">
-        <p class="select-size__header text__add-to-basket text__bold-black">Добавить в корзину</p>
-        <p class="select-size__subheader text__select-size">Выберите размер:</p>
-        <ul class="select-size__choices">
+        <p class="select-size__header text text--add-to-basket text--bold-black">Добавить в корзину</p>
+        <p class="select-size__subheader text text--select-size">Выберите размер:</p>
+        <ul class="list select-size__choices">
           <li>
             <label class="select-size__radio-btn">
               <input class="visually-hidden select-size__radio-input" type="radio" name="item-size" value="S" checked required>
-              <span class="text__size-item select-size__radio-shell">S</span>
+              <span class="text text--size-item select-size__radio-shell">S</span>
             </label>
           </li>
           <li>
             <label class="select-size__radio-btn">
               <input class="visually-hidden select-size__radio-input" type="radio" name="item-size" value="M" required>
-              <span class="text__size-item select-size__radio-shell">M</span>
+              <span class="text text--size-item select-size__radio-shell">M</span>
             </label>
           </li>
           <li>
             <label class="select-size__radio-btn">
               <input class="visually-hidden select-size__radio-input" type="radio" name="item-size" value="L" required>
-              <span class="text__size-item select-size__radio-shell">L</span>
+              <span class="text text--size-item select-size__radio-shell">L</span>
             </label>
           </li>
         </ul>
         <input class="select-size__item" type="hidden" value="" name="item-name" required>
-        <input class="select-size__submit text__add-button" type="submit" value="Добавить">
+        <input class="select-size__submit text text--add-button" type="submit" value="Добавить">
       </form>
     </aside>
     <footer class="page-footer">
@@ -286,9 +286,9 @@
           <use href="./img/logo-footer.svg#Layer_1"></use>
         </svg>
         <div class="page-footer__social social page-footer__item">
-          <ul class="social__list">
+          <ul class="list social__list">
             <li class="social__item">
-              <a class="page-footer__link-unit" href="https://vk.com/htmlacademy">
+              <a class="link page-footer__link-unit" href="https://vk.com/htmlacademy">
                 <p class="visually-hidden">Мы во Вконтакте</p>
                 <svg class="page-footer__icon" width="23" height="20">
                   <use href="./img/icon-twitter.svg#Layer_1"></use>
@@ -296,7 +296,7 @@
               </a>
             </li>
             <li class="social__item">
-              <a class="page-footer__link-unit" href="https://www.facebook.com/htmlacademy">
+              <a class="link page-footer__link-unit" href="https://www.facebook.com/htmlacademy">
                 <p class="visually-hidden">Мы в Фейсбуке</p>
                 <svg class="page-footer__icon" width="15" height="28">
                   <use href="./img/icon-fb.svg#Layer_1"></use>
@@ -304,7 +304,7 @@
               </a>
             </li>
             <li class="social__item">
-              <a class=" page-footer__link-unit" href="https://www.instagram.com/htmlacademy">
+              <a class="link  page-footer__link-unit" href="https://www.instagram.com/htmlacademy">
                 <p class="visually-hidden">Мы в Инстаграме</p>
                 <svg class="page-footer__icon" width="22" height="21">
                   <use href="./img/icon-insta.svg#Layer_1"></use>
@@ -314,8 +314,8 @@
           </ul>
         </div>
         <div class="page-footer__copyright page-footer__item page-footer__link-unit">
-          <b class="text__copyright">Разработано</b>
-          <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
+          <b class="text text--copyright">Разработано</b>
+          <a class="link page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
             <svg class="page-footer__icon page-footer__icon--copyright" width="27" height="34">
               <use href="./img/htmlacademy.svg#Layer_1"></use>
             </svg>

@@ -1,0 +1,13 @@
+@import "../var.scss";
+
+.image {
+  display: block;
+
+  &--bc-seafoam-blue {
+    background-color: $seafoam-blue;
+  }
+
+  &--bc-gray {
+    background-color: $white-30;
+  }
+}

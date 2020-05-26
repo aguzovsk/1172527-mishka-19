@@ -3,24 +3,26 @@ $icon-width-mobile: 46px;
 .nav-link {
   display: flex;
   align-items: center;
+  height: 100%;
+  padding-left: $margin-horizontal-mobile;
 
   &--iconless {
-    padding-left: $icon-width-mobile;
+    padding-left: $margin-horizontal-mobile + $icon-width-mobile;
+  }
 
-    @include tablet {
-      padding-left: 0;
-    }
+  @include tablet {
+    padding-left: 0;
   }
 }
 
 .nav-link__icon {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100%;
   width: $icon-width-mobile;
 
   @include tablet {
     width: 82px;
+    justify-content: center;
   }
 }

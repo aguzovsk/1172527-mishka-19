@@ -1,13 +1,22 @@
-@import "../var.scss";
-@import "../utils.scss";
-
 $headline-height: 60px;
 
 .popular {
-  margin: 34px calc((100% +  #{2 * $margin-horizontal-mobile - $mobile-min-width}) / 4);
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+
+  @include tablet {
+    justify-content: flex-start;
+    height: 404px + $headline-height + 20px;
+    align-content: space-between;
+    flex-wrap: wrap-reverse;
+    width: auto;
+  }
+
+  @include desktop {
+    height: 636px;
+    align-content: center;
+  }
 }
 
 .popular__header {
@@ -16,36 +25,24 @@ $headline-height: 60px;
 }
 
 .popular__list {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   margin: 33px 0 42px;
-}
-
-.popular__list-cols {
-  display: flex;
-  flex-direction: column;
-}
-
-.popular__list-item {
-  display: flex;
-  flex-grow: 1;
-  align-items: center;
-  border-bottom: 1px solid;
-  border-color: rgb(224, 233, 207);
-  padding: 10px 0;
-}
-
-.popular__list-cols--not-last .popular__list-item {
-  padding-right: 30px;
-}
-
-.popular__list-cols--last {
-  width: 100%;
 }
 
 .popular__title {
   padding-bottom: 30px;
+
+  @include tablet {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 0;
+    order: 1;
+  }
+
+  @include desktop {
+    justify-content: start;
+    height: 100%;
+    order: 6;
+  }
 }
 
 .popular__image {
@@ -61,25 +58,40 @@ $headline-height: 60px;
 
 .popular__order-price {
   margin-bottom: 28px;
+
+  @include tablet {
+    margin-bottom: 34px;
+  }
 }
 
-@media (min-width: $tablet-min-width) {
-  .popular {
-    justify-content: flex-start;
-    margin: 55px 0;
-    height: 404px + $headline-height + 20px;
-    align-content: space-between;
-    flex-wrap: wrap-reverse;
-    width: auto;
-  }
-
-  .popular__title {
+.popular__headline {
+  @include tablet {
     display: flex;
-    justify-content: flex-end;
-    padding-bottom: 0;
-    order: 1;
+    flex-direction: column;
+    justify-content: center;
+    height: $headline-height;
+    margin-bottom: 20px;
   }
 
+  @include desktop {
+    height: $headline-height + $indent-vertical-index-desktop;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: $indent-vertical-index-desktop;
+    }
+  }
+}
+
+.popular__image-wrapper {
+  @include desktop {
+    margin-left: auto;
+    z-index: -1;
+  }
+}
+
+@include tablet {
   .popular__image-wrapper {
     order: 2;
   }
@@ -97,50 +109,5 @@ $headline-height: 60px;
     margin: 0;
     margin-top: auto;
     order: 5;
-  }
-
-  .popular__order-price {
-    margin-bottom: 34px;
-  }
-
-  .popular__column {
-    width: 45%;
-  }
-
-  .popular__headline {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: $headline-height;
-    margin-bottom: 20px;
-  }
-}
-
-@media (min-width: $desktop-min-width) {
-  .popular {
-    margin: 55px 0 70px;
-    height: 636px;
-    align-content: center;
-  }
-
-  .popular__title {
-    justify-content: start;
-    height: 100%;
-    order: 6;
-  }
-
-  .popular__headline {
-    height: $headline-height + $indent-vertical-index-desktop;
-
-    &::before {
-      content: "";
-      display: inline-block;
-      height: $indent-vertical-index-desktop;
-    }
-  }
-
-  .popular__image-wrapper {
-    margin-left: auto;
-    z-index: -1;
   }
 }

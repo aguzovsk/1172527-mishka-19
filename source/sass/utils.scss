@@ -1,4 +1,45 @@
-@import "./var.scss";
+@mixin tablet() {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin only-tablet() {
+  @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width - 1) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin tablet-col-1 {
+  @include only-tablet {
+    width: 292px;
+    margin-right: 43px;
+  }
+}
+
+@mixin tablet-col-2 {
+  @include only-tablet {
+    width: 195px;
+  }
+}
+
+@mixin desktop-main {
+  @include desktop {
+    width: 295px;
+  }
+}
+
+@mixin border($side) {
+  border-#{$side}-width: 1px;
+  border-#{$side}-style: solid;
+  border-color: $delimiter-color;
+}
 
 @mixin discard-page-horizontal-margins {
   margin-left: -$margin-horizontal-mobile;

@@ -1,43 +1,43 @@
 @import "../var.scss";
 @import "../utils.scss";
 
-$vertical-indent-mobile: -17px;
 
-.page-main {
-  margin: 0 $margin-horizontal-mobile;
-}
+// .page-main {
+//   @warn "deprecatred";
+//   margin: 0 $margin-horizontal-mobile;
+// }
 
-.page-main__header-text {
-  height: 100%;
-  box-sizing: border-box;
+// .page-main__header-text {
+//   height: 100%;
+//   box-sizing: border-box;
 
-  &--casual {
-    padding-top: 76px;
-  }
+//   &--casual {
+//     padding-top: 76px;
+//   }
 
-  &--index {
-    padding-top: 93px;
-  }
-}
+//   &--index {
+//     padding-top: 93px;
+//   }
+// }
 
-.page-main__header {
-  @include discard-page-horizontal-margins();
+// .page-main__header {
+//   @include discard-page-horizontal-margins();
 
-  &--index {
-    height: 373px;
-    background-image: url("../../img/hero-mobile@1x.jpg");
-    background-position: center $vertical-indent-mobile;
-    background-color: #f9f9f9;
-    background-repeat: no-repeat;
+//   &--index {
+//     height: 373px;
+//     background-image: url("../../img/hero-mobile@1x.jpg");
+//     background-position: center $vertical-indent-mobile;
+//     background-color: #f9f9f9;
+//     background-repeat: no-repeat;
 
-    margin-bottom: -73px;
-  }
+//     margin-bottom: -73px;
+//   }
 
-  &--casual {
-    background-color: $white;
-    height: calc(177px + (100vw - #{$mobile-width}) / 9);
-  }
-}
+//   &--casual {
+//     background-color: $white;
+//     height: calc(177px + (100vw - #{$mobile-width}) / 9);
+//   }
+// }
 
 .page-main__catalog {
   @include discard-page-horizontal-margins();

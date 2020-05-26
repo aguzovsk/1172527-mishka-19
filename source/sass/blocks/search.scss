@@ -1,0 +1,18 @@
+.search {
+  @include tablet {
+    height: 100%;
+  }
+}
+
+.search__text {
+  @include tablet {
+    display: none;
+  }
+}
+
+.search__icon {
+  @include tablet {
+    @include border(right);
+    @include border(left);
+  }
+}

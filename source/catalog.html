@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/style.css" rel="stylesheet">
   </head>
-  <body>
-    <header class="page-header">
+  <body class="page">
+    <header class="page__header page-header">
       <nav class="main-nav">
         <ul class="list main-nav__list">
           <li class="main-nav__item main-nav__unit main-nav__unit--tablet-first main-nav__unit--desktop-first main-nav__group-1 main-nav__logo">
@@ -86,13 +86,13 @@
           </li>
         </ul>
       </nav>
-    </header>
-    <main class="page-main">
-      <header class="page-main__header page-main__header--casual">
-        <h1 class="page-main__header-text page-main__header-text text--casual text--main-header text--bold-black">
+      <h1 class="page-header__header page-header__header--casual">
+        <span class="page-header__text page-header__text--casual text text--main-header text--main-header--casual text--bold-black page-main__header-text page-main__header-text--casual">
           Каталог товаров
-        </h1>
-      </header>
+        </span>
+      </h1>
+    </header>
+    <main class="catalog page__main">
       <ul class="list catalog__list">
         <li class="catalog__item catalog__item--casual ">
           <picture class="catalog__picture catalog__picture--casual">
@@ -270,7 +270,7 @@
         <input class="select-size__submit text text--add-button" type="submit" value="Добавить">
       </form>
     </aside>
-    <footer class="page-footer">
+    <footer class="page-footer page__footer">
       <div class="page-footer__wrapper">
         <svg class="page-footer__link-unit page-footer__icon mobile-hide" width="109" height="34">
           <use href="./img/logo-footer.svg#Layer_1"></use>

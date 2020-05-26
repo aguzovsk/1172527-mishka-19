@@ -6,8 +6,8 @@
     <link href="./css/style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body>
-    <header class="page-header">
+  <body class="page">
+    <header class="page-header page__header">
       <nav class="main-nav">
         <ul class="list main-nav__list">
           <li class="main-nav__item main-nav__unit main-nav__unit--tablet-first main-nav__unit--desktop-first main-nav__group-1 main-nav__logo">
@@ -86,13 +86,13 @@
           </li>
         </ul>
       </nav>
-    </header>
-    <main class="page-main">
-      <header class="page-main__header page-main__header--casual">
-        <h1 class="page-main__header-text page-main__header-text text--casual text--main-header text--bold-black">
+      <h1 class="page-header__header page-header__header--casual">
+        <span class="page-header__text page-header__text--casual text text--main-header text--main-header--casual text--bold-black page-main__header-text page-main__header-text--casual">
           Вязание на заказ
-        </h1>
-      </header>
+        </span>
+      </h1>
+    </header>
+    <main class="page-main page__main">
       <section class="form">
         <section class="form__description desktop__indented">
           <p class="form__description-text text text--knitting-description">
@@ -103,29 +103,29 @@
           <div class="form__group form__group-wrapper form__group-wrapper--1">
             <span class="form__legend text text--knitting-sub-header desktop__first-column">ТИП</span>
             <ul class="list form__column-of-types">
-              <li>
-                <label class="radio-btn text text--knitting-item-name text--bold-black">
+              <li class="form__radio-option">
+                <label class="btn-input text text--knitting-item-name text--bold-black">
                   <input
                     id="knitting-item__interior"
-                    class="radio-btn__input visually-hidden"
+                    class="btn-input__radio-input visually-hidden"
                     type="radio"
                     name="knitting__type"
                     value="interior"
                   >
-                  <span class="radio-btn__shell"></span>
+                  <span class="btn-input__shell btn-input__radio-shell"></span>
                     Аксессуар для интерьера
                 </label>
               </li>
-              <li>
-                <label class="radio-btn text text--knitting-item-name text--bold-black">
+              <li class="form__radio-option">
+                <label class="btn-input text text--knitting-item-name text--bold-black">
                   <input
                     id="knitting-item__toy"
-                    class="radio-btn__input visually-hidden"
+                    class="btn-input__radio-input visually-hidden"
                     type="radio"
                     name="knitting__type"
                     value="interior"
                   >
-                  <span class="radio-btn__shell"></span>
+                  <span class="btn-input__shell btn-input__radio-shell"></span>
                     Детская игрушка
                 </label>
               </li>
@@ -134,83 +134,83 @@
           <div class="form__group form__group-wrapper form__group-wrapper--2">
             <span class="form__legend text text--knitting-sub-header desktop__first-column">Цвет</span>
             <ul class="list form__fieldlist">
-              <li class="form__list-item">
-                <label class="checkbox text text--knitting-item-name text--bold-black">
+              <li class="form__list-item form__checkbox-option">
+                <label class="btn-input text text--knitting-item-name text--bold-black">
                   <input
                     id="knitting-item__white"
-                    class="checkbox__input visually-hidden"
+                    class="btn-input__checkbox-input visually-hidden"
                     type="checkbox"
                     name="knitting__color"
                     value="white"
                     checked
                   >
-                  <span class="checkbox__shell"></span>
+                  <span class="btn-input__shell  btn-input__checkbox-shell"></span>
                     Белый
                 </label>
               </li>
-              <li class="form__list-item">
-                <label class="checkbox text text--knitting-item-name text--bold-black">
+              <li class="form__list-item form__checkbox-option">
+                <label class="btn-input text text--knitting-item-name text--bold-black">
                   <input
                     id="knitting-item__grey"
-                    class="checkbox__input visually-hidden"
+                    class="btn-input__checkbox-input visually-hidden"
                     type="checkbox"
                     name="knitting__color"
                     value="grey"
                     checked
                   >
-                  <span class="checkbox__shell"></span>
+                  <span class="btn-input__shell  btn-input__checkbox-shell"></span>
                     Серый
                 </label>
               </li>
-              <li class="form__list-item">
-                <label class="checkbox text text--knitting-item-name text--bold-black">
+              <li class="form__list-item form__checkbox-option">
+                <label class="btn-input text text--knitting-item-name text--bold-black">
                   <input
                     id="knitting-item__tiffani"
-                    class="checkbox__input visually-hidden"
+                    class="btn-input__checkbox-input visually-hidden"
                     type="checkbox"
                     name="knitting__color"
                     value="tiffani"
                   >
-                  <span class="checkbox__shell"></span>
+                  <span class="btn-input__shell  btn-input__checkbox-shell"></span>
                     «Тиффани»
                 </label>
               </li>
-              <li class="form__list-item">
-                <label class="checkbox text text--knitting-item-name text--bold-black">
+              <li class="form__list-item form__checkbox-option">
+                <label class="btn-input text text--knitting-item-name text--bold-black">
                   <input
                     id="knitting-item__black"
-                    class="checkbox__input visually-hidden"
+                    class="btn-input__checkbox-input visually-hidden"
                     type="checkbox"
                     name="knitting__color"
                     value="black"
                   >
-                  <span class="checkbox__shell"></span>
+                  <span class="btn-input__shell  btn-input__checkbox-shell"></span>
                     Черный
                 </label>
               </li>
-              <li class="form__list-item">
-                <label class="checkbox text text--knitting-item-name text--bold-black">
+              <li class="form__list-item form__checkbox-option">
+                <label class="btn-input text text--knitting-item-name text--bold-black">
                   <input
                     id="knitting-item__pink"
-                    class="checkbox__input visually-hidden"
+                    class="btn-input__checkbox-input visually-hidden"
                     type="checkbox"
                     name="knitting__color"
                     value="pink"
                   >
-                  <span class="checkbox__shell"></span>
+                  <span class="btn-input__shell  btn-input__checkbox-shell"></span>
                     Розовый
                 </label>
               </li>
-              <li class="form__list-item">
-                <label class="checkbox text text--knitting-item-name text--bold-black">
+              <li class="form__list-item form__checkbox-option">
+                <label class="btn-input text text--knitting-item-name text--bold-black">
                   <input
                     id="knitting-item__orange"
-                    class="checkbox__input visually-hidden"
+                    class="btn-input__checkbox-input visually-hidden"
                     type="checkbox"
                     name="knitting__color"
                     value="orange"
                   >
-                  <span class="checkbox__shell"></span>
+                  <span class="btn-input__shell  btn-input__checkbox-shell"></span>
                     Оранжевый
                 </label>
               </li>

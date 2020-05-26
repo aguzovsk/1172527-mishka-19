@@ -1,0 +1,94 @@
+$shell-diameter-mobile: $radio-btn-height-mobile;
+$shell-diameter: $radi0-btn-height;
+$checkmark-diameter-mobile: 16px;
+$checkmark-diameter: 22px;
+
+@mixin diameter($diameter) {
+  width: $diameter;
+  min-width: $diameter;
+  height: $diameter;
+}
+
+@mixin centered($parent-diameter, $diameter, $is-border-box: true) {
+  $offset: ($parent-diameter / 2 - $diameter / 2)
+    - if($is-border-box, $button-border-width, 0);
+  padding: $offset;
+}
+
+@mixin edges($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+.btn-input {
+  display: flex;
+  align-items: center;
+}
+
+.btn-input__shell {
+  border-style: solid;
+  border-color: $black-44;
+  border-width: 2px;
+
+  display: inline-block;
+  box-sizing: border-box;
+  margin-right: 22px;
+
+  @include tablet {
+    margin-right: 28px;
+  }
+
+  &:hover {
+    border-color: $seafoam-blue-two;
+  }
+
+  &:active {
+    border-color: transparentize($black-44, 0.7);
+  }
+}
+
+.btn-input__checkbox-shell {
+  @include edges(40px, $checkbox-height-mobile);
+
+  @include tablet {
+    @include edges(54px, $checkbox-height);
+  }
+}
+
+.btn-input__radio-shell {
+  @include diameter($shell-diameter-mobile);
+  @include centered($shell-diameter-mobile, $checkmark-diameter-mobile);
+
+  border-radius: 50%;
+
+  &::before {
+    content: none;
+    display: inline-block;
+
+    @include diameter($checkmark-diameter-mobile);
+    background-color: $seafoam-blue-two;
+    border-radius: 50%;
+  }
+
+  @include tablet {
+    @include diameter($shell-diameter);
+    @include centered($shell-diameter, $checkmark-diameter);
+
+    &::before {
+      @include diameter($checkmark-diameter);
+    }
+  }
+}
+
+.btn-input__radio-input:checked ~ .btn-input__radio-shell::before {
+  content: "";
+}
+
+.btn-input__checkbox-input:checked ~ .btn-input__checkbox-shell {
+  background: url("../../img/icon-tick.svg") no-repeat center;
+  background-size: 22px 16px;
+
+  @include tablet {
+    background-size: 33px 23px;
+  }
+}

@@ -109,6 +109,22 @@
   margin-top: 27px;
 }
 
+.form__checkbox-option {
+  margin-bottom: 22px;
+
+  @include tablet {
+    margin-bottom: 24px;
+  }
+}
+
+.form__radio-option {
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 23px;
+  }
+}
+
 @media (min-width: $tablet-min-width) {
   .form {
     margin-top: 80px;
@@ -120,7 +136,6 @@
   }
 
   .form__fieldlist {
-    // margin-top: 23px;
     margin-top: 0;
     display: flex;
     flex-wrap: wrap;
@@ -142,7 +157,9 @@
   }
 
   .form__list-item {
-    flex: 1 1 45%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 45%;
   }
 
   .form__column-item {
@@ -204,12 +221,6 @@
 }
 
 @media (min-width: $desktop-min-width) {
-  // .form__fieldlist {
-  //   & li {
-  //     flex-basis: 30%;
-  //   }
-  // }
-
   .form__list-item {
     flex-basis: 30%;
   }

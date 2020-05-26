@@ -1,5 +1,3 @@
-@import "./var.scss";
-
 @mixin tablet-first-column() {
   @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width - 1) {
     width: 292px;

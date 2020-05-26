@@ -1,0 +1,41 @@
+.contacts-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include tablet {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  @include desktop {
+    flex-wrap: wrap;
+  }
+}
+
+.contacts-list__item {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 21px 0;
+
+  @include desktop {
+    width: 100%;
+    margin: 0;
+  }
+
+  &--last {
+    @include tablet {
+      margin-left: 55px;
+      margin-right: 40px;
+    }
+
+    @include desktop {
+      margin-top: 35px;
+    }
+  }
+}
+
+.contacts-list__key {
+  margin-right: 1.5em;
+  white-space: nowrap;
+}

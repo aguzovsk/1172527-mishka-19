@@ -1,0 +1,24 @@
+@import "../var.scss";
+@import "../utils.scss";
+
+.page {
+  background-color: $white-three;
+}
+
+.page__header {
+  // @include discard-page-horizontal-margins();
+}
+
+.page__main {
+  padding-left: $margin-horizontal-mobile;
+  padding-right: $margin-horizontal-mobile;
+
+  @media (min-width: $tablet-min-width) {
+    padding-left: $margin-horizontal-tablet;
+    padding-right: $margin-horizontal-tablet;
+  }
+}
+
+.page__footer {
+
+}

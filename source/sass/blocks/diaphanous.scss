@@ -1,0 +1,52 @@
+.diaphanous {
+  &:hover .diaphanous__icon {
+    opacity: 1;
+    fill: $seafoam-blue;
+  }
+
+  &:hover .diaphanous__text {
+    opacity: 0.6;
+  }
+
+  &--basic {
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &--icon {
+    opacity: 0.2;
+
+    &:hover {
+      opacity: 1;
+      fill: $seafoam-blue;
+    }
+
+    &:active {
+      fill: $seafoam-blue;
+    }
+  }
+
+  &--footer-icon {
+    &:hover,
+    &:active {
+      fill: $greeny-blue-two;
+    }
+  }
+
+  &--mail {
+    &:hover,
+    &:active {
+      color: $greeny-blue-two;
+      border-bottom-color: $greeny-blue-two;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.diaphanous__icon {
+  opacity: 0.2;
+}

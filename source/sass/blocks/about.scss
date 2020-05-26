@@ -1,95 +1,114 @@
-@import "../var.scss";
 @import "../zig-zag-line.scss";
-@import "../util-classes.scss";
 
 .about {
   @include zig-zag-line();
-  margin: 36px 0 60px;
 }
 
 .about__wrapper {
   margin: 34px 0 60px;
+
+  @include tablet {
+    margin: 60px 0 80px;
+  }
+
+  @include desktop {
+    margin: 70px 0 90px;
+  }
 }
 
 .about__header {
   margin-bottom: 30px;
+
+  @include tablet {
+    margin-bottom: 17px;
+  }
+}
+
+.about__list {
+  max-width: 800px;
+
+  @include tablet {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
 
 $icon-list: (flower: (32px 37px), money: (47px 27px), heart: (33px 28px),
   ball: (34px 34px), rocket: (54px 23px), gift: (33px 32px));
 
+$icon-sizes: map-values($icon-list);
+$side-values-list: zip($icon-sizes...);
+$width-values: nth($side-values-list, 1);
+$height-values: nth($side-values-list, 2);
+$max-width: max($width-values...);
+$max-height: max($height-values...);
+
+@mixin background($name) {
+  $sizes: map-get($icon-list, $name);
+  $width: nth($sizes, 1);
+  $height: nth($sizes, 2);
+
+  background-position: ($max-width - $width) / 2 ($max-height - $height) / 2;
+  background-size: $sizes;
+}
+
 .about__item {
   margin-top: 30px;
+  padding-top: 55px;
+  background-repeat: no-repeat;
 
-  @include insert-icon(before) {
-    $icon-sizes: map-values($icon-list);
-    $side-values-list: zip($icon-sizes...);
-    $width-values: nth($side-values-list, 1);
-    $height-values: nth($side-values-list, 2);
-
-    width: max($width-values...);
-    height: max($height-values...);
-    margin-bottom: 20px;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &--icon-flower::before {
+  &--icon-flower {
     background-image: url("../img/icon-feature-flower.svg");
-    background-size: map-get($icon-list, flower);
+    @include background(flower);
   }
 
-  &--icon-money::before {
+  &--icon-money {
     background-image: url("../img/icon-feature-money.svg");
-    background-size: map-get($icon-list, money);
+    @include background(money);
   }
 
-  &--icon-heart::before {
+  &--icon-heart {
     background-image: url("../img/icon-feature-heart.svg");
-    background-size: map-get($icon-list, heart);
+    @include background(heart);
   }
 
-  &--icon-ball::before {
+  &--icon-ball {
     background-image: url("../img/icon-feature-ball.svg");
-    background-size: map-get($icon-list, ball);
+    @include background(ball);
   }
 
-  &--icon-rocket::before {
+  &--icon-rocket {
     background-image: url("../img/icon-feature-rocket.svg");
-    background-size: map-get($icon-list, rocket);
+    @include background(rocket);
   }
 
-  &--icon-gift::before {
+  &--icon-gift {
     background-image: url("../img/icon-feature-gift.svg");
-    background-size: map-get($icon-list, gift);
-  }
-}
-
-.about__item-image {
-  margin-bottom: 10px;
-}
-
-@media (min-width: $tablet-min-width) {
-  .about {
-    margin: 53px 0 82px;
+    @include background(gift);
   }
 
-  .about__wrapper {
-    margin: 60px 0 80px;
+  $n: 3;
+
+  &:nth-of-type(-n+#{$n}) {
+    width: 200px;
+
+    @include tablet {
+      width: 235px;
+    }
   }
 
-  .about__header {
-    margin-bottom: 17px;
+  &:nth-last-of-type(-n+#{$n}) {
+    width: 251px;
+
+    @include tablet {
+      width: 295px;
+      margin-right: 40px;
+    }
   }
 
-  .about__list {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-  }
-
-  .about__item {
-    $n: 3;
+  @include tablet {
+    margin-top: 57px;
 
     &:nth-child(#{$n}n+1) {
       order: 1;
@@ -102,24 +121,5 @@ $icon-list: (flower: (32px 37px), money: (47px 27px), heart: (33px 28px),
     &:nth-child(#{$n}n+3) {
       order: 3;
     }
-
-    &:nth-of-type(-n+#{$n}) {
-      @include tablet-first-column();
-    }
-
-    &:nth-last-of-type(-n+#{$n}) {
-      width: 333px;
-    }
-  }
-}
-
-
-@media (min-width: $desktop-min-width) {
-  .about {
-    margin: 73px 0 90px;
-  }
-
-  .about__wrapper {
-    margin: 70px 0 90px;
   }
 }

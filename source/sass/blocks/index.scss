@@ -1,0 +1,67 @@
+.index__inventory {
+  @include discard-page-horizontal-margins();
+
+  @include tablet {
+    padding: 0 $margin-horizontal-tablet;
+  }
+}
+
+.index__popular {
+  margin: 34px calc((100% +  #{2 * $margin-horizontal-mobile - $mobile-min-width}) / 4);
+
+  @include tablet {
+    margin: 55px 0;
+  }
+
+  @include desktop {
+    margin: 55px 0 70px;
+  }
+}
+
+.index__about {
+  margin: 36px 0 60px;
+
+  @include tablet {
+    margin: 53px 0 82px;
+  }
+
+  @include desktop {
+    margin: 73px 0 90px;
+  }
+}
+
+.index__reviews {
+  margin: 60px 0 45px;
+
+  @include only-tablet {
+    margin-left: -$margin-horizontal-tablet;
+  }
+
+  @include tablet {
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
+
+  @include desktop {
+    margin-top: 90px;
+    margin-bottom: 65px;
+  }
+}
+
+.index__contacts {
+  @include desktop {
+    margin: 65px 0 105px;
+  }
+}
+
+.index__col-tablet-1 {
+  @include tablet-col-1;
+}
+
+.index__col-tablet-2 {
+  @include tablet-col-2;
+}
+
+.index__col-desktop {
+  @include desktop-main;
+}

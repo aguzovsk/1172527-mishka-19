@@ -1,0 +1,27 @@
+.popular-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.popular-list__cols {
+  display: flex;
+  flex-direction: column;
+
+  &--not-last .popular-list__item {
+    padding-right: 30px;
+  }
+
+  &--last {
+    width: 100%;
+  }
+}
+
+.popular-list__item {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  border-bottom: 1px solid;
+  border-color: rgb(224, 233, 207);
+  padding: 10px 0;
+}

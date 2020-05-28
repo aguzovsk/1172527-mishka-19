@@ -1,8 +1,8 @@
 'use strict';
 (function() {
   var nonMobileWidth = "768px";
-  var menuToggleButton = document.querySelector(".main-nav__dropbtn");
-  var menuToggleItems = document.querySelectorAll(".mobile-toggle");
+  var menuToggleButton = document.querySelector(".main-nav__js-dropbtn");
+  var menuToggleItems = document.querySelectorAll(".main-nav__main-group");
   var isChecked = true;
 
   function toggle() {

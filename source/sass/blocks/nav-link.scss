@@ -3,8 +3,8 @@ $icon-width-mobile: 46px;
 .nav-link {
   display: flex;
   align-items: center;
-  height: 79px;
   padding-left: $margin-horizontal-mobile;
+  height: 100%;
 
   &--iconless {
     padding-left: $margin-horizontal-mobile + $icon-width-mobile;
@@ -12,6 +12,10 @@ $icon-width-mobile: 46px;
 
   @include tablet {
     padding-left: 0;
+  }
+
+  &--logo {
+    padding: 0;
   }
 }
 

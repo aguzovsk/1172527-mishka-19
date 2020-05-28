@@ -10,8 +10,8 @@
     <header class="page__header page-header">
       <nav class="main-nav">
         <ul class="list main-nav__list">
-          <li class="main-nav__item main-nav__unit main-nav__unit--tablet-first main-nav__unit--desktop-first main-nav__group-1 main-nav__logo">
-            <a class="link diaphanous diaphanous--basic" href="./index.html">
+          <li class="main-nav__item main-nav__logo main-nav__unit main-nav__unit--tablet-first main-nav__unit--desktop-first main-nav__group-1">
+            <a class="link nav-link nav-link--logo diaphanous diaphanous--basic" href="./index.html">
               <picture>
                 <source media="(min-width: 1024px)" srcset="./img/logo-desktop.svg">
                 <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg">
@@ -23,27 +23,27 @@
             </a>
           </li>
           <li class="main-nav__item main-nav__dropbtn-wrapper">
-            <input
+            <input class="main-nav__js-dropbtn"
               type="image"
               src="./img/icon-menu-close.svg"
               alt="Открыть меню"
             />
           </li>
-          <li class="main-nav__group-2 mobile-toggle">
+          <li class="main-nav__group-2 main-nav__main-group">
             <ul class="list main-nav__unit main-nav__unit--space-between main-nav__unit--tablet-second main-nav__unit--desktop-first">
               <li class="main-nav__item  main-nav__item--horizontally-bordered main-nav__catalog">
                 <a class="link nav-link nav-link--iconless diaphanous" href="./catalog.html">
                   <p class="text diaphanous__text text--menu-item text--menu-item-small text--bold-black">Каталог товаров</p>
                 </a>
               </li>
-              <li class="main-nav__item  main-nav__item--bot-bordered main-nav__knitting">
+              <li class="main-nav__item main-nav__item--bot-bordered">
                 <a class="link nav-link nav-link--iconless diaphanous" href="./knitting.html">
                   <p class="text diaphanous__text text--menu-item text--menu-item-small text--bold-black">Вязание на заказ</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="main-nav__group-3  mobile-toggle">
+          <li class="main-nav__group-3 main-nav__main-group">
             <ul class="list main-nav__unit main-nav__unit--align-end main-nav__unit--tablet-first main-nav__unit--desktop-first">
               <li class="main-nav__item  main-nav__item--bot-bordered search">
                 <a class="link nav-link diaphanous" href="#">
@@ -55,7 +55,7 @@
                   <p class="text diaphanous__text text--menu-item text--bold-black search__text">Поиск по сайту</p>
                 </a>
               </li>
-              <li class="main-nav__item  main-nav__item--bot-bordered main-nav__basket main-nav__card">
+              <li class="main-nav__item  main-nav__item--bot-bordered">
                 <a class="link nav-link diaphanous" href="#">
                   <div class="nav-link__icon">
                     <svg class=" diaphanous__icon" width="21" height="18">
@@ -67,7 +67,7 @@
               </li>
             </ul>
           </li>
-          <li class="main-nav__group-4 desktop-show">
+          <li class="main-nav__group-4">
             <ul class="list main-nav__unit main-nav__unit--space-between main-nav__unit--desktop-second">
               <li class="main-nav__item main-nav__new">
                 <a class="link main-nav__link text text--menu-item-small text--bold-black" href="#">Новые поступления</a>
@@ -77,15 +77,15 @@
               </li>
             </ul>
           </li>
-          <li class="main-nav__item main-nav__group-5 main-nav__unit main-nav__unit--tablet-second main-nav__unit--desktop-second mobile-hide main-nav__delivery">
-            <p class="main-nav__unit main-nav__unit--align-end text text--menu-item-small">Бесплатная доставка по России</p>
+          <li class="main-nav__item main-nav__group-5 main-nav__unit main-nav__unit--tablet-second main-nav__unit--desktop-second main-nav__delivery">
+            <span class="text text--menu-item-small">Бесплатная доставка по России</span>
           </li>
         </ul>
       </nav>
       <h1 class="page-header__header page-header__header--index">
-        <span class="page-header__text page-header__text--index text text--centered text--main-header text--main-header--index text--bold-black page-main__header-text page-main__header-text--index">
-          Милые штуки ручной работы для дома
-        </span>
+        <p class="page-header__text page-header__text--index text text--main-header text--main-header--index text--bold-black page-main__header-text page-main__header-text--index">
+          Милые штуки ручной работы&nbspдля&nbspдома
+        </p>
       </h1>
     </header>
     <main class="page__main index">

@@ -52,7 +52,8 @@ $vertical-indent-mobile: -17px;
 .page-header__text {
   height: 100%;
   box-sizing: border-box;
-
+  margin: 0 auto;
+  padding: 0 7vw;
 
   &--casual {
     padding-top: 76px;
@@ -69,7 +70,6 @@ $vertical-indent-mobile: -17px;
 
     @include tablet {
       padding-top: 161px;
-      margin: 0 20vw;
     }
   }
 }

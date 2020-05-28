@@ -35,6 +35,11 @@
   }
 }
 
+@mixin flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @mixin border($side) {
   border-#{$side}-width: 1px;
   border-#{$side}-style: solid;

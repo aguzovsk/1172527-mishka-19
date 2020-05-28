@@ -10,7 +10,7 @@
     <header class="page__header page-header">
       <nav class="main-nav">
         <ul class="list main-nav__list">
-          <li class="main-nav__item main-nav__logo main-nav__unit main-nav__unit--tablet-first main-nav__unit--desktop-first main-nav__group-1">
+          <li class="nav-group main-nav__item main-nav__logo nav-group--1">
             <a class="link nav-link nav-link--logo diaphanous diaphanous--basic" href="./index.html">
               <picture>
                 <source media="(min-width: 1024px)" srcset="./img/logo-desktop.svg">
@@ -29,8 +29,8 @@
               alt="Открыть меню"
             />
           </li>
-          <li class="main-nav__group-2 main-nav__main-group">
-            <ul class="list main-nav__unit main-nav__unit--space-between main-nav__unit--tablet-second main-nav__unit--desktop-first">
+          <li class="nav-group nav-group--2 nav-group--main">
+            <ul class="list">
               <li class="main-nav__item  main-nav__item--horizontally-bordered main-nav__catalog">
                 <a class="link nav-link nav-link--iconless diaphanous" href="./catalog.html">
                   <p class="text diaphanous__text text--menu-item text--menu-item-small text--bold-black">Каталог товаров</p>
@@ -43,8 +43,8 @@
               </li>
             </ul>
           </li>
-          <li class="main-nav__group-3 main-nav__main-group">
-            <ul class="list main-nav__unit main-nav__unit--align-end main-nav__unit--tablet-first main-nav__unit--desktop-first">
+          <li class="nav-group nav-group--3 nav-group--main">
+            <ul class="list">
               <li class="main-nav__item  main-nav__item--bot-bordered search">
                 <a class="link nav-link diaphanous" href="#">
                   <div class="nav-link__icon search__icon">
@@ -67,17 +67,17 @@
               </li>
             </ul>
           </li>
-          <li class="main-nav__group-4">
-            <ul class="list main-nav__unit main-nav__unit--space-between main-nav__unit--desktop-second">
+          <li class="nav-group nav-group--4 main-nav__sales">
+            <ul class="list">
               <li class="main-nav__item main-nav__new">
                 <a class="link main-nav__link text text--menu-item-small text--bold-black" href="#">Новые поступления</a>
               </li>
-              <li class="main-nav__item main-nav__sale">
+              <li class="main-nav__item">
                 <a class="link main-nav__link text text--menu-item-small text--bold-black" href="#">Распродажа</a>
               </li>
             </ul>
           </li>
-          <li class="main-nav__item main-nav__group-5 main-nav__unit main-nav__unit--tablet-second main-nav__unit--desktop-second main-nav__delivery">
+          <li class="nav-group main-nav__item nav-group--5 main-nav__delivery">
             <span class="text text--menu-item-small">Бесплатная доставка по России</span>
           </li>
         </ul>
@@ -89,9 +89,6 @@
       </h1>
     </header>
     <main class="page__main index">
-      <!-- <header class="page-main__header page-main__header--index">
-
-      </header> -->
       <section class="inventory-types index__inventory">
         <button class="green-btn green-btn--left">
           <span class="text text--green-btn green-btn__text">Предметы интерьера</span>

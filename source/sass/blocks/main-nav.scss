@@ -1,10 +1,12 @@
-$first-line-height-mobile: 79px;
-$first-line-height-tablet: 88px;
-$first-line-height-desktop: $first-line-height-tablet;
+@mixin display($version) {
+  display: none;
+
+  @include #{$version} {
+    @content;
+  }
+}
 
 .main-nav {
-  background-color: $white-three;
-
   @include tablet {
     margin: 0 $margin-horizontal-tablet;
   }
@@ -17,7 +19,12 @@ $first-line-height-desktop: $first-line-height-tablet;
 .main-nav__item {
   display: flex;
   align-items: center;
-  height: $first-line-height-mobile;
+  height: 79px;
+  min-height: $menu-second-line-height-tablet;
+
+  @include tablet {
+    height: auto;
+  }
 
   &--bot-bordered {
     @include border(bottom);
@@ -41,8 +48,9 @@ $first-line-height-desktop: $first-line-height-tablet;
   margin-left: calc((100% - 80px) / 2);
 
   @include tablet {
+    height: 88px;
     margin-left: 0;
-    margin-right: calc(50% - 88px - 50px);
+    margin-right: calc(50% - 150px);
   }
 
   @include desktop {
@@ -56,48 +64,10 @@ $first-line-height-desktop: $first-line-height-tablet;
 }
 
 .main-nav__dropbtn-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   margin-right: $margin-horizontal-mobile;
 
   @include tablet {
     display: none;
-  }
-}
-
-.main-nav__unit {
-  display: flex;
-  flex-wrap: wrap;
-
-  @include tablet {
-    & .main-nav__item {
-      height: 100%;
-    }
-  }
-
-  &--tablet-first {
-    @include tablet {
-      height: $first-line-height-tablet;
-    }
-  }
-
-  &--tablet-second {
-    @include tablet {
-      height: $menu-second-line-height-tablet;
-    }
-  }
-
-  &--desktop-first {
-    @include desktop {
-      height: $first-line-height-desktop;
-    }
-  }
-
-  &--desktop-second {
-    @include desktop {
-      height: $menu-second-line-height-tablet;
-    }
   }
 }
 
@@ -107,9 +77,9 @@ $first-line-height-desktop: $first-line-height-tablet;
   }
 
   @include desktop {
+    @include border(right);
     margin-right: 35px;
     padding-right: 35px;
-    @include border(right);
   }
 }
 
@@ -127,76 +97,89 @@ $first-line-height-desktop: $first-line-height-tablet;
 }
 
 .main-nav__delivery {
-  display: none;
-
-  @include tablet {
-    display: block;
-  }
+  @include display(tablet);
 }
 
-.main-nav__main-group {
-  width: 100%;
-
-  & .main-nav__item {
-    width: 100%;
-  }
-
-  @include tablet {
-    width: auto;
-
-    & .main-nav__item {
-      width: auto;
-    }
-  }
-}
-
-.main-nav__group-1 {
-  @include tablet {
-    order: 1;
-  }
-
-  @include desktop {
-    order: 2;
-  }
-}
-
-.main-nav__group-2 {
-  @include tablet {
-    order: 3;
-  }
-
-  @include desktop {
-    order: 1;
-  }
-}
-
-.main-nav__group-3 {
-  @include tablet {
-    order: 2;
-  }
-
-  @include desktop {
-    margin-left: 27.5px;
-    order: 3;
-  }
-}
-
-.main-nav__group-4 {
-  display: none;
-
-  @include desktop {
+.main-nav__sales {
+  @include display(desktop) {
     flex-basis: calc(100% - 400px);
-    display: block;
-    order: 4;
   }
 }
 
-.main-nav__group-5 {
-  @include tablet {
-    order: 4;
-  }
+// .main-nav__group {
+//   & .list {
+//     @include flex-wrap;
 
-  @include desktop {
-    order: 5;
-  }
-}
+//     @include tablet {
+//       height: 100%;
+//     }
+//   }
+// }
+
+// .main-nav__main-group {
+//   width: 100%;
+
+//   & .main-nav__item {
+//     width: 100%;
+//   }
+
+//   @include tablet {
+//     width: auto;
+
+//     & .main-nav__item {
+//       width: auto;
+//     }
+//   }
+// }
+
+// .main-nav__group-1 {
+//   @include tablet {
+//     height: 88px;
+//     order: 1;
+//   }
+
+//   @include desktop {
+//     order: 2;
+//   }
+// }
+
+// .main-nav__group-2 {
+//   @include tablet {
+//     order: 3;
+//   }
+
+//   @include desktop {
+//     order: 1;
+//   }
+// }
+
+// .main-nav__group-3 {
+//   @include tablet {
+//     order: 2;
+//   }
+
+//   @include desktop {
+//     margin-left: 27.5px;
+//     order: 3;
+//   }
+// }
+
+// .main-nav__group-4 {
+//   display: none;
+
+//   @include desktop {
+//     flex-basis: calc(100% - 400px);
+//     display: flex;
+//     order: 4;
+//   }
+// }
+
+// .main-nav__group-5 {
+//   @include tablet {
+//     order: 4;
+//   }
+
+//   @include desktop {
+//     order: 5;
+//   }
+// }

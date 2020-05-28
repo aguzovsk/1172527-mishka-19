@@ -59,33 +59,33 @@ $max-height: max($height-values...);
   background-repeat: no-repeat;
 
   &--icon-flower {
-    background-image: url("../img/icon-feature-flower.svg");
     @include background(flower);
+    background-image: url("../img/icon-feature-flower.svg");
   }
 
   &--icon-money {
-    background-image: url("../img/icon-feature-money.svg");
     @include background(money);
+    background-image: url("../img/icon-feature-money.svg");
   }
 
   &--icon-heart {
-    background-image: url("../img/icon-feature-heart.svg");
     @include background(heart);
+    background-image: url("../img/icon-feature-heart.svg");
   }
 
   &--icon-ball {
-    background-image: url("../img/icon-feature-ball.svg");
     @include background(ball);
+    background-image: url("../img/icon-feature-ball.svg");
   }
 
   &--icon-rocket {
-    background-image: url("../img/icon-feature-rocket.svg");
     @include background(rocket);
+    background-image: url("../img/icon-feature-rocket.svg");
   }
 
   &--icon-gift {
-    background-image: url("../img/icon-feature-gift.svg");
     @include background(gift);
+    background-image: url("../img/icon-feature-gift.svg");
   }
 
   $n: 3;

@@ -10,10 +10,10 @@
     <header class="page-header page__header">
       <nav class="main-nav">
         <ul class="list main-nav__list">
-          <li class="main-nav__item main-nav__unit main-nav__unit--tablet-first main-nav__unit--desktop-first main-nav__group-1 main-nav__logo">
-            <a class="link main-nav__link main-nav__link--logo" href="./index.html">
+          <li class="nav-group main-nav__item main-nav__logo nav-group--1">
+            <a class="link nav-link nav-link--logo diaphanous diaphanous--basic" href="./index.html">
               <picture>
-                <source media="(min-width: 1020px)" srcset="./img/logo-desktop.svg">
+                <source media="(min-width: 1024px)" srcset="./img/logo-desktop.svg">
                 <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg">
                 <img class="image page-header__logo-image"
                   src="./img/logo-mobile.svg"
@@ -22,67 +22,63 @@
               </picture>
             </a>
           </li>
-
-          <li class="main-nav__item main-nav__dropbtn-wrapper mobile-show">
-            <input class="main-nav__dropbtn"
+          <li class="main-nav__item main-nav__dropbtn-wrapper">
+            <input class="main-nav__js-dropbtn"
               type="image"
               src="./img/icon-menu-close.svg"
               alt="Открыть меню"
             />
           </li>
-
-          <li class="main-nav__group-2 main-nav__group--toggle mobile-toggle">
-            <ul class="list main-nav__unit main-nav__unit--space-between main-nav__unit--tablet-second main-nav__unit--desktop-first">
-              <li class="main-nav__item main-nav__unit--mobile main-nav__item--horizontally-bordered main-nav__catalog">
-                <a class="link main-nav__link" href="./catalog.html">
-                  <div class="main-nav__prepend-icon-1"></div>
-                  <p class="text text--menu-item text--menu-item-small text--bold-black">Каталог товаров</p>
+          <li class="nav-group nav-group--2 nav-group--main">
+            <ul class="list">
+              <li class="main-nav__item main-nav__item--horizontally-bordered main-nav__catalog">
+                <a class="link nav-link nav-link--iconless diaphanous" href="./catalog.html">
+                  <p class="text diaphanous__text text--menu-item text--menu-item-small text--bold-black">Каталог товаров</p>
                 </a>
               </li>
-              <li class="main-nav__item main-nav__unit--mobile main-nav__item--bot-bordered main-nav__knitting">
-                <a class="link main-nav__link" href="./knitting.html">
-                  <div class="main-nav__prepend-icon-1"></div>
-                  <p class="text text--menu-item text--menu-item-small text--bold-black">Вязание на заказ</p>
+              <li class="main-nav__item main-nav__item--bot-bordered">
+                <a class="link nav-link nav-link--iconless diaphanous" href="./knitting.html">
+                  <p class="text diaphanous__text text--menu-item text--menu-item-small text--bold-black">Вязание на заказ</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="main-nav__group-3 main-nav__group--toggle mobile-toggle">
-            <ul class="list main-nav__unit main-nav__unit--align-end main-nav__unit--tablet-first main-nav__unit--desktop-first">
-              <li class="main-nav__item main-nav__unit--mobile main-nav__item--bot-bordered main-nav__search main-nav__search">
-                <a class="link main-nav__link" href="#">
-                  <div class="main-nav__prepend-icon-2 main-nav__prepend-icon-2--search">
-                    <svg class="main-nav__icon" width="18" height="18">
+          <li class="nav-group nav-group--3 nav-group--main">
+            <ul class="list">
+              <li class="main-nav__item  main-nav__item--bot-bordered search">
+                <a class="link nav-link diaphanous" href="#">
+                  <div class="nav-link__icon search__icon">
+                    <svg class="diaphanous__icon" width="18" height="18">
                       <use href="./img/icon-search.svg#Layer_1"></use>
                     </svg>
                   </div>
-                  <p class="text text--menu-item text--bold-black main-nav__search-text">Поиск по сайту</p>
+                  <p class="text diaphanous__text text--menu-item text--bold-black search__text">Поиск по сайту</p>
                 </a>
               </li>
-              <li class="main-nav__item main-nav__unit--mobile main-nav__item--bot-bordered main-nav__basket main-nav__card">
-                <a class="link main-nav__link" href="#">
-                  <div class="main-nav__prepend-icon-2">
-                    <svg class="main-nav__icon" width="21" height="18">
+              <li class="main-nav__item  main-nav__item--bot-bordered">
+                <a class="link nav-link diaphanous" href="#">
+                  <div class="nav-link__icon">
+                    <svg class=" diaphanous__icon" width="21" height="18">
                       <use href="./img/icon-cart.svg#Layer_1"></use>
                     </svg>
                   </div>
-                  <p class="text text--menu-item text--bold-black">Корзина: пока пуста</p>
+                  <p class="text diaphanous__text text--centered text--menu-item text--bold-black">Корзина: пока пуста</p>
                 </a>
               </li>
             </ul>
           </li>
-          <li class="main-nav__group-4 desktop-show">
-            <ul class="list main-nav__unit main-nav__unit--space-between main-nav__unit--desktop-second">
+          <li class="nav-group nav-group--4 main-nav__sales">
+            <ul class="list">
               <li class="main-nav__item main-nav__new">
-                <a class="link main-nav__link text text--menu-item-small text--bold-black" href="#">Новые поступления</a>
+                <a class="link text text--menu-item-small text--bold-black" href="#">Новые поступления</a>
               </li>
-              <li class="main-nav__item main-nav__sale">
-                <a class="link main-nav__link text text--menu-item-small text--bold-black" href="#">Распродажа</a>
+              <li class="main-nav__item">
+                <a class="link text text--menu-item-small text--bold-black" href="#">Распродажа</a>
               </li>
             </ul>
           </li>
-          <li class="main-nav__item main-nav__group-5 main-nav__unit main-nav__unit--tablet-second main-nav__unit--desktop-second mobile-hide main-nav__delivery">
-            <p class="main-nav__unit main-nav__unit--align-end text text--menu-item-small">Бесплатная доставка по России</p>
+          <li class="nav-group main-nav__item nav-group--5 main-nav__delivery">
+            <span class="text text--menu-item-small">Бесплатная доставка по России</span>
           </li>
         </ul>
       </nav>
@@ -316,7 +312,7 @@
     </main>
     <footer class="page-footer">
       <div class="page-footer__wrapper">
-        <svg class="page-footer__link-unit page-footer__icon mobile-hide" width="109" height="34">
+        <svg class="page-footer__link-unit page-footer__icon page-footer__logo" width="109" height="34">
           <use href="./img/logo-footer.svg#Layer_1"></use>
         </svg>
         <div class="page-footer__social social page-footer__item">

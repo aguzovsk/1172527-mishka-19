@@ -7,7 +7,7 @@ $headline-height: 60px;
 
   @include tablet {
     justify-content: flex-start;
-    height: 404px + $headline-height + 20px;
+    height: 515px;
     align-content: space-between;
     flex-wrap: wrap-reverse;
     width: auto;
@@ -19,34 +19,72 @@ $headline-height: 60px;
   }
 }
 
-.popular__header {
-  margin: 0;
-  white-space: nowrap;
-}
+// .popular__headline {
+  // @include tablet {
+  //   // display: flex;
+  //   // flex-direction: column;
+  //   // justify-content: center;
+  //   height: $headline-height;
+  //   margin-bottom: 20px;
+  // }
 
-.popular__list {
-  margin: 33px 0 42px;
+  // @include desktop {
+  //   height: $headline-height + $indent-vertical-index-desktop;
+  //   margin-top: $indent-vertical-index-desktop;
+  // }
+// }
+
+.popular__header {
+  // margin: 0;
+  white-space: nowrap;
+
+  @include tablet {
+    width: percentage(292px / ($tablet-min-width - 2 * $margin-horizontal-tablet));
+  }
+
+  @include desktop {
+    margin-bottom: 52px;
+  }
 }
 
 .popular__title {
   padding-bottom: 30px;
 
   @include tablet {
-    display: flex;
-    justify-content: flex-end;
+    // display: flex;
+    // justify-content: flex-end;
+    // padding-bottom: 0;
+    padding-top: 8px;
     padding-bottom: 0;
     order: 1;
   }
 
   @include desktop {
-    justify-content: start;
-    height: 100%;
+    // justify-content: start;
+    // height: 100%;
     order: 6;
+    padding-top: 12px;
+    margin-bottom: 50%;
   }
+}
+
+.popular__headline {
+  @include tablet {
+    margin-bottom: 60px;
+  }
+
+  @include desktop {
+    margin-top: 63px;
+  }
+}
+
+.popular__list {
+  margin: 33px 0 42px;
 }
 
 .popular__image {
   width: 100%;
+  align-self: flex-end;
 }
 
 .popular__order {
@@ -64,27 +102,9 @@ $headline-height: 60px;
   }
 }
 
-.popular__headline {
-  @include tablet {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: $headline-height;
-    margin-bottom: 20px;
-  }
-
-  @include desktop {
-    height: $headline-height + $indent-vertical-index-desktop;
-
-    &::before {
-      content: "";
-      display: inline-block;
-      height: $indent-vertical-index-desktop;
-    }
-  }
-}
-
 .popular__image-wrapper {
+  align-self: flex-end;
+
   @include desktop {
     margin-left: auto;
     z-index: -1;

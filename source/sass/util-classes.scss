@@ -5,6 +5,20 @@
   }
 }
 
+.desktop__main-column {
+  @include tablet-first-column();
+  @include desktop {
+    $maquette-width: 293px;
+    $container-width: $desktop-maquette-width - 2 * $margin-horizontal-desktop;
+    $width: ($maquette-width / $desktop-maquette-width) * 100vw;
+    $maquette-margin-right: 53px;
+    $margin-right: percentage($maquette-margin-right / $container-width);
+
+    width: $width;
+    margin-right: $margin-right;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -58,15 +72,5 @@ $indent-column-width: 175px;
     width: 16vw;
   }
 
-  .desktop__main-column {
-    @include tablet-first-column();
-    $maquette-width: 293px;
-    $container-width: $desktop-maquette-width - 2 * $margin-horizontal-desktop;
-    $width: ($maquette-width / $desktop-maquette-width) * 100vw;
-    $maquette-margin-right: 53px;
-    $margin-right: percentage($maquette-margin-right / $container-width);
 
-    width: $width;
-    margin-right: $margin-right;
-  }
 }

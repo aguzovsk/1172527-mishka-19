@@ -2,7 +2,7 @@
 (function() {
   var nonMobileWidth = "768px";
   var menuToggleButton = document.querySelector(".main-nav__js-dropbtn");
-  var menuToggleItems = document.querySelectorAll(".main-nav__main-group");
+  var menuToggleItems = document.querySelectorAll(".nav-group--main");
   var isChecked = true;
 
   function toggle() {

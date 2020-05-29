@@ -6,6 +6,10 @@
   }
 }
 
+.index__button {
+  width: 100%;
+}
+
 .index__popular {
   margin: 34px calc((100% +  #{2 * $margin-horizontal-mobile - $mobile-min-width}) / 4);
 

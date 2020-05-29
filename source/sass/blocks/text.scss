@@ -138,6 +138,7 @@
   @include bold-with-color($white-three);
   @include height-size(0.94, 17px);
   text-transform: uppercase;
+  text-align: center;
 }
 
 .text--knitting-sub-header {

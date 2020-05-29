@@ -1,11 +1,3 @@
-@mixin display($version) {
-  display: none;
-
-  @include #{$version} {
-    @content;
-  }
-}
-
 .main-nav {
   @include tablet {
     margin: 0 $margin-horizontal-tablet;
@@ -97,11 +89,17 @@
 }
 
 .main-nav__delivery {
-  @include display(tablet);
+  display: none;
+
+  @include tablet {
+    display: flex;
+  }
 }
 
 .main-nav__sales {
-  @include display(desktop) {
-    flex-basis: calc(100% - 400px);
+  display: none;
+
+  @include desktop {
+    flex-basis: calc(100% - 300px);;
   }
 }

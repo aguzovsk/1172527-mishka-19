@@ -1,10 +1,5 @@
-@import "../var.scss";
-@import "../button-utils.scss";
-@import "../utils.scss";
-
 $container-border-width: 1px;
 $max-width: 355px;
-$padding-horizontal-mobile: 30px;
 
 .select-size {
   position: fixed;
@@ -24,9 +19,10 @@ $padding-horizontal-mobile: 30px;
 }
 
 .select-size__form {
-  padding: 36px $padding-horizontal-mobile 46px;
-  margin: 0 -31px;
+  padding: 36px $margin-horizontal-mobile 46px;
+  margin: 0 -$container-border-width;
   max-width: $max-width;
+  width: 100%;
   border: solid $container-border-width #c6c6c6;
   background-color: $white-three;
 }
@@ -42,10 +38,6 @@ $padding-horizontal-mobile: 30px;
 .select-size__choices {
   display: flex;
   justify-content: space-between;
-}
-
-.select-size__radio-btn {
-  @include selection-button-styles();
 }
 
 .select-size__radio-shell {
@@ -77,15 +69,6 @@ $padding-horizontal-mobile: 30px;
   margin-top: 30px;
   width: 100%;
   background-color: $seafoam-blue;
-  margin-bottom: 46px;
-}
-
-@media (min-width: $max-width + 2 * $padding-horizontal-mobile + 2 * $border-width) {
-  .select-size__form {
-    border-style: solid;
-    border-width: $container-border-width;
-    border-color: #c6c6c6;
-  }
 }
 
 @media (min-width: $tablet-min-width) {

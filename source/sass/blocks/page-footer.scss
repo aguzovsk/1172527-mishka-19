@@ -6,6 +6,14 @@
   height: 160px;
 }
 
+.page-footer__logo {
+  display: none;
+
+  @include tablet {
+    display: inline-block;
+  }
+}
+
 .page-footer__wrapper {
   height: 100%;
   display: flex;

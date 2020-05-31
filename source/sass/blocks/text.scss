@@ -62,8 +62,6 @@
 .text--green-btn {
   @include bold-with-color($white-three);
   @include height-size(1.26, 19px);
-
-  width: min-content;
 }
 
 .text--popular-description {
@@ -194,7 +192,6 @@
 
   .text--popular-title {
     text-align: center;
-    width: min-content;
     line-height: 1;
   }
 

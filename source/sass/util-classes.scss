@@ -11,11 +11,8 @@
     $maquette-width: 293px;
     $container-width: $desktop-maquette-width - 2 * $margin-horizontal-desktop;
     $width: ($maquette-width / $desktop-maquette-width) * 100vw;
-    $maquette-margin-right: 53px;
-    $margin-right: percentage($maquette-margin-right / $container-width);
 
     width: $width;
-    margin-right: $margin-right;
   }
 }
 

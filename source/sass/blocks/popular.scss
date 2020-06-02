@@ -109,8 +109,12 @@ $headline-height: 60px;
 .popular__image-wrapper {
   margin-top: auto;
 
+  @include tablet {
+    margin-left: percentage(44px / ($tablet-min-width - 2 * $margin-horizontal-tablet));
+  }
+
   @include desktop {
-    margin-left: auto;
+    margin-left: percentage(57px / (1150px - 2 * $margin-horizontal-desktop));
     z-index: -1;
   }
 }
@@ -124,15 +128,10 @@ $headline-height: 60px;
     order: 3;
   }
 
-  // .popular__description {
-  //   order: 4;
-  // }
-
   .popular__description,
   .popular__list,
   .popular__order {
     margin: 0;
-    // margin-top: auto;
     order: 4;
   }
 
@@ -141,7 +140,3 @@ $headline-height: 60px;
     margin-top: auto;
   }
 }
-
-// @include desktop {
-
-// }

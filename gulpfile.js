@@ -9,7 +9,6 @@ var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
 var csso = require("gulp-csso");
 var rename = require("gulp-rename");
-console.log(sass.info);
 var svgMain = ["source/img/*.svg", "!source/img/bg-zigzag*", "!source/img/icon-feature-*"];
 
 gulp.task("copy", function() {
@@ -45,13 +44,14 @@ gulp.task("css", function () {
     .pipe(server.stream());
 });
 
-var imagemin = require("imagemin");
+var imagemin = require("gulp-imagemin");
 
 gulp.task("images", function() {
+  console.log(imagemin);
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive: true}),
+      imagemin.mozjpeg({progressive: true}),
       imagemin.svgo()
     ]))
     .pipe(gulp.dest("source/img"));

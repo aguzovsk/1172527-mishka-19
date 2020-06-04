@@ -4,7 +4,6 @@
 $video-btn-width: 101px;
 $video-btn-height: 77px;
 $border-width: 1px;
-$video-desktop-min-width: 1050px;
 
 @mixin horizontal-margin-list($base-width) {
   $formula: unquote("calc((100vw - #{$base-width}) / 3)");
@@ -128,7 +127,7 @@ $video-desktop-min-width: 1050px;
   width: 100%;
 }
 
-@media (min-width: $tablet-min-width) {
+@include tablet {
   .catalog__list {
     @include horizontal-margin-list($tablet-min-width);
 
@@ -208,7 +207,7 @@ $margin-right:  $video-info-margin-right * 100vw;
 $margin-left: $video-info-margin-left * 100vw;
 $margin-sum: ($video-info-margin-right + $video-info-margin-left) * 100vw;
 
-@media (min-width: $desktop-min-width) {
+@include desktop {
   .catalog__list {
     display: flex;
     flex-wrap: wrap;
@@ -233,7 +232,7 @@ $margin-sum: ($video-info-margin-right + $video-info-margin-left) * 100vw;
   }
 }
 
-@media (min-width: $video-desktop-min-width) {
+@include desktop {
   .catalog__item {
     &--video {
       flex-grow: 1;

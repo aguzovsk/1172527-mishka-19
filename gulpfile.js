@@ -9,7 +9,7 @@ var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
 var csso = require("gulp-csso");
 var rename = require("gulp-rename");
-var svgMain = ["source/img/*.svg", "!source/img/bg-zigzag*", "!source/img/icon-feature-*"];
+var svgMain = ["source/img/*.svg", "!source/img/bg-zigzag*", "!source/img/icon-feature*.svg", "!source/img/icon-menu*.svg", "!source/img/icon-*-arrow.svg"];
 
 gulp.task("copy", function() {
   return gulp.src([

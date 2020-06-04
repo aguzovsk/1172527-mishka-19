@@ -1,0 +1,8 @@
+.columns__desktop-first {
+  @include desktop {
+    $container-width: $desktop-min-width - 2 * $margin-horizontal-desktop;
+    $width: percentage(293px / $container-width);
+
+    width: $width;
+  }
+}

@@ -236,7 +236,6 @@ $margin-sum: ($video-info-margin-right + $video-info-margin-left) * 100vw;
   .catalog__item {
     &--video {
       flex-grow: 1;
-      // flex-basis: 100%;
       flex-wrap: wrap;
       height: 455px;
       justify-content: center;

@@ -1,8 +1,27 @@
-.columns__desktop-first {
-  @include desktop {
-    $container-width: $desktop-min-width - 2 * $margin-horizontal-desktop;
-    $width: percentage(293px / $container-width);
+$container-width: $desktop-min-width - 2 * $margin-horizontal-desktop;
 
-    width: $width;
+.columns__main-col {
+  @include tablet {
+    $container-width-tablet: 768 - 2 * $margin-horizontal-tablet;
+    width: percentage(292px / $container-width-tablet);
+  }
+
+  @include desktop {
+    width: percentage(292px / $container-width);;
+  }
+}
+
+@include desktop {
+  $indent-column-width: percentage(175px / $container-width);
+
+  .columns__indented {
+    padding-left: $indent-column-width;
+  }
+
+  .columns__desktop-first-col {
+    $padding-left: 62px;
+
+    width: calc(#{$indent-column-width} - #{$padding-left});
+    padding-left: $padding-left;
   }
 }
